@@ -1,0 +1,574 @@
+# Pollis Datasets: curated catalogue
+#
+# One [[datasets]] entry per dataset; data/<id>.csv holds the data. Fields:
+#   id          name passed to dataset("..."); also the CSV file name and the DuckDB view name
+#   title       display name
+#   domain      grouping for docs and a future Datasets browser
+#   description one or two sentences
+#   rows        number of rows in data/<id>.csv
+#   source      original publication or producer (cite this)
+#   url         where the data was taken from
+#   licence     the terms stated by the provider
+#   status      open           explicit open licence (CC0, CC BY, permission granted)
+#               public-domain  US-government work, or published before 1930
+#               redistributed  no explicit licence; small factual table redistributed for decades in CRAN/textbook packages
+#   columns     every column in file order: name and description (units, codes); missing values are empty fields
+#
+# Rejected after the licence check:
+#   Fama-French factors   "Copyright Eugene F. Fama and Kenneth R. French", no redistribution grant (fetch live instead)
+#   Sunspots (SILSO)      CC BY-NC 4.0: the non-commercial clause is incompatible with AGPL distribution
+#   Boston Housing        ethically problematic variable; withdrawn from scikit-learn
+
+# ---------- Regression ----------
+
+[[datasets]]
+id = "mtcars"
+title = "Motor Trend Cars"
+domain = "Regression"
+description = "Fuel consumption and ten design and performance variables for 32 cars (1973-74 models)."
+rows = 32
+source = "Henderson, H. V. and Velleman, P. F. (1981), Building multiple regression models interactively, Biometrics 37, 391-411; data from Motor Trend (1974)"
+url = "R datasets package (mtcars)"
+licence = "None stated; R datasets package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "model", description = "Car make and model" },
+	{ name = "mpg", description = "Miles per US gallon" },
+	{ name = "cyl", description = "Number of cylinders" },
+	{ name = "disp", description = "Displacement (cubic inches)" },
+	{ name = "hp", description = "Gross horsepower" },
+	{ name = "drat", description = "Rear axle ratio" },
+	{ name = "wt", description = "Weight (1000 lb)" },
+	{ name = "qsec", description = "Quarter-mile time (seconds)" },
+	{ name = "vs", description = "Engine: 0 = V-shaped, 1 = straight" },
+	{ name = "am", description = "Transmission: 0 = automatic, 1 = manual" },
+	{ name = "gear", description = "Number of forward gears" },
+	{ name = "carb", description = "Number of carburettors" },
+]
+
+[[datasets]]
+id = "anscombe"
+title = "Anscombe's Quartet"
+domain = "Regression"
+description = "Four x-y data sets with identical summary statistics and regression lines but very different shapes."
+rows = 11
+source = "Anscombe, F. J. (1973), Graphs in statistical analysis, The American Statistician 27, 17-21"
+url = "R datasets package (anscombe)"
+licence = "None stated; R datasets package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "x1", description = "Predictor of set 1" },
+	{ name = "x2", description = "Predictor of set 2" },
+	{ name = "x3", description = "Predictor of set 3" },
+	{ name = "x4", description = "Predictor of set 4" },
+	{ name = "y1", description = "Response of set 1" },
+	{ name = "y2", description = "Response of set 2" },
+	{ name = "y3", description = "Response of set 3" },
+	{ name = "y4", description = "Response of set 4" },
+]
+
+[[datasets]]
+id = "galton"
+title = "Galton Family Heights"
+domain = "Regression"
+description = "Heights of parents and their adult children; the origin of 'regression towards the mean'."
+rows = 934
+source = "Galton, F. (1886), Regression towards mediocrity in hereditary stature, Journal of the Anthropological Institute 15, 246-263"
+url = "HistData R package (GaltonFamilies), via Rdatasets"
+licence = "Published 1886"
+status = "public-domain"
+columns = [
+	{ name = "family", description = "Family identifier" },
+	{ name = "father", description = "Father's height (inches)" },
+	{ name = "mother", description = "Mother's height (inches)" },
+	{ name = "midparent_height", description = "(father + 1.08 * mother) / 2 (inches)" },
+	{ name = "children", description = "Number of children in the family" },
+	{ name = "child_num", description = "Child's birth order within the family" },
+	{ name = "gender", description = "Child's gender: male, female" },
+	{ name = "child_height", description = "Child's adult height (inches)" },
+]
+
+# ---------- Econometrics ----------
+
+[[datasets]]
+id = "grunfeld"
+title = "Grunfeld Investment"
+domain = "Panel econometrics"
+description = "Annual gross investment, firm value and capital stock of 11 large US firms, 1935-1954."
+rows = 220
+source = "Grunfeld, Y. (1958), The Determinants of Corporate Investment, PhD thesis, University of Chicago"
+url = "AER R package (Grunfeld)"
+licence = "None stated; tables published in the thesis and many textbooks"
+status = "redistributed"
+columns = [
+	{ name = "firm", description = "Firm name" },
+	{ name = "year", description = "Year" },
+	{ name = "invest", description = "Gross investment (million 1947 USD)" },
+	{ name = "value", description = "Market value of the firm (million 1947 USD)" },
+	{ name = "capital", description = "Stock of plant and equipment (million 1947 USD)" },
+]
+
+[[datasets]]
+id = "mroz"
+title = "Mroz Women's Labour Supply"
+domain = "Econometrics"
+description = "Hours, wages, education and family background of 753 married women (PSID, 1975)."
+rows = 753
+source = "Mroz, T. A. (1987), The sensitivity of an empirical model of married women's hours of work, Econometrica 55, 765-799"
+url = "Wooldridge, Introductory Econometrics data (MROZ), via Rdatasets"
+licence = "None stated; derived from PSID public-use data"
+status = "redistributed"
+columns = [
+	{ name = "inlf", description = "1 if in the labour force in 1975" },
+	{ name = "hours", description = "Hours worked in 1975" },
+	{ name = "kidslt6", description = "Number of children under 6" },
+	{ name = "kidsge6", description = "Number of children aged 6-18" },
+	{ name = "age", description = "Woman's age (years)" },
+	{ name = "educ", description = "Woman's years of schooling" },
+	{ name = "wage", description = "Estimated hourly wage (USD); empty if not working" },
+	{ name = "repwage", description = "Reported hourly wage at the 1976 interview (USD)" },
+	{ name = "hushrs", description = "Husband's hours worked in 1975" },
+	{ name = "husage", description = "Husband's age (years)" },
+	{ name = "huseduc", description = "Husband's years of schooling" },
+	{ name = "huswage", description = "Husband's hourly wage (USD)" },
+	{ name = "faminc", description = "Family income in 1975 (USD)" },
+	{ name = "mtr", description = "Federal marginal tax rate facing the woman" },
+	{ name = "motheduc", description = "Mother's years of schooling" },
+	{ name = "fatheduc", description = "Father's years of schooling" },
+	{ name = "unem", description = "Unemployment rate in the county of residence (%)" },
+	{ name = "city", description = "1 if living in a metropolitan area (SMSA)" },
+	{ name = "exper", description = "Years of labour market experience" },
+	{ name = "nwifeinc", description = "Non-wife family income: (faminc - wage * hours) / 1000" },
+	{ name = "lwage", description = "log(wage); empty if not working" },
+	{ name = "expersq", description = "exper squared" },
+]
+
+[[datasets]]
+id = "card"
+title = "Card College Proximity"
+domain = "Econometrics"
+description = "Wages, schooling and whether young men grew up near a college (NLSYM, 1976); the classic instrument. Wooldridge's 3,010-row version."
+rows = 3010
+source = "Card, D. (1995), Using geographic variation in college proximity to estimate the return to schooling, in Aspects of Labour Market Behaviour, University of Toronto Press"
+url = "Wooldridge, Introductory Econometrics data (CARD), via Rdatasets; original at https://davidcard.berkeley.edu/data_sets.html"
+licence = "None stated; posted by the author for public download; NLS public-use data"
+status = "redistributed"
+columns = [
+	{ name = "id", description = "Person identifier" },
+	{ name = "nearc2", description = "1 if grew up near a 2-year college" },
+	{ name = "nearc4", description = "1 if grew up near a 4-year college" },
+	{ name = "educ", description = "Years of schooling in 1976" },
+	{ name = "age", description = "Age in 1976 (years)" },
+	{ name = "fatheduc", description = "Father's years of schooling" },
+	{ name = "motheduc", description = "Mother's years of schooling" },
+	{ name = "weight", description = "NLS sampling weight, 1976" },
+	{ name = "momdad14", description = "1 if lived with mother and father at age 14" },
+	{ name = "sinmom14", description = "1 if lived with a single mother at age 14" },
+	{ name = "step14", description = "1 if lived with a step-parent at age 14" },
+	{ name = "reg661", description = "1 if lived in New England in 1966" },
+	{ name = "reg662", description = "1 if lived in the Middle Atlantic region in 1966" },
+	{ name = "reg663", description = "1 if lived in the East North Central region in 1966" },
+	{ name = "reg664", description = "1 if lived in the West North Central region in 1966" },
+	{ name = "reg665", description = "1 if lived in the South Atlantic region in 1966" },
+	{ name = "reg666", description = "1 if lived in the East South Central region in 1966" },
+	{ name = "reg667", description = "1 if lived in the West South Central region in 1966" },
+	{ name = "reg668", description = "1 if lived in the Mountain region in 1966" },
+	{ name = "reg669", description = "1 if lived in the Pacific region in 1966" },
+	{ name = "south66", description = "1 if lived in the South in 1966" },
+	{ name = "black", description = "1 if Black" },
+	{ name = "smsa", description = "1 if lived in a metropolitan area (SMSA) in 1976" },
+	{ name = "south", description = "1 if lived in the South in 1976" },
+	{ name = "smsa66", description = "1 if lived in a metropolitan area (SMSA) in 1966" },
+	{ name = "wage", description = "Hourly wage in 1976 (US cents)" },
+	{ name = "enroll", description = "1 if enrolled in school in 1976" },
+	{ name = "kww", description = "Knowledge of the World of Work test score" },
+	{ name = "iq", description = "IQ score" },
+	{ name = "married", description = "Marital status in 1976: 1 = married, spouse present; 2 = married, spouse absent; 3 = separated; 4 = divorced; 5 = widowed; 6 = never married" },
+	{ name = "libcrd14", description = "1 if had a library card at age 14" },
+	{ name = "exper", description = "Potential experience: age - educ - 6" },
+	{ name = "lwage", description = "log(wage)" },
+	{ name = "expersq", description = "exper squared" },
+]
+
+[[datasets]]
+id = "lalonde"
+title = "LaLonde NSW Job Training"
+domain = "Causal inference"
+description = "Earnings of treated and control participants in the National Supported Work experiment (Dehejia-Wahba subsample)."
+rows = 445
+source = "LaLonde, R. (1986), Evaluating the econometric evaluations of training programs, American Economic Review 76, 604-620; Dehejia, R. and Wahba, S. (1999), JASA 94, 1053-1062"
+url = "https://users.nber.org/~rdehejia/data/.nswdata2.html"
+licence = "None stated; posted by the author for public download"
+status = "redistributed"
+columns = [
+	{ name = "treat", description = "1 if assigned to the job training programme" },
+	{ name = "age", description = "Age (years)" },
+	{ name = "educ", description = "Years of schooling" },
+	{ name = "black", description = "1 if Black" },
+	{ name = "hisp", description = "1 if Hispanic" },
+	{ name = "married", description = "1 if married" },
+	{ name = "nodegree", description = "1 if no high-school degree" },
+	{ name = "re74", description = "Real earnings in 1974 (USD)" },
+	{ name = "re75", description = "Real earnings in 1975 (USD)" },
+	{ name = "re78", description = "Real earnings in 1978, after the programme (USD)" },
+]
+
+# ---------- Counts and GLM ----------
+
+[[datasets]]
+id = "horsekicks"
+title = "Prussian Horse Kicks"
+domain = "Count data"
+description = "Deaths by horse kick in 14 Prussian army corps, 1875-1894; the textbook Poisson example."
+rows = 280
+source = "Bortkiewicz, L. von (1898), Das Gesetz der kleinen Zahlen, Leipzig"
+url = "vcd R package (VonBort), via Rdatasets"
+licence = "Published 1898"
+status = "public-domain"
+columns = [
+	{ name = "year", description = "Year" },
+	{ name = "corps", description = "Army corps: G (Guard), I-XI, XIV, XV" },
+	{ name = "deaths", description = "Soldiers killed by a horse kick" },
+]
+
+[[datasets]]
+id = "insectsprays"
+title = "Insect Sprays"
+domain = "Count data"
+description = "Counts of insects in agricultural plots treated with six insecticides."
+rows = 72
+source = "Beall, G. (1942), The transformation of data from entomological field experiments, Biometrika 32, 243-262"
+url = "R datasets package (InsectSprays)"
+licence = "None stated; R datasets package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "count", description = "Number of insects in the plot" },
+	{ name = "spray", description = "Insecticide: A-F" },
+]
+
+# ---------- Classification ----------
+
+[[datasets]]
+id = "penguins"
+title = "Palmer Penguins"
+domain = "Classification"
+description = "Bill, flipper and body measurements of 344 penguins of three species in the Palmer Archipelago, Antarctica."
+rows = 344
+source = "Gorman, K. B., Williams, T. D. and Fraser, W. R. (2014), PLoS ONE 9(3), e90081; Horst, A. M., Hill, A. P. and Gorman, K. B. (2020), palmerpenguins R package"
+url = "https://github.com/allisonhorst/palmerpenguins"
+licence = "CC0 1.0"
+status = "open"
+columns = [
+	{ name = "species", description = "Adelie, Chinstrap, Gentoo" },
+	{ name = "island", description = "Biscoe, Dream, Torgersen" },
+	{ name = "bill_length_mm", description = "Bill length (mm)" },
+	{ name = "bill_depth_mm", description = "Bill depth (mm)" },
+	{ name = "flipper_length_mm", description = "Flipper length (mm)" },
+	{ name = "body_mass_g", description = "Body mass (g)" },
+	{ name = "sex", description = "female, male" },
+	{ name = "year", description = "Year of the study: 2007-2009" },
+]
+
+[[datasets]]
+id = "iris"
+title = "Iris"
+domain = "Classification"
+description = "Sepal and petal measurements of 150 flowers from three iris species."
+rows = 150
+source = "Fisher, R. A. (1936), The use of multiple measurements in taxonomic problems, Annals of Eugenics 7, 179-188"
+url = "https://archive.ics.uci.edu/dataset/53/iris (with the two errors documented by UCI corrected to Fisher's values)"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "sepal_length", description = "Sepal length (cm)" },
+	{ name = "sepal_width", description = "Sepal width (cm)" },
+	{ name = "petal_length", description = "Petal length (cm)" },
+	{ name = "petal_width", description = "Petal width (cm)" },
+	{ name = "species", description = "setosa, versicolor, virginica" },
+]
+
+[[datasets]]
+id = "titanic"
+title = "Titanic Passengers"
+domain = "Classification"
+description = "Survival, class, sex, age and fare of 1,309 Titanic passengers."
+rows = 1309
+source = "Harrell, F. E. and Cason, T., titanic3, Vanderbilt University Department of Biostatistics (from Encyclopedia Titanica)"
+url = "https://hbiostat.org/data/"
+licence = "Permission granted to anyone, with the credit 'Data obtained from http://hbiostat.org/data courtesy of the Vanderbilt University Department of Biostatistics'"
+status = "open"
+columns = [
+	{ name = "pclass", description = "Passenger class: 1-3" },
+	{ name = "survived", description = "1 if survived" },
+	{ name = "name", description = "Passenger name" },
+	{ name = "sex", description = "female, male" },
+	{ name = "age", description = "Age (years)" },
+	{ name = "sibsp", description = "Number of siblings or spouses aboard" },
+	{ name = "parch", description = "Number of parents or children aboard" },
+	{ name = "ticket", description = "Ticket number" },
+	{ name = "fare", description = "Passenger fare (GBP)" },
+	{ name = "cabin", description = "Cabin" },
+	{ name = "embarked", description = "Port of embarkation: C = Cherbourg, Q = Queenstown, S = Southampton" },
+	{ name = "boat", description = "Lifeboat" },
+	{ name = "body", description = "Body identification number" },
+	{ name = "home_dest", description = "Home and destination" },
+]
+
+[[datasets]]
+id = "wine"
+title = "Wine Recognition"
+domain = "Classification"
+description = "Thirteen chemical measurements of 178 wines from three cultivars grown in the same region of Italy."
+rows = 178
+source = "Aeberhard, S. and Forina, M. (1991), Wine, UCI Machine Learning Repository, doi:10.24432/C5PC7J"
+url = "https://archive.ics.uci.edu/dataset/109/wine"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "cultivar", description = "Cultivar: 1-3" },
+	{ name = "alcohol", description = "Alcohol (%)" },
+	{ name = "malic_acid", description = "Malic acid" },
+	{ name = "ash", description = "Ash" },
+	{ name = "alcalinity_of_ash", description = "Alcalinity of ash" },
+	{ name = "magnesium", description = "Magnesium" },
+	{ name = "total_phenols", description = "Total phenols" },
+	{ name = "flavanoids", description = "Flavanoids" },
+	{ name = "nonflavanoid_phenols", description = "Non-flavanoid phenols" },
+	{ name = "proanthocyanins", description = "Proanthocyanins" },
+	{ name = "color_intensity", description = "Colour intensity" },
+	{ name = "hue", description = "Hue" },
+	{ name = "od280_od315", description = "OD280/OD315 of diluted wines" },
+	{ name = "proline", description = "Proline" },
+]
+
+[[datasets]]
+id = "breastcancer"
+title = "Breast Cancer Wisconsin (Diagnostic)"
+domain = "Classification"
+description = "Thirty cell-nucleus features of 569 breast masses, labelled malignant or benign. Each of ten features is given as the mean, standard error and worst (largest) value over the nuclei in the image."
+rows = 569
+source = "Wolberg, W., Mangasarian, O., Street, N. and Street, W. (1995), UCI Machine Learning Repository, doi:10.24432/C5DW2B"
+url = "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "id", description = "Sample identifier" },
+	{ name = "diagnosis", description = "M = malignant, B = benign" },
+	{ name = "radius_mean", description = "Radius: mean" },
+	{ name = "texture_mean", description = "Texture (standard deviation of grey levels): mean" },
+	{ name = "perimeter_mean", description = "Perimeter: mean" },
+	{ name = "area_mean", description = "Area: mean" },
+	{ name = "smoothness_mean", description = "Smoothness (local variation in radius): mean" },
+	{ name = "compactness_mean", description = "Compactness (perimeter^2 / area - 1): mean" },
+	{ name = "concavity_mean", description = "Concavity (severity of concave contour portions): mean" },
+	{ name = "concave_points_mean", description = "Number of concave contour portions: mean" },
+	{ name = "symmetry_mean", description = "Symmetry: mean" },
+	{ name = "fractal_dimension_mean", description = "Fractal dimension (coastline approximation - 1): mean" },
+	{ name = "radius_se", description = "Radius: standard error" },
+	{ name = "texture_se", description = "Texture: standard error" },
+	{ name = "perimeter_se", description = "Perimeter: standard error" },
+	{ name = "area_se", description = "Area: standard error" },
+	{ name = "smoothness_se", description = "Smoothness: standard error" },
+	{ name = "compactness_se", description = "Compactness: standard error" },
+	{ name = "concavity_se", description = "Concavity: standard error" },
+	{ name = "concave_points_se", description = "Concave points: standard error" },
+	{ name = "symmetry_se", description = "Symmetry: standard error" },
+	{ name = "fractal_dimension_se", description = "Fractal dimension: standard error" },
+	{ name = "radius_worst", description = "Radius: worst" },
+	{ name = "texture_worst", description = "Texture: worst" },
+	{ name = "perimeter_worst", description = "Perimeter: worst" },
+	{ name = "area_worst", description = "Area: worst" },
+	{ name = "smoothness_worst", description = "Smoothness: worst" },
+	{ name = "compactness_worst", description = "Compactness: worst" },
+	{ name = "concavity_worst", description = "Concavity: worst" },
+	{ name = "concave_points_worst", description = "Concave points: worst" },
+	{ name = "symmetry_worst", description = "Symmetry: worst" },
+	{ name = "fractal_dimension_worst", description = "Fractal dimension: worst" },
+]
+
+# ---------- Time series ----------
+
+[[datasets]]
+id = "airpassengers"
+title = "Airline Passengers"
+domain = "Time series"
+description = "Monthly international airline passengers, 1949-1960; trend plus multiplicative seasonality."
+rows = 144
+source = "Box, G. E. P. and Jenkins, G. M. (1976), Time Series Analysis, Forecasting and Control, series G"
+url = "R datasets package (AirPassengers)"
+licence = "None stated; R datasets package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "year", description = "Year" },
+	{ name = "month", description = "Month: 1-12" },
+	{ name = "passengers", description = "International airline passengers (thousands)" },
+]
+
+[[datasets]]
+id = "nile"
+title = "Nile River Flow"
+domain = "Time series"
+description = "Annual flow of the Nile at Aswan, 1871-1970, with a structural break around 1898."
+rows = 100
+source = "Cobb, G. W. (1978), The problem of the Nile, Biometrika 65, 243-251; Durbin, J. and Koopman, S. J. (2001), Time Series Analysis by State Space Methods"
+url = "R datasets package (Nile)"
+licence = "None stated; R datasets package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "year", description = "Year" },
+	{ name = "flow", description = "Annual flow (10^8 cubic metres)" },
+]
+
+[[datasets]]
+id = "co2"
+title = "Mauna Loa CO2"
+domain = "Time series"
+description = "Monthly mean atmospheric CO2 at Mauna Loa Observatory, Hawaii, March 1958 to August 2026; trend plus seasonal cycle. A snapshot: rebuilding adds the newest months."
+rows = 822
+source = "NOAA Global Monitoring Laboratory and Scripps Institution of Oceanography, doi:10.15138/yaf1-bk21"
+url = "https://gml.noaa.gov/webdata/ccgg/trends/co2/co2_mm_mlo.txt"
+licence = "CC0 1.0 (NOAA waives copyright; citation requested)"
+status = "open"
+columns = [
+	{ name = "year", description = "Year" },
+	{ name = "month", description = "Month: 1-12" },
+	{ name = "decimal_date", description = "Middle of the month as a decimal year" },
+	{ name = "average", description = "Monthly mean CO2 mole fraction (ppm)" },
+	{ name = "deseasonalized", description = "Monthly mean with the average seasonal cycle removed (ppm)" },
+	{ name = "ndays", description = "Days with data in the month; empty before 1974" },
+	{ name = "sdev", description = "Standard deviation of the daily means (ppm); empty before 1974" },
+	{ name = "unc", description = "Uncertainty of the monthly mean (ppm); empty before 1974" },
+]
+
+# ---------- Dynamical systems ----------
+
+[[datasets]]
+id = "lynxhare"
+title = "Hudson Bay Lynx and Hare"
+domain = "Dynamical systems"
+description = "Annual pelts of snowshoe hare and Canada lynx traded by the Hudson's Bay Company, 1900-1920; the Lotka-Volterra example."
+rows = 21
+source = "MacLulich, D. A. (1937), Fluctuations in the numbers of the varying hare, University of Toronto Studies; Carpenter, B. (2018), Predator-Prey Population Dynamics, Stan case study"
+url = "https://github.com/stan-dev/example-models/blob/master/knitr/lotka-volterra/hudson-bay-lynx-hare.csv"
+licence = "None stated; factual trade records published in 1937"
+status = "redistributed"
+columns = [
+	{ name = "year", description = "Year" },
+	{ name = "lynx", description = "Lynx pelts (thousands)" },
+	{ name = "hare", description = "Hare pelts (thousands)" },
+]
+
+# ---------- Survival ----------
+
+[[datasets]]
+id = "lung"
+title = "NCCTG Lung Cancer"
+domain = "Survival"
+description = "Survival times of 228 patients with advanced lung cancer, with performance scores and weight loss."
+rows = 228
+source = "Loprinzi, C. L. et al. (1994), Prospective evaluation of prognostic variables from patient-completed questionnaires, Journal of Clinical Oncology 12, 601-607"
+url = "survival R package (lung)"
+licence = "None stated; survival R package (LGPL-2 | LGPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "inst", description = "Institution code" },
+	{ name = "time", description = "Survival time (days)" },
+	{ name = "status", description = "1 = censored, 2 = dead" },
+	{ name = "age", description = "Age (years)" },
+	{ name = "sex", description = "1 = male, 2 = female" },
+	{ name = "ph_ecog", description = "ECOG performance score rated by the physician: 0 = good to 4 = bedbound" },
+	{ name = "ph_karno", description = "Karnofsky performance score rated by the physician: 0 = bad to 100 = good" },
+	{ name = "pat_karno", description = "Karnofsky performance score rated by the patient" },
+	{ name = "meal_cal", description = "Calories consumed at meals" },
+	{ name = "wt_loss", description = "Weight loss in the last six months (lb)" },
+]
+
+[[datasets]]
+id = "veteran"
+title = "Veterans' Lung Cancer Trial"
+domain = "Survival"
+description = "Survival of 137 male veterans with lung cancer in a randomised trial of two chemotherapies."
+rows = 137
+source = "Kalbfleisch, J. D. and Prentice, R. L. (1980), The Statistical Analysis of Failure Time Data, Wiley"
+url = "survival R package (veteran)"
+licence = "None stated; survival R package (LGPL-2 | LGPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "trt", description = "Treatment: 1 = standard, 2 = test" },
+	{ name = "celltype", description = "squamous, smallcell, adeno, large" },
+	{ name = "time", description = "Survival time (days)" },
+	{ name = "status", description = "1 = dead, 0 = censored" },
+	{ name = "karno", description = "Karnofsky performance score: 0 = bad to 100 = good" },
+	{ name = "diagtime", description = "Months from diagnosis to randomisation" },
+	{ name = "age", description = "Age (years)" },
+	{ name = "prior", description = "Prior therapy: 10 = yes, 0 = no" },
+]
+
+# ---------- Bayesian and multilevel ----------
+
+[[datasets]]
+id = "eightschools"
+title = "Eight Schools"
+domain = "Bayesian / multilevel"
+description = "Estimated effects and standard errors of SAT coaching in eight schools; the canonical hierarchical model."
+rows = 8
+source = "Rubin, D. B. (1981), Estimation in parallel randomized experiments, Journal of Educational Statistics 6, 377-401"
+url = "Gelman et al., Bayesian Data Analysis, section 5.5"
+licence = "None stated; eight published numbers"
+status = "redistributed"
+columns = [
+	{ name = "school", description = "School: A-H" },
+	{ name = "effect", description = "Estimated coaching effect (SAT points)" },
+	{ name = "se", description = "Standard error of the estimate" },
+]
+
+[[datasets]]
+id = "radon"
+title = "Minnesota Radon"
+domain = "Bayesian / multilevel"
+description = "Radon measurements in 919 Minnesota homes across 85 counties, with floor and county uranium; built as in Gelman and Hill's radon_setup.R."
+rows = 919
+source = "US EPA National Residential Radon Survey; Gelman, A. and Hill, J. (2007), Data Analysis Using Regression and Multilevel/Hierarchical Models"
+url = "http://www.stat.columbia.edu/~gelman/arm/examples/radon/ (srrs2.dat, cty.dat)"
+licence = "US government survey data"
+status = "public-domain"
+columns = [
+	{ name = "county", description = "County name" },
+	{ name = "floor", description = "Floor of the measurement: 0 = basement, 1 = first floor" },
+	{ name = "activity", description = "Radon level (pCi/L)" },
+	{ name = "log_radon", description = "log(activity), with 0 replaced by 0.1" },
+	{ name = "log_uranium", description = "log of the county's soil uranium (ppm)" },
+]
+
+[[datasets]]
+id = "sleepstudy"
+title = "Sleep Deprivation Reaction Times"
+domain = "Bayesian / multilevel"
+description = "Reaction times of 18 subjects over ten days of sleep restriction; the classic random-slopes example."
+rows = 180
+source = "Belenky, G. et al. (2003), Patterns of performance degradation and restoration during sleep restriction, Journal of Sleep Research 12, 1-12"
+url = "lme4 R package (sleepstudy)"
+licence = "None stated; lme4 R package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "subject", description = "Subject identifier" },
+	{ name = "days", description = "Days of sleep restriction: 0-9" },
+	{ name = "reaction", description = "Average reaction time (ms)" },
+]
+
+# ---------- Density ----------
+
+[[datasets]]
+id = "faithful"
+title = "Old Faithful Eruptions"
+domain = "Density / mixtures"
+description = "Eruption durations and waiting times of the Old Faithful geyser; two clear clusters."
+rows = 272
+source = "Härdle, W. (1991), Smoothing Techniques with Implementation in S, Springer; Azzalini, A. and Bowman, A. W. (1990), Applied Statistics 39, 357-365"
+url = "R datasets package (faithful)"
+licence = "None stated; R datasets package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "eruptions", description = "Eruption time (minutes)" },
+	{ name = "waiting", description = "Waiting time to the next eruption (minutes)" },
+]
