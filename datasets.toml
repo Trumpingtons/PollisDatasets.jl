@@ -109,6 +109,30 @@ columns = [
 ]
 
 [[datasets]]
+id = "produc"
+title = "US States Public Capital"
+domain = "Panel econometrics"
+description = "Output, public and private capital, employment and unemployment of 48 US states, 1970-1986; the public-capital productivity panel."
+rows = 816
+source = "Munnell, A. (1990), Why has productivity growth declined? Productivity and public investment, New England Economic Review, 3-22; Baltagi, B. H. and Pinnoi, N. (1995), Public capital stock and state productivity growth, Empirical Economics 20, 351-359"
+url = "plm R package (Produc), via Rdatasets; from the online complements to Baltagi, Econometric Analysis of Panel Data"
+licence = "None stated; plm R package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "state", description = "State" },
+	{ name = "year", description = "Year" },
+	{ name = "region", description = "Census region code: 1-9" },
+	{ name = "pcap", description = "Public capital stock (million 1982 USD)" },
+	{ name = "hwy", description = "Highways and streets (million 1982 USD)" },
+	{ name = "water", description = "Water and sewer facilities (million 1982 USD)" },
+	{ name = "util", description = "Other public buildings and structures (million 1982 USD)" },
+	{ name = "pc", description = "Private capital stock (million 1982 USD)" },
+	{ name = "gsp", description = "Gross state product (million 1982 USD)" },
+	{ name = "emp", description = "Employment on non-agricultural payrolls (thousands)" },
+	{ name = "unemp", description = "State unemployment rate (%)" },
+]
+
+[[datasets]]
 id = "mroz"
 title = "Mroz Women's Labour Supply"
 domain = "Econometrics"
