@@ -270,6 +270,60 @@ columns = [
 	{ name = "spray", description = "Insecticide: A-F" },
 ]
 
+[[datasets]]
+id = "biochemists"
+title = "Biochemists' Articles"
+domain = "Count data"
+description = "Articles published by 915 biochemistry PhD students in the last three years of the PhD; overdispersed counts with many zeros, the classic negative binomial example."
+rows = 915
+source = "Long, J. S. (1990), The origins of sex differences in science, Social Forces 68, 1297-1316; Long, J. S. (1997), Regression Models for Categorical and Limited Dependent Variables, Sage"
+url = "pscl R package (bioChemists), via Rdatasets"
+licence = "None stated; pscl R package (GPL-2)"
+status = "redistributed"
+columns = [
+	{ name = "art", description = "Articles published in the last three years of the PhD" },
+	{ name = "fem", description = "Gender: Men, Women" },
+	{ name = "mar", description = "Marital status: Single, Married" },
+	{ name = "kid5", description = "Number of children aged 5 or younger" },
+	{ name = "phd", description = "Prestige of the PhD department" },
+	{ name = "ment", description = "Articles published by the mentor in the last three years" },
+]
+
+[[datasets]]
+id = "ships"
+title = "Ship Damage"
+domain = "Count data"
+description = "Wave damage incidents to cargo ships by ship type, construction period and period of operation, with the aggregate months of service as exposure; the classic Poisson rate model with an offset."
+rows = 40
+source = "McCullagh, P. and Nelder, J. A. (1989), Generalized Linear Models, 2nd ed., Chapman and Hall, p. 205"
+url = "MASS R package (ships)"
+licence = "None stated; MASS R package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "type", description = "Ship type: A-E" },
+	{ name = "year", description = "Year of construction: 60 = 1960-64, 65 = 1965-69, 70 = 1970-74, 75 = 1975-79" },
+	{ name = "period", description = "Period of operation: 60 = 1960-74, 75 = 1975-79" },
+	{ name = "service", description = "Aggregate months of service; 0 where no ship of that kind existed" },
+	{ name = "incidents", description = "Number of damage incidents" },
+]
+
+[[datasets]]
+id = "challenger"
+title = "Challenger O-Rings"
+domain = "Count data"
+description = "O-rings with thermal distress out of the six field joints on each of the 23 Space Shuttle flights before the Challenger accident, with the launch temperature; the classic binomial regression."
+rows = 23
+source = "Dalal, S. R., Fowlkes, E. B. and Hoadley, B. (1989), Risk analysis of the space shuttle: pre-Challenger prediction of failure, JASA 84, 945-957; data from the Report of the Presidential Commission on the Space Shuttle Challenger Accident (1986)"
+url = "vcd R package (SpaceShuttle), via Rdatasets; flight 4 dropped (boosters lost at sea, O-rings never inspected)"
+licence = "US government work (Presidential Commission report, 1986)"
+status = "public-domain"
+columns = [
+	{ name = "flight", description = "Flight number" },
+	{ name = "temperature", description = "Temperature at launch (degrees F)" },
+	{ name = "pressure", description = "Leak-check pressure (psi)" },
+	{ name = "n_failures", description = "O-rings with thermal distress, out of 6" },
+]
+
 # ---------- Classification ----------
 
 [[datasets]]
