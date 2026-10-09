@@ -312,17 +312,26 @@ columns = [
 id = "challenger"
 title = "Challenger O-Rings"
 domain = "Count data"
-description = "O-rings with thermal distress out of the six field joints on each of the 23 Space Shuttle flights before the Challenger accident, with the launch temperature; the classic binomial regression."
+description = "O-ring thermal distress (erosion and blowby) on the six field joints and the two nozzle joints of each of the 23 Space Shuttle flights before the Challenger accident, with joint temperature and leak-check pressures: Table 1 of Dalal, Fowlkes and Hoadley (1989). Challenger (flight 61-I) was launched at 31 degrees F with 200 psi field and nozzle pressures; flight 4 is absent (boosters lost at sea)."
 rows = 23
-source = "Dalal, S. R., Fowlkes, E. B. and Hoadley, B. (1989), Risk analysis of the space shuttle: pre-Challenger prediction of failure, JASA 84, 945-957; data from the Report of the Presidential Commission on the Space Shuttle Challenger Accident (1986)"
-url = "vcd R package (SpaceShuttle), via Rdatasets; flight 4 dropped (boosters lost at sea, O-rings never inspected)"
+source = "Dalal, S. R., Fowlkes, E. B. and Hoadley, B. (1989), Risk analysis of the space shuttle: pre-Challenger prediction of failure, Journal of the American Statistical Association 84(408), 945-957, Table 1 (p. 949), doi:10.1080/01621459.1989.10478858; data from the Report of the Presidential Commission on the Space Shuttle Challenger Accident (1986), Vol. 1, pp. 129-131"
+url = "Transcribed from Table 1 of Dalal et al. (1989); column totals checked against the table's Total row"
 licence = "US government work (Presidential Commission report, 1986)"
 status = "public-domain"
 columns = [
-	{ name = "flight", description = "Flight number" },
-	{ name = "temperature", description = "Temperature at launch (degrees F)" },
-	{ name = "pressure", description = "Leak-check pressure (psi)" },
-	{ name = "n_failures", description = "O-rings with thermal distress, out of 6" },
+	{ name = "flight", description = "Flight number, as in Table 1 (e.g. 41-B)" },
+	{ name = "date", description = "Launch date" },
+	{ name = "temperature", description = "Joint temperature at launch (degrees F)" },
+	{ name = "pressure", description = "Field-joint leak-check pressure (psi)" },
+	{ name = "n_failures", description = "Field joints with primary O-ring erosion or blowby, out of 6 (Table 1, Field, Erosion or blowby)" },
+	{ name = "field_erosion", description = "Field joints with primary O-ring erosion" },
+	{ name = "field_erosion_secondary", description = "Field joints with secondary O-ring erosion" },
+	{ name = "field_blowby", description = "Field joints with primary O-ring blowby" },
+	{ name = "nozzle_pressure", description = "Nozzle-joint leak-check pressure (psi)" },
+	{ name = "nozzle_failures", description = "Nozzle joints with primary O-ring erosion or blowby, out of 2, as printed in Table 1 (blank, here 0, for 51-F, 51-I and 61-A, although each shows one eroded nozzle O-ring)" },
+	{ name = "nozzle_erosion", description = "Nozzle joints with primary O-ring erosion" },
+	{ name = "nozzle_erosion_secondary", description = "Nozzle joints with secondary O-ring erosion" },
+	{ name = "nozzle_blowby", description = "Nozzle joints with primary O-ring blowby" },
 ]
 
 # ---------- Classification ----------
@@ -421,48 +430,27 @@ columns = [
 ]
 
 [[datasets]]
-id = "breastcancer"
-title = "Breast Cancer Wisconsin (Diagnostic)"
+id = "breastwisconsin"
+title = "Breast Cancer Wisconsin (Original)"
 domain = "Classification"
-description = "Thirty cell-nucleus features of 569 breast masses, labelled malignant or benign. Each of ten features is given as the mean, standard error and worst (largest) value over the nuclei in the image."
-rows = 569
-source = "Wolberg, W., Mangasarian, O., Street, N. and Street, W. (1995), UCI Machine Learning Repository, doi:10.24432/C5DW2B"
-url = "https://archive.ics.uci.edu/dataset/17/breast+cancer+wisconsin+diagnostic"
+description = "Nine cytological features, each scored 1 to 10, of 699 breast fine-needle aspirates, labelled benign or malignant. Collected by Dr. Wolberg at the University of Wisconsin Hospitals from 1989 to 1991; 16 cases lack bare nuclei. The breast-cancer set of Breiman (2001), Random Forests."
+rows = 699
+source = "Wolberg, W. (1992), UCI Machine Learning Repository, doi:10.24432/C5HP4Z"
+url = "https://archive.ics.uci.edu/dataset/15/breast+cancer+wisconsin+original"
 licence = "CC BY 4.0"
 status = "open"
 columns = [
-	{ name = "id", description = "Sample identifier" },
-	{ name = "diagnosis", description = "M = malignant, B = benign" },
-	{ name = "radius_mean", description = "Radius: mean" },
-	{ name = "texture_mean", description = "Texture (standard deviation of grey levels): mean" },
-	{ name = "perimeter_mean", description = "Perimeter: mean" },
-	{ name = "area_mean", description = "Area: mean" },
-	{ name = "smoothness_mean", description = "Smoothness (local variation in radius): mean" },
-	{ name = "compactness_mean", description = "Compactness (perimeter^2 / area - 1): mean" },
-	{ name = "concavity_mean", description = "Concavity (severity of concave contour portions): mean" },
-	{ name = "concave_points_mean", description = "Number of concave contour portions: mean" },
-	{ name = "symmetry_mean", description = "Symmetry: mean" },
-	{ name = "fractal_dimension_mean", description = "Fractal dimension (coastline approximation - 1): mean" },
-	{ name = "radius_se", description = "Radius: standard error" },
-	{ name = "texture_se", description = "Texture: standard error" },
-	{ name = "perimeter_se", description = "Perimeter: standard error" },
-	{ name = "area_se", description = "Area: standard error" },
-	{ name = "smoothness_se", description = "Smoothness: standard error" },
-	{ name = "compactness_se", description = "Compactness: standard error" },
-	{ name = "concavity_se", description = "Concavity: standard error" },
-	{ name = "concave_points_se", description = "Concave points: standard error" },
-	{ name = "symmetry_se", description = "Symmetry: standard error" },
-	{ name = "fractal_dimension_se", description = "Fractal dimension: standard error" },
-	{ name = "radius_worst", description = "Radius: worst" },
-	{ name = "texture_worst", description = "Texture: worst" },
-	{ name = "perimeter_worst", description = "Perimeter: worst" },
-	{ name = "area_worst", description = "Area: worst" },
-	{ name = "smoothness_worst", description = "Smoothness: worst" },
-	{ name = "compactness_worst", description = "Compactness: worst" },
-	{ name = "concavity_worst", description = "Concavity: worst" },
-	{ name = "concave_points_worst", description = "Concave points: worst" },
-	{ name = "symmetry_worst", description = "Symmetry: worst" },
-	{ name = "fractal_dimension_worst", description = "Fractal dimension: worst" },
+	{ name = "id", description = "Sample code number (not unique: some samples repeat)" },
+	{ name = "clump_thickness", description = "Clump thickness, 1-10" },
+	{ name = "cell_size", description = "Uniformity of cell size, 1-10" },
+	{ name = "cell_shape", description = "Uniformity of cell shape, 1-10" },
+	{ name = "marginal_adhesion", description = "Marginal adhesion, 1-10" },
+	{ name = "epithelial_size", description = "Single epithelial cell size, 1-10" },
+	{ name = "bare_nuclei", description = "Bare nuclei, 1-10 (missing for 16 cases)" },
+	{ name = "bland_chromatin", description = "Bland chromatin, 1-10" },
+	{ name = "normal_nucleoli", description = "Normal nucleoli, 1-10" },
+	{ name = "mitoses", description = "Mitoses, 1-10" },
+	{ name = "class", description = "M = malignant, B = benign" },
 ]
 
 # ---------- Time series ----------
@@ -612,6 +600,39 @@ columns = [
 	{ name = "diagtime", description = "Months from diagnosis to randomisation" },
 	{ name = "age", description = "Age (years)" },
 	{ name = "prior", description = "Prior therapy: 10 = yes, 0 = no" },
+]
+
+[[datasets]]
+id = "pbc"
+title = "Mayo Clinic Primary Biliary Cirrhosis"
+domain = "Survival"
+description = "418 patients with primary biliary cirrhosis seen at the Mayo Clinic in 1974-1984: the first 312 were in a randomised trial of D-penicillamine against placebo, the other 106 were eligible but declined and have only basic measurements. Basis of the Mayo risk score."
+rows = 418
+source = "Dickson, E. R., Grambsch, P. M., Fleming, T. R., Fisher, L. D. and Langworthy, A. (1989), Prognosis in primary biliary cirrhosis: model for decision making, Hepatology 10, 1-7; Fleming, T. R. and Harrington, D. P. (1991), Counting Processes and Survival Analysis, Wiley, Appendix D"
+url = "survival R package (pbc)"
+licence = "None stated; survival R package (LGPL-2 | LGPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "id", description = "Case number" },
+	{ name = "time", description = "Days from registration to death, transplantation or end of follow-up (July 1986)" },
+	{ name = "status", description = "0 = censored, 1 = liver transplant, 2 = dead" },
+	{ name = "trt", description = "1 = D-penicillamine, 2 = placebo; empty for the 106 patients outside the trial" },
+	{ name = "age", description = "Age (years)" },
+	{ name = "sex", description = "m = male, f = female" },
+	{ name = "ascites", description = "Ascites: 1 = present, 0 = absent" },
+	{ name = "hepato", description = "Enlarged liver: 1 = present, 0 = absent" },
+	{ name = "spiders", description = "Blood vessel malformations in the skin: 1 = present, 0 = absent" },
+	{ name = "edema", description = "0 = no edema, 0.5 = untreated or successfully treated, 1 = edema despite diuretic therapy" },
+	{ name = "bili", description = "Serum bilirubin (mg/dl)" },
+	{ name = "chol", description = "Serum cholesterol (mg/dl)" },
+	{ name = "albumin", description = "Serum albumin (g/dl)" },
+	{ name = "copper", description = "Urine copper (ug/day)" },
+	{ name = "alk_phos", description = "Alkaline phosphatase (U/litre)" },
+	{ name = "ast", description = "Aspartate aminotransferase, once called SGOT (U/ml)" },
+	{ name = "trig", description = "Triglycerides (mg/dl)" },
+	{ name = "platelet", description = "Platelet count (per cubic ml / 1000)" },
+	{ name = "protime", description = "Standardised blood clotting time (seconds)" },
+	{ name = "stage", description = "Histologic stage of disease, 1 to 4 (needs a biopsy)" },
 ]
 
 # ---------- Bayesian and multilevel ----------

@@ -20,10 +20,10 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Regression | mtcars, anscombe, galton |
 | Econometrics | grunfeld, produc, mroz, card, lalonde |
 | Count data | horsekicks, insectsprays, biochemists, ships, challenger |
-| Classification | penguins, iris, titanic, wine, breastcancer |
+| Classification | penguins, iris, titanic, wine, breastwisconsin |
 | Time series | airpassengers, nile, co2, bg96, dgs10 |
 | Dynamical systems | lynxhare |
-| Survival | lung, veteran |
+| Survival | lung, pbc, veteran |
 | Bayesian / multilevel | eightschools, radon, sleepstudy |
 | Density / mixtures | faithful |
 
