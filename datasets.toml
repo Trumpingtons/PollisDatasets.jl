@@ -17,6 +17,7 @@
 # Rejected after the licence check:
 #   Fama-French factors   "Copyright Eugene F. Fama and Kenneth R. French", no redistribution grant (fetch live instead)
 #   Sunspots (SILSO)      CC BY-NC 4.0: the non-commercial clause is incompatible with AGPL distribution
+#   S&P 500               "Reproduction of S&P 500 in any form is prohibited" (S&P Dow Jones Indices); Yahoo Finance terms forbid redistribution (fetch live instead)
 #   Boston Housing        ethically problematic variable; withdrawn from scikit-learn
 
 # ---------- Regression ----------
@@ -516,6 +517,36 @@ columns = [
 	{ name = "ndays", description = "Days with data in the month; empty before 1974" },
 	{ name = "sdev", description = "Standard deviation of the daily means (ppm); empty before 1974" },
 	{ name = "unc", description = "Uncertainty of the monthly mean (ppm); empty before 1974" },
+]
+
+[[datasets]]
+id = "bg96"
+title = "Deutschmark/Pound Returns"
+domain = "Time series"
+description = "Daily percentage returns of the Deutschmark/British pound exchange rate, 3 January 1984 to 31 December 1991: the benchmark for checking GARCH estimates. Returns only, no dates."
+rows = 1974
+source = "Bollerslev, T. and Ghysels, E. (1996), Periodic autoregressive conditional heteroscedasticity, Journal of Business & Economic Statistics 14, 139-151, doi:10.2307/1392425"
+url = "ARCHModels.jl (src/data/bollerslev_ghysels.txt, the BG96 constant)"
+licence = "None stated; ARCHModels.jl (MIT)"
+status = "redistributed"
+columns = [
+	{ name = "obs", description = "Observation number: 1-1974, one per trading day" },
+	{ name = "return", description = "Daily percentage return: 100 [ln(P_t) - ln(P_t-1)], P the Deutschmark/pound rate" },
+]
+
+[[datasets]]
+id = "dgs10"
+title = "10-Year Treasury Yield"
+domain = "Time series"
+description = "Daily market yield on US Treasury securities at 10-year constant maturity, 2 January 1962 to 7 October 2026; holidays without a quote are left out. A snapshot: rebuilding adds the newest days."
+rows = 16177
+source = "Board of Governors of the Federal Reserve System (US), H.15 Selected Interest Rates, series DGS10"
+url = "https://fred.stlouisfed.org/series/DGS10"
+licence = "Public domain (Federal Reserve Board; please cite the Board as the source)"
+status = "public-domain"
+columns = [
+	{ name = "date", description = "Trading day" },
+	{ name = "yield", description = "Market yield, quoted on an investment basis (percent)" },
 ]
 
 # ---------- Dynamical systems ----------
