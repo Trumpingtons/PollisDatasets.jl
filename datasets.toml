@@ -523,15 +523,16 @@ columns = [
 id = "bg96"
 title = "Deutschmark/Pound Returns"
 domain = "Time series"
-description = "Daily percentage returns of the Deutschmark/British pound exchange rate, 3 January 1984 to 31 December 1991: the benchmark for checking GARCH estimates. Returns only, no dates."
+description = "Daily percentage returns of the Deutschmark/British pound exchange rate, 3 January 1984 to 31 December 1991: the benchmark for checking GARCH estimates, with the paper's non-trading-day dummy. No dates."
 rows = 1974
 source = "Bollerslev, T. and Ghysels, E. (1996), Periodic autoregressive conditional heteroscedasticity, Journal of Business & Economic Statistics 14, 139-151, doi:10.2307/1392425"
-url = "ARCHModels.jl (src/data/bollerslev_ghysels.txt, the BG96 constant)"
-licence = "None stated; ARCHModels.jl (MIT)"
+url = "Returns: ARCHModels.jl (src/data/bollerslev_ghysels.txt, the BG96 constant); dummy: rugarch (data/dmbp.rda, column V2)"
+licence = "None stated; ARCHModels.jl (MIT), rugarch (GPL-3)"
 status = "redistributed"
 columns = [
 	{ name = "obs", description = "Observation number: 1-1974, one per trading day" },
 	{ name = "return", description = "Daily percentage return: 100 [ln(P_t) - ln(P_t-1)], P the Deutschmark/pound rate" },
+	{ name = "nontrading", description = "1 on Mondays and other days following no trading in the Deutschmark or pound/US dollar market during regular European trading hours, 0 otherwise (456 days)" },
 ]
 
 [[datasets]]
