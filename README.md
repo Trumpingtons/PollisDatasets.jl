@@ -18,9 +18,9 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Domain | Datasets |
 |---|---|
 | Regression | mtcars, anscombe, galton |
-| Econometrics | grunfeld, produc, mroz, card, lalonde |
+| Econometrics | grunfeld, produc, gasoline, mroz, card, lalonde |
 | Count data | horsekicks, insectsprays, biochemists, ships, challenger |
-| Classification | penguins, iris, titanic, wine, breastwisconsin |
+| Classification | penguins, iris, titanic, wine, breastwisconsin, glass, pima, sonar, vowel, ionosphere, vehicle, germancredit, image, ecoli, votes, liver, letters, satimage, soybean |
 | Time series | airpassengers, nile, co2, bg96, dgs10 |
 | Dynamical systems | lynxhare |
 | Survival | lung, pbc, veteran |

@@ -134,6 +134,25 @@ columns = [
 ]
 
 [[datasets]]
+id = "gasoline"
+title = "OECD Gasoline Demand"
+domain = "Panel econometrics"
+description = "Gasoline consumption per car, income, real gasoline price and cars per capita of 18 OECD countries, 1960-1978; the gasoline-demand panel of Baltagi's random-effects examples."
+rows = 342
+source = "Baltagi, B. H. and Griffin, J. M. (1983), Gasoline demand in the OECD: An application of pooling and testing procedures, European Economic Review 22, 117-137"
+url = "plm R package (Gasoline); from the online complements to Baltagi, Econometric Analysis of Panel Data"
+licence = "None stated; plm R package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "country", description = "Country (names truncated to 8 characters)" },
+	{ name = "year", description = "Year" },
+	{ name = "lgaspcar", description = "Log motor gasoline consumption per car" },
+	{ name = "lincomep", description = "Log real per-capita income" },
+	{ name = "lrpmg", description = "Log real motor gasoline price" },
+	{ name = "lcarpcap", description = "Log stock of cars per capita" },
+]
+
+[[datasets]]
 id = "mroz"
 title = "Mroz Women's Labour Supply"
 domain = "Econometrics"
@@ -435,7 +454,7 @@ title = "Breast Cancer Wisconsin (Original)"
 domain = "Classification"
 description = "Nine cytological features, each scored 1 to 10, of 699 breast fine-needle aspirates, labelled benign or malignant. Collected by Dr. Wolberg at the University of Wisconsin Hospitals from 1989 to 1991; 16 cases lack bare nuclei. The breast-cancer set of Breiman (2001), Random Forests."
 rows = 699
-source = "Wolberg, W. (1992), UCI Machine Learning Repository, doi:10.24432/C5HP4Z"
+source = "Wolberg, W. (1990), UCI Machine Learning Repository, doi:10.24432/C5HP4Z"
 url = "https://archive.ics.uci.edu/dataset/15/breast+cancer+wisconsin+original"
 licence = "CC BY 4.0"
 status = "open"
@@ -451,6 +470,508 @@ columns = [
 	{ name = "normal_nucleoli", description = "Normal nucleoli, 1-10" },
 	{ name = "mitoses", description = "Mitoses, 1-10" },
 	{ name = "class", description = "M = malignant, B = benign" },
+]
+
+[[datasets]]
+id = "glass"
+title = "Glass Identification"
+domain = "Classification"
+description = "Refractive index and eight oxide contents (weight percent) of 214 glass fragments, labelled with one of six types of glass. Collected for forensic science: glass left at a crime scene can be evidence if it is correctly identified. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 214
+source = "German, B. (1987), UCI Machine Learning Repository, doi:10.24432/C5WW2P"
+url = "https://archive.ics.uci.edu/dataset/42/glass+identification"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "id", description = "Fragment number" },
+	{ name = "RI", description = "Refractive index" },
+	{ name = "Na", description = "Sodium, weight percent of oxide" },
+	{ name = "Mg", description = "Magnesium, weight percent of oxide" },
+	{ name = "Al", description = "Aluminium, weight percent of oxide" },
+	{ name = "Si", description = "Silicon, weight percent of oxide" },
+	{ name = "K", description = "Potassium, weight percent of oxide" },
+	{ name = "Ca", description = "Calcium, weight percent of oxide" },
+	{ name = "Ba", description = "Barium, weight percent of oxide" },
+	{ name = "Fe", description = "Iron, weight percent of oxide" },
+	{ name = "type", description = "building_float, building_nonfloat (window glass, float-processed or not), vehicle_float (vehicle window), containers, tableware, headlamps" },
+]
+
+[[datasets]]
+id = "sonar"
+title = "Sonar, Mines vs. Rocks"
+domain = "Classification"
+description = "Energy in 60 frequency bands of 208 sonar returns bounced off a metal cylinder (a mine) or a rock, from various angles. Gorman and Sejnowski (1988) used it to train neural networks. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 208
+source = "Sejnowski, T. and Gorman, R. (1988), UCI Machine Learning Repository, doi:10.24432/C5T01Q"
+url = "https://archive.ics.uci.edu/dataset/151/connectionist+bench+sonar+mines+vs+rocks"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "band1", description = "Energy in frequency band 1, integrated over time, 0-1" },
+	{ name = "band2", description = "Energy in frequency band 2, integrated over time, 0-1" },
+	{ name = "band3", description = "Energy in frequency band 3, integrated over time, 0-1" },
+	{ name = "band4", description = "Energy in frequency band 4, integrated over time, 0-1" },
+	{ name = "band5", description = "Energy in frequency band 5, integrated over time, 0-1" },
+	{ name = "band6", description = "Energy in frequency band 6, integrated over time, 0-1" },
+	{ name = "band7", description = "Energy in frequency band 7, integrated over time, 0-1" },
+	{ name = "band8", description = "Energy in frequency band 8, integrated over time, 0-1" },
+	{ name = "band9", description = "Energy in frequency band 9, integrated over time, 0-1" },
+	{ name = "band10", description = "Energy in frequency band 10, integrated over time, 0-1" },
+	{ name = "band11", description = "Energy in frequency band 11, integrated over time, 0-1" },
+	{ name = "band12", description = "Energy in frequency band 12, integrated over time, 0-1" },
+	{ name = "band13", description = "Energy in frequency band 13, integrated over time, 0-1" },
+	{ name = "band14", description = "Energy in frequency band 14, integrated over time, 0-1" },
+	{ name = "band15", description = "Energy in frequency band 15, integrated over time, 0-1" },
+	{ name = "band16", description = "Energy in frequency band 16, integrated over time, 0-1" },
+	{ name = "band17", description = "Energy in frequency band 17, integrated over time, 0-1" },
+	{ name = "band18", description = "Energy in frequency band 18, integrated over time, 0-1" },
+	{ name = "band19", description = "Energy in frequency band 19, integrated over time, 0-1" },
+	{ name = "band20", description = "Energy in frequency band 20, integrated over time, 0-1" },
+	{ name = "band21", description = "Energy in frequency band 21, integrated over time, 0-1" },
+	{ name = "band22", description = "Energy in frequency band 22, integrated over time, 0-1" },
+	{ name = "band23", description = "Energy in frequency band 23, integrated over time, 0-1" },
+	{ name = "band24", description = "Energy in frequency band 24, integrated over time, 0-1" },
+	{ name = "band25", description = "Energy in frequency band 25, integrated over time, 0-1" },
+	{ name = "band26", description = "Energy in frequency band 26, integrated over time, 0-1" },
+	{ name = "band27", description = "Energy in frequency band 27, integrated over time, 0-1" },
+	{ name = "band28", description = "Energy in frequency band 28, integrated over time, 0-1" },
+	{ name = "band29", description = "Energy in frequency band 29, integrated over time, 0-1" },
+	{ name = "band30", description = "Energy in frequency band 30, integrated over time, 0-1" },
+	{ name = "band31", description = "Energy in frequency band 31, integrated over time, 0-1" },
+	{ name = "band32", description = "Energy in frequency band 32, integrated over time, 0-1" },
+	{ name = "band33", description = "Energy in frequency band 33, integrated over time, 0-1" },
+	{ name = "band34", description = "Energy in frequency band 34, integrated over time, 0-1" },
+	{ name = "band35", description = "Energy in frequency band 35, integrated over time, 0-1" },
+	{ name = "band36", description = "Energy in frequency band 36, integrated over time, 0-1" },
+	{ name = "band37", description = "Energy in frequency band 37, integrated over time, 0-1" },
+	{ name = "band38", description = "Energy in frequency band 38, integrated over time, 0-1" },
+	{ name = "band39", description = "Energy in frequency band 39, integrated over time, 0-1" },
+	{ name = "band40", description = "Energy in frequency band 40, integrated over time, 0-1" },
+	{ name = "band41", description = "Energy in frequency band 41, integrated over time, 0-1" },
+	{ name = "band42", description = "Energy in frequency band 42, integrated over time, 0-1" },
+	{ name = "band43", description = "Energy in frequency band 43, integrated over time, 0-1" },
+	{ name = "band44", description = "Energy in frequency band 44, integrated over time, 0-1" },
+	{ name = "band45", description = "Energy in frequency band 45, integrated over time, 0-1" },
+	{ name = "band46", description = "Energy in frequency band 46, integrated over time, 0-1" },
+	{ name = "band47", description = "Energy in frequency band 47, integrated over time, 0-1" },
+	{ name = "band48", description = "Energy in frequency band 48, integrated over time, 0-1" },
+	{ name = "band49", description = "Energy in frequency band 49, integrated over time, 0-1" },
+	{ name = "band50", description = "Energy in frequency band 50, integrated over time, 0-1" },
+	{ name = "band51", description = "Energy in frequency band 51, integrated over time, 0-1" },
+	{ name = "band52", description = "Energy in frequency band 52, integrated over time, 0-1" },
+	{ name = "band53", description = "Energy in frequency band 53, integrated over time, 0-1" },
+	{ name = "band54", description = "Energy in frequency band 54, integrated over time, 0-1" },
+	{ name = "band55", description = "Energy in frequency band 55, integrated over time, 0-1" },
+	{ name = "band56", description = "Energy in frequency band 56, integrated over time, 0-1" },
+	{ name = "band57", description = "Energy in frequency band 57, integrated over time, 0-1" },
+	{ name = "band58", description = "Energy in frequency band 58, integrated over time, 0-1" },
+	{ name = "band59", description = "Energy in frequency band 59, integrated over time, 0-1" },
+	{ name = "band60", description = "Energy in frequency band 60, integrated over time, 0-1" },
+	{ name = "class", description = "M = mine (metal cylinder), R = rock" },
+]
+
+[[datasets]]
+id = "vowel"
+title = "Vowel Recognition (Deterding)"
+domain = "Classification"
+description = "The eleven steady-state vowels of British English, said by fifteen speakers (eight men, seven women) and cut into six segments each: 990 utterances described by ten log-area ratios from linear predictive analysis. Deterding's original file: the first eight speakers (48 speaker-segments) are the training set. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 990
+source = "Deterding, D., Niranjan, M. and Robinson, T. (1988), UCI Machine Learning Repository, doi:10.24432/C58P4S"
+url = "https://archive.ics.uci.edu/dataset/152/connectionist+bench+vowel+recognition+deterding+data"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "speaker", description = "Andrew, Bill, David, Mark, Jo, Kate, Penny, Rose (training), Mike, Nick, Rich, Tim, Sarah, Sue, Wendy (test)" },
+	{ name = "segment", description = "Segment of the recording, 0-5" },
+	{ name = "set", description = "train or test, the original split" },
+	{ name = "x1", description = "Log-area ratio 1" },
+	{ name = "x2", description = "Log-area ratio 2" },
+	{ name = "x3", description = "Log-area ratio 3" },
+	{ name = "x4", description = "Log-area ratio 4" },
+	{ name = "x5", description = "Log-area ratio 5" },
+	{ name = "x6", description = "Log-area ratio 6" },
+	{ name = "x7", description = "Log-area ratio 7" },
+	{ name = "x8", description = "Log-area ratio 8" },
+	{ name = "x9", description = "Log-area ratio 9" },
+	{ name = "x10", description = "Log-area ratio 10" },
+	{ name = "vowel", description = "Word the vowel was recorded in, in Deterding's notation: hid, hId, hEd, hAd, hYd, had, hOd, hod, hUd, hud, hed" },
+]
+
+[[datasets]]
+id = "ionosphere"
+title = "Ionosphere Radar Returns"
+domain = "Classification"
+description = "351 radar returns from the ionosphere, collected at Goose Bay, Labrador, by 16 high-frequency antennas. Good returns show structure in the ionosphere; bad ones pass through it. Each return is 17 pulses, given as complex autocorrelation values. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 351
+source = "Sigillito, V., Wing, S., Hutton, L. and Baker, K. (1989), UCI Machine Learning Repository, doi:10.24432/C5W01B"
+url = "https://archive.ics.uci.edu/dataset/52/ionosphere"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "re1", description = "Pulse 1: real part of the autocorrelation" },
+	{ name = "im1", description = "Pulse 1: imaginary part of the autocorrelation" },
+	{ name = "re2", description = "Pulse 2: real part of the autocorrelation" },
+	{ name = "im2", description = "Pulse 2: imaginary part of the autocorrelation" },
+	{ name = "re3", description = "Pulse 3: real part of the autocorrelation" },
+	{ name = "im3", description = "Pulse 3: imaginary part of the autocorrelation" },
+	{ name = "re4", description = "Pulse 4: real part of the autocorrelation" },
+	{ name = "im4", description = "Pulse 4: imaginary part of the autocorrelation" },
+	{ name = "re5", description = "Pulse 5: real part of the autocorrelation" },
+	{ name = "im5", description = "Pulse 5: imaginary part of the autocorrelation" },
+	{ name = "re6", description = "Pulse 6: real part of the autocorrelation" },
+	{ name = "im6", description = "Pulse 6: imaginary part of the autocorrelation" },
+	{ name = "re7", description = "Pulse 7: real part of the autocorrelation" },
+	{ name = "im7", description = "Pulse 7: imaginary part of the autocorrelation" },
+	{ name = "re8", description = "Pulse 8: real part of the autocorrelation" },
+	{ name = "im8", description = "Pulse 8: imaginary part of the autocorrelation" },
+	{ name = "re9", description = "Pulse 9: real part of the autocorrelation" },
+	{ name = "im9", description = "Pulse 9: imaginary part of the autocorrelation" },
+	{ name = "re10", description = "Pulse 10: real part of the autocorrelation" },
+	{ name = "im10", description = "Pulse 10: imaginary part of the autocorrelation" },
+	{ name = "re11", description = "Pulse 11: real part of the autocorrelation" },
+	{ name = "im11", description = "Pulse 11: imaginary part of the autocorrelation" },
+	{ name = "re12", description = "Pulse 12: real part of the autocorrelation" },
+	{ name = "im12", description = "Pulse 12: imaginary part of the autocorrelation" },
+	{ name = "re13", description = "Pulse 13: real part of the autocorrelation" },
+	{ name = "im13", description = "Pulse 13: imaginary part of the autocorrelation" },
+	{ name = "re14", description = "Pulse 14: real part of the autocorrelation" },
+	{ name = "im14", description = "Pulse 14: imaginary part of the autocorrelation" },
+	{ name = "re15", description = "Pulse 15: real part of the autocorrelation" },
+	{ name = "im15", description = "Pulse 15: imaginary part of the autocorrelation" },
+	{ name = "re16", description = "Pulse 16: real part of the autocorrelation" },
+	{ name = "im16", description = "Pulse 16: imaginary part of the autocorrelation" },
+	{ name = "re17", description = "Pulse 17: real part of the autocorrelation" },
+	{ name = "im17", description = "Pulse 17: imaginary part of the autocorrelation" },
+	{ name = "class", description = "g = good (shows structure), b = bad" },
+]
+
+[[datasets]]
+id = "germancredit"
+title = "German Credit (Statlog)"
+domain = "Classification"
+description = "1,000 applicants for credit at a German bank, rated good or bad risks. The 24-variable numeric coding made at Strathclyde University for StatLog, as used by Breiman: ordered attributes as integers, some categorical ones as indicators; the instalment rate and part of the purpose are left out. Codes refer to the attribute values of the original 20-attribute file (german.doc); each was checked against it on all 1,000 rows. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 1000
+source = "Hofmann, H. (1994), UCI Machine Learning Repository, doi:10.24432/C5NC77"
+url = "https://archive.ics.uci.edu/dataset/144/statlog+german+credit+data"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "checking", description = "Checking account: 1 < 0 DM, 2 0-200 DM, 3 >= 200 DM or salary paid in for a year, 4 none" },
+	{ name = "duration", description = "Duration in months" },
+	{ name = "history", description = "Credit history: 0 none taken or all paid back duly, 1 all at this bank paid back duly, 2 existing paid back duly till now, 3 delays in the past, 4 critical account or credits at other banks" },
+	{ name = "amount", description = "Credit amount in hundreds of DM, rounded" },
+	{ name = "savings", description = "Savings account or bonds: 1 < 100 DM, 2 100-500, 3 500-1000, 4 >= 1000, 5 unknown or none" },
+	{ name = "employment", description = "Present employment since: 1 unemployed, 2 < 1 year, 3 1-4 years, 4 4-7 years, 5 >= 7 years" },
+	{ name = "status_sex", description = "Personal status and sex: 1 male divorced/separated, 2 female divorced/separated/married, 3 male single, 4 male married/widowed" },
+	{ name = "residence", description = "Present residence since, years" },
+	{ name = "property", description = "Property: 1 real estate, 2 building society savings or life insurance, 3 car or other, 4 unknown or none" },
+	{ name = "age", description = "Age, years" },
+	{ name = "other_plans", description = "Other instalment plans: 1 bank, 2 stores, 3 none" },
+	{ name = "credits", description = "Number of existing credits at this bank" },
+	{ name = "dependants", description = "Number of people the applicant maintains" },
+	{ name = "telephone", description = "Telephone: 1 none, 2 yes, in the customer's name" },
+	{ name = "foreign", description = "Foreign worker: 1 yes, 2 no" },
+	{ name = "purpose_new_car", description = "1 if the purpose is a new car" },
+	{ name = "purpose_used_car", description = "1 if the purpose is a used car" },
+	{ name = "debtors_none", description = "1 if there are no other debtors or guarantors" },
+	{ name = "debtors_coapplicant", description = "1 if there is a co-applicant" },
+	{ name = "housing_rent", description = "1 if renting" },
+	{ name = "housing_own", description = "1 if owning" },
+	{ name = "job_unemployed", description = "1 if unemployed or unskilled non-resident" },
+	{ name = "job_unskilled", description = "1 if unskilled resident" },
+	{ name = "job_skilled", description = "1 if skilled employee or official" },
+	{ name = "credit", description = "good or bad risk" },
+]
+
+[[datasets]]
+id = "image"
+title = "Image Segmentation"
+domain = "Classification"
+description = "2,310 3x3-pixel regions drawn at random from seven hand-segmented outdoor images, described by 19 colour and texture features. The task is to say which of seven surfaces each region shows. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 2310
+source = "Vision Group, University of Massachusetts (1990), UCI Machine Learning Repository, doi:10.24432/C5GP4N"
+url = "https://archive.ics.uci.edu/dataset/50/image+segmentation"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "set", description = "train (210 regions) or test (2,100), the original split" },
+	{ name = "centroid_col", description = "Column of the centre pixel of the region" },
+	{ name = "centroid_row", description = "Row of the centre pixel of the region" },
+	{ name = "pixel_count", description = "Pixels in the region (always 9)" },
+	{ name = "line_density_5", description = "Low-contrast lines of length 5 through the region" },
+	{ name = "line_density_2", description = "High-contrast lines of length 5 through the region" },
+	{ name = "vedge_mean", description = "Contrast of horizontally adjacent pixels: mean (vertical edges)" },
+	{ name = "vedge_sd", description = "Contrast of horizontally adjacent pixels: standard deviation" },
+	{ name = "hedge_mean", description = "Contrast of vertically adjacent pixels: mean (horizontal edges)" },
+	{ name = "hedge_sd", description = "Contrast of vertically adjacent pixels: standard deviation" },
+	{ name = "intensity_mean", description = "Mean of (R + G + B) / 3" },
+	{ name = "rawred_mean", description = "Mean of R" },
+	{ name = "rawblue_mean", description = "Mean of B" },
+	{ name = "rawgreen_mean", description = "Mean of G" },
+	{ name = "exred_mean", description = "Excess red, mean of 2R - (G + B)" },
+	{ name = "exblue_mean", description = "Excess blue, mean of 2B - (G + R)" },
+	{ name = "exgreen_mean", description = "Excess green, mean of 2G - (R + B)" },
+	{ name = "value_mean", description = "HSV value, mean" },
+	{ name = "saturation_mean", description = "HSV saturation, mean" },
+	{ name = "hue_mean", description = "HSV hue, mean" },
+	{ name = "class", description = "Surface: brickface, sky, foliage, cement, window, path, grass" },
+]
+
+[[datasets]]
+id = "ecoli"
+title = "E. coli Protein Localisation"
+domain = "Classification"
+description = "336 proteins of the bacterium E. coli, with seven scores from signal-sequence and amino-acid analyses, labelled with the cell site where the protein is found. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 336
+source = "Nakai, K. (1996), UCI Machine Learning Repository, doi:10.24432/C5388M"
+url = "https://archive.ics.uci.edu/dataset/39/ecoli"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "protein", description = "SWISS-PROT accession name" },
+	{ name = "mcg", description = "McGeoch's signal-sequence score" },
+	{ name = "gvh", description = "von Heijne's signal-sequence score" },
+	{ name = "lip", description = "von Heijne signal peptidase II consensus (binary, 0.48 or 1)" },
+	{ name = "chg", description = "Charge on the N-terminus of predicted lipoproteins (binary, 0.5 or 1)" },
+	{ name = "aac", description = "Discriminant score of amino-acid content (outer membrane vs periplasmic)" },
+	{ name = "alm1", description = "ALOM membrane-spanning score" },
+	{ name = "alm2", description = "ALOM score without the putative cleavable signal regions" },
+	{ name = "site", description = "cp cytoplasm, im inner membrane, pp periplasm, imU inner membrane uncleavable signal, om outer membrane, omL outer membrane lipoprotein, imL inner membrane lipoprotein, imS inner membrane cleavable signal" },
+]
+
+[[datasets]]
+id = "votes"
+title = "US Congressional Voting Records 1984"
+domain = "Classification"
+description = "Votes of the 435 members of the US House of Representatives on 16 key votes of 1984, as identified by the Congressional Quarterly. Blank means the member did not vote yes or no. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 435
+source = "Congressional Quarterly Almanac (1985), UCI Machine Learning Repository, doi:10.24432/C5C01P"
+url = "https://archive.ics.uci.edu/dataset/105/congressional+voting+records"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "handicapped_infants", description = "Handicapped infants: y, n or blank" },
+	{ name = "water_project", description = "Water project cost sharing: y, n or blank" },
+	{ name = "budget_resolution", description = "Adoption of the budget resolution: y, n or blank" },
+	{ name = "physician_fee_freeze", description = "Physician fee freeze: y, n or blank" },
+	{ name = "el_salvador_aid", description = "El Salvador aid: y, n or blank" },
+	{ name = "religious_groups_schools", description = "Religious groups in schools: y, n or blank" },
+	{ name = "anti_satellite_ban", description = "Anti-satellite test ban: y, n or blank" },
+	{ name = "nicaraguan_contras", description = "Aid to Nicaraguan contras: y, n or blank" },
+	{ name = "mx_missile", description = "MX missile: y, n or blank" },
+	{ name = "immigration", description = "Immigration: y, n or blank" },
+	{ name = "synfuels_cutback", description = "Synfuels corporation cutback: y, n or blank" },
+	{ name = "education_spending", description = "Education spending: y, n or blank" },
+	{ name = "superfund_sue", description = "Superfund right to sue: y, n or blank" },
+	{ name = "crime", description = "Crime: y, n or blank" },
+	{ name = "duty_free_exports", description = "Duty-free exports: y, n or blank" },
+	{ name = "south_africa_exports", description = "Export Administration Act, South Africa: y, n or blank" },
+	{ name = "party", description = "democrat or republican" },
+]
+
+[[datasets]]
+id = "letters"
+title = "Letter Recognition"
+domain = "Classification"
+description = "20,000 images of the 26 capital letters, drawn from 20 fonts and randomly distorted, each summarised by 16 integer features scaled to 0-15. The file order is kept: Breiman (2001) trained on the first 15,000 and tested on the last 5,000. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 20000
+source = "Slate, D. (1991), UCI Machine Learning Repository, doi:10.24432/C5ZP40"
+url = "https://archive.ics.uci.edu/dataset/59/letter+recognition"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "xbox", description = "Horizontal position of the box (0-15)" },
+	{ name = "ybox", description = "Vertical position of the box (0-15)" },
+	{ name = "width", description = "Width of the box (0-15)" },
+	{ name = "height", description = "Height of the box (0-15)" },
+	{ name = "onpix", description = "Number of on pixels (0-15)" },
+	{ name = "xbar", description = "Mean x of on pixels (0-15)" },
+	{ name = "ybar", description = "Mean y of on pixels (0-15)" },
+	{ name = "x2bar", description = "Mean x variance (0-15)" },
+	{ name = "y2bar", description = "Mean y variance (0-15)" },
+	{ name = "xybar", description = "Mean x-y correlation (0-15)" },
+	{ name = "x2ybar", description = "Mean of x*x*y (0-15)" },
+	{ name = "xy2bar", description = "Mean of x*y*y (0-15)" },
+	{ name = "xedge", description = "Mean edge count, left to right (0-15)" },
+	{ name = "xedgey", description = "Correlation of xedge with y (0-15)" },
+	{ name = "yedge", description = "Mean edge count, bottom to top (0-15)" },
+	{ name = "yedgex", description = "Correlation of yedge with x (0-15)" },
+	{ name = "letter", description = "Capital letter, A-Z" },
+]
+
+[[datasets]]
+id = "satimage"
+title = "Landsat Satellite Images (Statlog)"
+domain = "Classification"
+description = "6,435 3x3-pixel neighbourhoods of a Landsat image of Australian farmland, with the brightness of each pixel in four spectral bands, labelled by the soil or crop at the centre pixel. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 6435
+source = "Srinivasan, A. (1993), UCI Machine Learning Repository, doi:10.24432/C55887"
+url = "https://archive.ics.uci.edu/dataset/146/statlog+landsat+satellite"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "set", description = "train (4,435) or test (2,000), the original split" },
+	{ name = "p1b1", description = "Pixel 1 of 9 (row by row, 5 = centre), spectral band 1: brightness 0-255" },
+	{ name = "p1b2", description = "Pixel 1 of 9 (row by row, 5 = centre), spectral band 2: brightness 0-255" },
+	{ name = "p1b3", description = "Pixel 1 of 9 (row by row, 5 = centre), spectral band 3: brightness 0-255" },
+	{ name = "p1b4", description = "Pixel 1 of 9 (row by row, 5 = centre), spectral band 4: brightness 0-255" },
+	{ name = "p2b1", description = "Pixel 2 of 9 (row by row, 5 = centre), spectral band 1: brightness 0-255" },
+	{ name = "p2b2", description = "Pixel 2 of 9 (row by row, 5 = centre), spectral band 2: brightness 0-255" },
+	{ name = "p2b3", description = "Pixel 2 of 9 (row by row, 5 = centre), spectral band 3: brightness 0-255" },
+	{ name = "p2b4", description = "Pixel 2 of 9 (row by row, 5 = centre), spectral band 4: brightness 0-255" },
+	{ name = "p3b1", description = "Pixel 3 of 9 (row by row, 5 = centre), spectral band 1: brightness 0-255" },
+	{ name = "p3b2", description = "Pixel 3 of 9 (row by row, 5 = centre), spectral band 2: brightness 0-255" },
+	{ name = "p3b3", description = "Pixel 3 of 9 (row by row, 5 = centre), spectral band 3: brightness 0-255" },
+	{ name = "p3b4", description = "Pixel 3 of 9 (row by row, 5 = centre), spectral band 4: brightness 0-255" },
+	{ name = "p4b1", description = "Pixel 4 of 9 (row by row, 5 = centre), spectral band 1: brightness 0-255" },
+	{ name = "p4b2", description = "Pixel 4 of 9 (row by row, 5 = centre), spectral band 2: brightness 0-255" },
+	{ name = "p4b3", description = "Pixel 4 of 9 (row by row, 5 = centre), spectral band 3: brightness 0-255" },
+	{ name = "p4b4", description = "Pixel 4 of 9 (row by row, 5 = centre), spectral band 4: brightness 0-255" },
+	{ name = "p5b1", description = "Pixel 5 of 9 (row by row, 5 = centre), spectral band 1: brightness 0-255" },
+	{ name = "p5b2", description = "Pixel 5 of 9 (row by row, 5 = centre), spectral band 2: brightness 0-255" },
+	{ name = "p5b3", description = "Pixel 5 of 9 (row by row, 5 = centre), spectral band 3: brightness 0-255" },
+	{ name = "p5b4", description = "Pixel 5 of 9 (row by row, 5 = centre), spectral band 4: brightness 0-255" },
+	{ name = "p6b1", description = "Pixel 6 of 9 (row by row, 5 = centre), spectral band 1: brightness 0-255" },
+	{ name = "p6b2", description = "Pixel 6 of 9 (row by row, 5 = centre), spectral band 2: brightness 0-255" },
+	{ name = "p6b3", description = "Pixel 6 of 9 (row by row, 5 = centre), spectral band 3: brightness 0-255" },
+	{ name = "p6b4", description = "Pixel 6 of 9 (row by row, 5 = centre), spectral band 4: brightness 0-255" },
+	{ name = "p7b1", description = "Pixel 7 of 9 (row by row, 5 = centre), spectral band 1: brightness 0-255" },
+	{ name = "p7b2", description = "Pixel 7 of 9 (row by row, 5 = centre), spectral band 2: brightness 0-255" },
+	{ name = "p7b3", description = "Pixel 7 of 9 (row by row, 5 = centre), spectral band 3: brightness 0-255" },
+	{ name = "p7b4", description = "Pixel 7 of 9 (row by row, 5 = centre), spectral band 4: brightness 0-255" },
+	{ name = "p8b1", description = "Pixel 8 of 9 (row by row, 5 = centre), spectral band 1: brightness 0-255" },
+	{ name = "p8b2", description = "Pixel 8 of 9 (row by row, 5 = centre), spectral band 2: brightness 0-255" },
+	{ name = "p8b3", description = "Pixel 8 of 9 (row by row, 5 = centre), spectral band 3: brightness 0-255" },
+	{ name = "p8b4", description = "Pixel 8 of 9 (row by row, 5 = centre), spectral band 4: brightness 0-255" },
+	{ name = "p9b1", description = "Pixel 9 of 9 (row by row, 5 = centre), spectral band 1: brightness 0-255" },
+	{ name = "p9b2", description = "Pixel 9 of 9 (row by row, 5 = centre), spectral band 2: brightness 0-255" },
+	{ name = "p9b3", description = "Pixel 9 of 9 (row by row, 5 = centre), spectral band 3: brightness 0-255" },
+	{ name = "p9b4", description = "Pixel 9 of 9 (row by row, 5 = centre), spectral band 4: brightness 0-255" },
+	{ name = "class", description = "Centre pixel: red_soil, cotton, grey_soil, damp_grey_soil, stubble, very_damp_grey_soil" },
+]
+
+[[datasets]]
+id = "vehicle"
+title = "Vehicle Silhouettes (Statlog)"
+domain = "Classification"
+description = "846 silhouettes of four model vehicles (a double-decker bus, a Chevrolet van, a Saab 9000 and an Opel Manta 400) seen from many angles, described by 18 shape features. Telling the two cars apart is the hard part. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 846
+source = "Mowforth, P. and Shepherd, B. (1987), UCI Machine Learning Repository, doi:10.24432/C5HG6N"
+url = "https://archive.ics.uci.edu/dataset/149/statlog+vehicle+silhouettes"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "compactness", description = "(average perimeter)^2 / area" },
+	{ name = "circularity", description = "(average radius)^2 / area" },
+	{ name = "distance_circularity", description = "Area / (average distance from border)^2" },
+	{ name = "radius_ratio", description = "(max radius - min radius) / average radius" },
+	{ name = "axis_aspect_ratio", description = "Minor axis / major axis" },
+	{ name = "length_aspect_ratio", description = "Length perpendicular to max length / max length" },
+	{ name = "scatter_ratio", description = "Inertia about minor axis / inertia about major axis" },
+	{ name = "elongatedness", description = "Area / (shrink width)^2" },
+	{ name = "axis_rectangularity", description = "Area / (principal axis length x width)" },
+	{ name = "length_rectangularity", description = "Area / (max length x length perpendicular)" },
+	{ name = "variance_major", description = "Scaled variance along the major axis" },
+	{ name = "variance_minor", description = "Scaled variance along the minor axis" },
+	{ name = "gyration_radius", description = "Scaled radius of gyration" },
+	{ name = "skewness_major", description = "Skewness about the major axis" },
+	{ name = "skewness_minor", description = "Skewness about the minor axis" },
+	{ name = "kurtosis_minor", description = "Kurtosis about the minor axis" },
+	{ name = "kurtosis_major", description = "Kurtosis about the major axis" },
+	{ name = "hollows_ratio", description = "Area of hollows / area of bounding polygon" },
+	{ name = "class", description = "bus, van, saab or opel" },
+]
+
+[[datasets]]
+id = "liver"
+title = "BUPA Liver Disorders"
+domain = "Classification"
+description = "Five blood tests and daily alcohol consumption of 345 male individuals. The selector column was meant only to split the data in two, but is widely used, Breiman (2001) included, as the class. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 345
+source = "BUPA Medical Research Ltd. (1990), UCI Machine Learning Repository, doi:10.24432/C54G67"
+url = "https://archive.ics.uci.edu/dataset/60/liver+disorders"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "mcv", description = "Mean corpuscular volume" },
+	{ name = "alkphos", description = "Alkaline phosphatase" },
+	{ name = "sgpt", description = "Alanine aminotransferase" },
+	{ name = "sgot", description = "Aspartate aminotransferase" },
+	{ name = "gammagt", description = "Gamma-glutamyl transpeptidase" },
+	{ name = "drinks", description = "Half-pint equivalents of alcoholic drinks per day" },
+	{ name = "selector", description = "1 or 2: a train/test split variable, used as the class in the literature" },
+]
+
+[[datasets]]
+id = "soybean"
+title = "Soybean Diseases (Large)"
+domain = "Classification"
+description = "683 diseased soybean plants described by 35 categorical observations of the plant, leaves, stem, seeds and roots, labelled with one of 19 diseases. Values are coded 0, 1, 2, ... in the order listed in each column; blank = missing. Breiman (2001), Random Forests, reports 685 cases. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 683
+source = "Michalski, R. S. and Chilausky, R. L. (1980), UCI Machine Learning Repository, doi:10.24432/C5JG6Z"
+url = "https://archive.ics.uci.edu/dataset/90/soybean+large"
+licence = "CC BY 4.0"
+status = "open"
+columns = [
+	{ name = "set", description = "train (307) or test (376), the original split" },
+	{ name = "date", description = "Coded april..october" },
+	{ name = "plant_stand", description = "Coded normal, lt-normal" },
+	{ name = "precip", description = "Coded lt-norm, norm, gt-norm" },
+	{ name = "temp", description = "Coded lt-norm, norm, gt-norm" },
+	{ name = "hail", description = "Coded yes, no" },
+	{ name = "crop_hist", description = "Coded diff-lst-year, same-lst-yr, same-lst-two-yrs, same-lst-sev-yrs" },
+	{ name = "area_damaged", description = "Coded scattered, low-areas, upper-areas, whole-field" },
+	{ name = "severity", description = "Coded minor, pot-severe, severe" },
+	{ name = "seed_tmt", description = "Coded none, fungicide, other" },
+	{ name = "germination", description = "Coded 90-100%, 80-89%, lt-80%" },
+	{ name = "plant_growth", description = "Coded norm, abnorm" },
+	{ name = "leaves", description = "Coded norm, abnorm" },
+	{ name = "leafspots_halo", description = "Coded absent, yellow-halos, no-yellow-halos" },
+	{ name = "leafspots_marg", description = "Coded w-s-marg, no-w-s-marg, dna" },
+	{ name = "leafspot_size", description = "Coded lt-1/8, gt-1/8, dna" },
+	{ name = "leaf_shread", description = "Coded absent, present" },
+	{ name = "leaf_malf", description = "Coded absent, present" },
+	{ name = "leaf_mild", description = "Coded absent, upper-surf, lower-surf" },
+	{ name = "stem", description = "Coded norm, abnorm" },
+	{ name = "lodging", description = "Coded yes, no" },
+	{ name = "stem_cankers", description = "Coded absent, below-soil, above-soil, above-sec-nde" },
+	{ name = "canker_lesion", description = "Coded dna, brown, dk-brown-blk, tan" },
+	{ name = "fruiting_bodies", description = "Coded absent, present" },
+	{ name = "external_decay", description = "Coded absent, firm-and-dry, watery" },
+	{ name = "mycelium", description = "Coded absent, present" },
+	{ name = "int_discolor", description = "Coded none, brown, black" },
+	{ name = "sclerotia", description = "Coded absent, present" },
+	{ name = "fruit_pods", description = "Coded norm, diseased, few-present, dna" },
+	{ name = "fruit_spots", description = "Coded absent, colored, brown-w/blk-specks, distort, dna" },
+	{ name = "seed", description = "Coded norm, abnorm" },
+	{ name = "mold_growth", description = "Coded absent, present" },
+	{ name = "seed_discolor", description = "Coded absent, present" },
+	{ name = "seed_size", description = "Coded norm, lt-norm" },
+	{ name = "shriveling", description = "Coded absent, present" },
+	{ name = "roots", description = "Coded norm, rotted, galls-cysts" },
+	{ name = "disease", description = "One of 19 diseases, e.g. diaporthe-stem-canker, charcoal-rot, brown-spot" },
+]
+
+[[datasets]]
+id = "pima"
+title = "Pima Indians Diabetes"
+domain = "Classification"
+description = "768 women of Pima Indian heritage, at least 21 years old, living near Phoenix, Arizona, tested for diabetes by World Health Organization criteria. Zeros in glucose, pressure, triceps, insulin and mass are missing values. One of the data sets of Breiman (2001), Random Forests, Machine Learning 45, 5-32."
+rows = 768
+source = "Smith, J. W., Everhart, J. E., Dickson, W. C., Knowler, W. C. and Johannes, R. S. (1988), Using the ADAP learning algorithm to forecast the onset of diabetes mellitus, Proceedings of the Symposium on Computer Applications in Medical Care, 261-265; National Institute of Diabetes and Digestive and Kidney Diseases"
+url = "mlbench R package (PimaIndiansDiabetes)"
+licence = "None stated; mlbench R package (GPL-2)"
+status = "redistributed"
+columns = [
+	{ name = "pregnant", description = "Number of pregnancies" },
+	{ name = "glucose", description = "Plasma glucose 2 hours into an oral glucose tolerance test" },
+	{ name = "pressure", description = "Diastolic blood pressure, mm Hg" },
+	{ name = "triceps", description = "Triceps skin fold thickness, mm" },
+	{ name = "insulin", description = "2-hour serum insulin, mu U/ml" },
+	{ name = "mass", description = "Body mass index, kg/m^2" },
+	{ name = "pedigree", description = "Diabetes pedigree function" },
+	{ name = "age", description = "Age, years" },
+	{ name = "diabetes", description = "pos or neg" },
 ]
 
 # ---------- Time series ----------
