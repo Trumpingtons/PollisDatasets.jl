@@ -1059,6 +1059,21 @@ columns = [
 	{ name = "yield", description = "Market yield, quoted on an investment basis (percent)" },
 ]
 
+[[datasets]]
+id = "lynxmackenzie"
+title = "Canadian Lynx Trappings, Mackenzie River"
+domain = "Time series"
+description = "Annual number of lynx trapped in the Mackenzie River district of north-west Canada, 1821-1934; the classic nonlinear, cyclical series (period about 9.5 years)."
+rows = 114
+source = "Elton, C. and Nicholson, M. (1942), The ten-year cycle in numbers of the lynx in Canada, Journal of Animal Ecology 11, 215-244; Campbell, M. J. and Walker, A. M. (1977), A survey of statistical work on the Mackenzie River series of annual Canadian lynx trappings for the years 1821-1934, Journal of the Royal Statistical Society A 140, 411-431"
+url = "R datasets package (lynx)"
+licence = "None stated; R datasets package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "year", description = "Year" },
+	{ name = "lynx", description = "Number of lynx trapped" },
+]
+
 # ---------- Dynamical systems ----------
 
 [[datasets]]
