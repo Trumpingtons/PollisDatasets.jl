@@ -1,6 +1,6 @@
 # Rebuild data/*.csv from the original sources listed in datasets.toml.
 # Run from the package root: Rscript scripts/build_data.R
-# Needs the R packages AER, survival, lme4, did and bacondecomp; everything else is downloaded.
+# Needs the R packages AER, survival, lme4, did and haven; everything else is downloaded.
 # Missing values are written as empty fields.
 
 suppressPackageStartupMessages({
@@ -8,7 +8,6 @@ suppressPackageStartupMessages({
 	library(survival)
 	library(lme4)
 	library(did)
-	library(bacondecomp)
 })
 
 options(timeout = 600)
@@ -69,16 +68,12 @@ for (k in 1:3) {
 save("petersen", read.table(fetch("https://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/test_data.txt"), col.names = c("firmid", "year", "x", "y")))
 data("mpdta", package = "did")
 save("mpdta", mpdta)
-# Stevenson and Wolfers' 147 columns cut to the 18 of Goodman-Bacon's (2021) example (5.3 MB to well under 1 MB): the state, the
-# year and sex, the year of unilateral divorce, suicides and homicides, population and the controls (income, welfare,
-# unemployment). Left out: the alternative law codings (lfdivlaw, divlaw, changed), the age and race shares, the other
-# crime rates and the outcome variants. The rates are Stata single-precision floats: 7 significant digits
-data("divorce", package = "bacondecomp")
-divorce <- divorce[, c("st", "state", "stid", "year", "sex", "divyear", "unilateral", "chyears", "suicide", "suiciderate_jag",
-	"murder", "murderrate", "stpop", "stpopgender", "persincome", "afdcrolls", "afdcmax", "stateur")]
-floats <- c("suiciderate_jag", "murderrate", "stpopgender", "afdcrolls", "stateur")
-divorce[floats] <- signif(divorce[floats], 7)
-save("divorce", divorce)
+# Goodman-Bacon's (2021) example as Thomas Goldring's ddtiming (MIT) ships it: Stevenson and Wolfers' female suicide rate
+# in 49 states, 1964-1996, and the indicator of no-fault (unilateral) divorce. The rate is a Stata single-precision float:
+# 7 significant digits
+divorce <- haven::read_dta(fetch("https://raw.githubusercontent.com/tgoldring/ddtiming/0f97729c1af4503bf0683c7f25df29cc1f562d3a/nofault_divorce.dta"))
+save("divorce", data.frame(state = as.character(haven::as_factor(divorce$state)), fips = as.integer(divorce$state),
+	year = as.integer(divorce$year), asmrs = signif(divorce$asmrs, 7), treat = as.integer(divorce$treat)))
 
 # ---------- Time series classification ----------
 
