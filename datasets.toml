@@ -327,6 +327,56 @@ columns = [
 ]
 
 [[datasets]]
+id = "mpdta"
+title = "Minimum Wage and Teen Employment"
+domain = "Causal inference"
+description = "Log teen employment in 500 US counties, 2003-2007, with the year each county's state first raised its minimum wage (2004, 2006, 2007 or never); the staggered difference-in-differences example of Callaway and Sant'Anna."
+rows = 2500
+source = "Callaway, B. and Sant'Anna, P. H. C. (2021), Difference-in-differences with multiple time periods, Journal of Econometrics 225, 200-230; teen employment from the Quarterly Workforce Indicators (US Census Bureau)"
+url = "did R package (mpdta), a subset of the paper's data"
+licence = "None stated; did R package (GPL-2 | GPL-3); the employment counts are a US-government work"
+status = "redistributed"
+columns = [
+	{ name = "year", description = "Year: 2003-2007" },
+	{ name = "countyreal", description = "County FIPS code" },
+	{ name = "lpop", description = "Log of the county's population (thousands), fixed over time" },
+	{ name = "lemp", description = "Log of teen employment (persons)" },
+	{ name = "first_treat", description = "Year the county's state first raised its minimum wage: 2004, 2006 or 2007; 0 for never in the period" },
+	{ name = "treat", description = "1 if the county is treated by 2007" },
+]
+
+[[datasets]]
+id = "divorce"
+title = "Unilateral Divorce and Suicide"
+domain = "Causal inference"
+description = "Suicides and homicides by sex in the 50 US states and Washington DC, 1964-1996, with the year each adopted unilateral divorce; the staggered-adoption example of Goodman-Bacon's decomposition of two-way fixed effects. 18 of the source's 147 columns."
+rows = 3366
+source = "Stevenson, B. and Wolfers, J. (2006), Bargaining in the shadow of the law: Divorce laws and family distress, Quarterly Journal of Economics 121, 267-288; Goodman-Bacon, A. (2021), Difference-in-differences with variation in treatment timing, Journal of Econometrics 225, 254-277"
+url = "bacondecomp R package (divorce)"
+licence = "None stated; bacondecomp R package (MIT)"
+status = "redistributed"
+columns = [
+	{ name = "st", description = "State postal code" },
+	{ name = "state", description = "State" },
+	{ name = "stid", description = "State: 1-51" },
+	{ name = "year", description = "Year: 1964-1996" },
+	{ name = "sex", description = "1 male, 2 female" },
+	{ name = "divyear", description = "Year the state adopted unilateral divorce; 1950 for before 1964, 2000 for not by 1996" },
+	{ name = "unilateral", description = "1 if unilateral divorce is in effect" },
+	{ name = "chyears", description = "Years since unilateral divorce, binned at -10 and 20" },
+	{ name = "suicide", description = "Suicides of the sex (deaths)" },
+	{ name = "suiciderate_jag", description = "Suicide rate of the sex: suicides per person of that sex (x 1e6 for per million)" },
+	{ name = "murder", description = "Homicides of the sex (deaths)" },
+	{ name = "murderrate", description = "State murder rate, both sexes, per person (FBI); 4 missing" },
+	{ name = "stpop", description = "State population" },
+	{ name = "stpopgender", description = "State population of the sex" },
+	{ name = "persincome", description = "Personal income per capita (current USD)" },
+	{ name = "afdcrolls", description = "AFDC (welfare) caseload relative to population, as coded in the source" },
+	{ name = "afdcmax", description = "Maximum monthly AFDC benefit (USD)" },
+	{ name = "stateur", description = "State unemployment rate (fraction); 0 for North Dakota in 1967, missing in the source" },
+]
+
+[[datasets]]
 id = "petersen"
 title = "Petersen Standard Errors Test Data"
 domain = "Panel econometrics"

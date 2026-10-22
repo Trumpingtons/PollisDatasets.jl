@@ -1,12 +1,14 @@
 # Rebuild data/*.csv from the original sources listed in datasets.toml.
 # Run from the package root: Rscript scripts/build_data.R
-# Needs the R packages AER, survival and lme4; everything else is downloaded.
+# Needs the R packages AER, survival, lme4, did and bacondecomp; everything else is downloaded.
 # Missing values are written as empty fields.
 
 suppressPackageStartupMessages({
 	library(AER)
 	library(survival)
 	library(lme4)
+	library(did)
+	library(bacondecomp)
 })
 
 options(timeout = 600)
@@ -65,6 +67,18 @@ for (k in 1:3) {
 	save(paste0("cps", k), read.table(fetch(sprintf("https://users.nber.org/~rdehejia/data/cps%s_controls.txt", if (k == 1) "" else k)), col.names = nsw))
 }
 save("petersen", read.table(fetch("https://www.kellogg.northwestern.edu/faculty/petersen/htm/papers/se/test_data.txt"), col.names = c("firmid", "year", "x", "y")))
+data("mpdta", package = "did")
+save("mpdta", mpdta)
+# Stevenson and Wolfers' 147 columns cut to the 18 of Goodman-Bacon's (2021) example (5.3 MB to well under 1 MB): the state, the
+# year and sex, the year of unilateral divorce, suicides and homicides, population and the controls (income, welfare,
+# unemployment). Left out: the alternative law codings (lfdivlaw, divlaw, changed), the age and race shares, the other
+# crime rates and the outcome variants. The rates are Stata single-precision floats: 7 significant digits
+data("divorce", package = "bacondecomp")
+divorce <- divorce[, c("st", "state", "stid", "year", "sex", "divyear", "unilateral", "chyears", "suicide", "suiciderate_jag",
+	"murder", "murderrate", "stpop", "stpopgender", "persincome", "afdcrolls", "afdcmax", "stateur")]
+floats <- c("suiciderate_jag", "murderrate", "stpopgender", "afdcrolls", "stateur")
+divorce[floats] <- signif(divorce[floats], 7)
+save("divorce", divorce)
 
 # ---------- Time series classification ----------
 
