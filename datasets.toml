@@ -1952,6 +1952,25 @@ columns = [
 	{ name = "hare", description = "Hare pelts (thousands)" },
 ]
 
+# ---------- Epidemiology ----------
+
+[[datasets]]
+id = "italycovid"
+title = "COVID-19 in Italy, 2020"
+domain = "Epidemiology"
+description = "Cumulative confirmed cases, recoveries and deaths in Italy each day from 27 February 2020, the first day with 500 cases or more, to 31 May 2020; the data of Dandekar and Barbastathis' quarantine-strength (QSIR) study."
+rows = 95
+source = "COVID-19 Data Repository by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University; Dong, E., Du, H. and Gardner, L. (2020), An interactive web-based dashboard to track COVID-19 in real time, The Lancet Infectious Diseases 20(5), 533-534"
+url = "https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series"
+licence = "CC BY 4.0 (Johns Hopkins University CSSE)"
+status = "open"
+columns = [
+	{ name = "date", description = "Day (ISO date)" },
+	{ name = "cases", description = "Cumulative confirmed cases" },
+	{ name = "recovered", description = "Cumulative recoveries" },
+	{ name = "dead", description = "Cumulative deaths" },
+]
+
 # ---------- Survival ----------
 
 [[datasets]]

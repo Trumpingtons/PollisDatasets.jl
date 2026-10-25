@@ -152,6 +152,18 @@ lynxhare <- read.csv(fetch("https://raw.githubusercontent.com/stan-dev/example-m
 names(lynxhare) <- c("year", "lynx", "hare")
 save("lynxhare", lynxhare)
 
+# ---------- Epidemiology ----------
+
+# Italy in JHU CSSE's global time series, from 27 February 2020 (the first day with 500 cases or more) to 31 May 2020
+jhu <- "https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series"
+italy <- function(kind) {
+	d <- read.csv(fetch(paste0(jhu, "/time_series_covid19_", kind, "_global.csv")), check.names = FALSE)
+	row <- d[d[["Country/Region"]] == "Italy" & d[["Province/State"]] == "", ]
+	setNames(as.integer(unlist(row[, -(1:4)])), as.character(as.Date(names(row)[-(1:4)], "%m/%d/%y")))
+}
+days <- as.character(seq(as.Date("2020-02-27"), as.Date("2020-05-31"), by = "day"))
+save("italycovid", data.frame(date = days, cases = italy("confirmed")[days], recovered = italy("recovered")[days], dead = italy("deaths")[days]))
+
 # ---------- Survival ----------
 
 save("lung", survival::lung)

@@ -1,6 +1,6 @@
 # PollisDatasets.jl
 
-A curated set of 56 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
+A curated set of 57 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
 
 ```julia
 using PollisDatasets
@@ -24,6 +24,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Time series | airpassengers, nile, co2, bg96, dgs10, lynxmackenzie |
 | Time series classification | ecg200, earthquakes, twoleadecg |
 | Dynamical systems | lynxhare |
+| Epidemiology | italycovid |
 | Survival | lung, pbc, veteran |
 | Bayesian / multilevel | eightschools, radon, sleepstudy |
 | Density / mixtures | faithful |
