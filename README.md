@@ -28,6 +28,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Survival | lung, pbc, veteran |
 | Bayesian / multilevel | eightschools, radon, sleepstudy |
 | Density / mixtures | faithful |
+| Simulated | sim_glmm, sim_clf |
 
 ## Licence
 

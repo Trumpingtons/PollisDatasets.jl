@@ -12,6 +12,8 @@
 #   status      open           explicit open licence (CC0, CC BY, permission granted)
 #               public-domain  US-government work, or published before 1930
 #               redistributed  no explicit licence; small factual table redistributed for decades in CRAN/textbook packages
+#               simulated      made by the Julia code in `code`, which states the true model; MIT, like the package
+#   code        simulated tables only: the code that made data/<id>.csv, ending with the column table
 #   columns     every column in file order: name and description (units, codes); missing values are empty fields
 #
 # Rejected after the licence check:
@@ -1303,7 +1305,7 @@ title = "Wine Recognition"
 domain = "Classification"
 description = "Thirteen chemical measurements of 178 wines from three cultivars grown in the same region of Italy."
 rows = 178
-source = "Aeberhard, S. and Forina, M. (1991), Wine, UCI Machine Learning Repository, doi:10.24432/C5PC7J"
+source = "Aeberhard, S. and Forina, M. (1992), Wine, UCI Machine Learning Repository, doi:10.24432/C5PC7J"
 url = "https://archive.ics.uci.edu/dataset/109/wine"
 licence = "CC BY 4.0"
 status = "open"
@@ -2134,3 +2136,60 @@ columns = [
 	{ name = "eruptions", description = "Eruption time (minutes)" },
 	{ name = "waiting", description = "Waiting time to the next eruption (minutes)" },
 ]
+
+# ---------- Simulated ----------
+
+[[datasets]]
+id = "sim_glmm"
+title = "Simulated Grouped Binary Outcomes"
+domain = "Simulated"
+description = "A 0/1 outcome for 1000 observations in 40 groups of 25, from a logistic model with a random intercept per group; the true model is in the code below."
+rows = 1000
+source = "Simulated for Pollis"
+url = "datasets.toml (code)"
+licence = "MIT"
+status = "simulated"
+columns = [
+	{ name = "y", description = "Outcome: 0 or 1" },
+	{ name = "x1", description = "Predictor, standard normal" },
+	{ name = "x2", description = "Predictor, uniform on 0-1" },
+	{ name = "group", description = "Group: g01-g40" },
+]
+code = '''
+using Random
+rng = Xoshiro(2026)
+groups, size = 40, 25
+u = 0.8 .* randn(rng, groups)  # random intercepts: SD 0.8
+group = repeat(1:groups, inner=size)
+x1 = randn(rng, groups * size)
+x2 = rand(rng, groups * size)
+eta = -0.5 .+ 1.0 .* x1 .- 1.5 .* x2 .+ u[group]  # true model: logit P(y = 1) = -0.5 + x1 - 1.5 x2 + u[group]
+y = Int.(rand(rng, groups * size) .< 1 ./ (1 .+ exp.(-eta)))
+(y = y, x1 = round.(x1, digits=4), x2 = round.(x2, digits=4), group = [string("g", lpad(g, 2, "0")) for g in group])
+'''
+
+[[datasets]]
+id = "sim_clf"
+title = "Simulated Classifier Output"
+domain = "Simulated"
+description = "1000 held-out cases with their true label, a classifier's score for the positive class and its prediction at a 0.5 threshold; about one case in five is positive. The true model and the classifier are in the code below."
+rows = 1000
+source = "Simulated for Pollis"
+url = "datasets.toml (code)"
+licence = "MIT"
+status = "simulated"
+columns = [
+	{ name = "y", description = "True label: no or yes (positive)" },
+	{ name = "score", description = "Classifier's estimated probability of yes" },
+	{ name = "yhat", description = "Predicted label: yes when score >= 0.5" },
+]
+code = '''
+using Random
+rng = Xoshiro(2026)
+n = 1000
+x = randn(rng, n)
+p = 1 ./ (1 .+ exp.(-(-1.8 .+ 1.5 .* x)))  # true model: logit P(yes) = -1.8 + 1.5 x
+y = ifelse.(rand(rng, n) .< p, "yes", "no")
+score = 1 ./ (1 .+ exp.(-(-1.6 .+ 1.2 .* x .+ 0.5 .* randn(rng, n))))  # the classifier: an imperfect estimate of the true probability
+(y = y, score = round.(score, digits=4), yhat = ifelse.(score .>= 0.5, "yes", "no"))
+'''
