@@ -107,6 +107,42 @@ columns = [
 	{ name = "child_height", description = "Child's adult height (inches)" },
 ]
 
+[[datasets]]
+id = "evals"
+title = "Beauty in the Classroom"
+domain = "Regression"
+description = "End-of-semester student evaluations of 463 courses taught by 94 professors at the University of Texas at Austin, with six students' ratings of each professor's physical appearance; the OpenIntro example of multiple regression (does beauty predict teaching scores?)."
+rows = 463
+source = "Hamermesh, D. S. and Parker, A. (2005), Beauty in the classroom: instructors' pulchritude and putative pedagogical productivity, Economics of Education Review 24(4), 369-376, doi:10.1016/j.econedurev.2004.07.013"
+url = "https://www.openintro.org/data/index.php?data=evals"
+licence = "GPL-3 (R openintro package); OpenIntro releases its resources under CC BY-SA 3.0"
+status = "redistributed"
+columns = [
+	{ name = "course_id", description = "Course identifier (1-463)" },
+	{ name = "prof_id", description = "Professor identifier (1-94)" },
+	{ name = "score", description = "Average evaluation score: 1 (very unsatisfactory) to 5 (excellent)" },
+	{ name = "rank", description = "Rank of professor: teaching, tenure track, tenured" },
+	{ name = "ethnicity", description = "Ethnicity of professor: not minority, minority" },
+	{ name = "gender", description = "Gender of professor: female, male" },
+	{ name = "language", description = "Language of the school where the professor was educated: english, non-english" },
+	{ name = "age", description = "Age of professor (years)" },
+	{ name = "cls_perc_eval", description = "Percent of students in the class who completed the evaluation" },
+	{ name = "cls_did_eval", description = "Number of students in the class who completed the evaluation" },
+	{ name = "cls_students", description = "Total number of students in the class" },
+	{ name = "cls_level", description = "Class level: lower, upper" },
+	{ name = "cls_profs", description = "Number of professors teaching sections of the course in the sample: single, multiple" },
+	{ name = "cls_credits", description = "Credits of the class: one credit (lab, PE, etc.), multi credit" },
+	{ name = "bty_f1lower", description = "Beauty rating by a lower-level female student: 1 (lowest) to 10 (highest)" },
+	{ name = "bty_f1upper", description = "Beauty rating by an upper-level female student: 1 to 10" },
+	{ name = "bty_f2upper", description = "Beauty rating by a second upper-level female student: 1 to 10" },
+	{ name = "bty_m1lower", description = "Beauty rating by a lower-level male student: 1 to 10" },
+	{ name = "bty_m1upper", description = "Beauty rating by an upper-level male student: 1 to 10" },
+	{ name = "bty_m2upper", description = "Beauty rating by a second upper-level male student: 1 to 10" },
+	{ name = "bty_avg", description = "Average of the six beauty ratings" },
+	{ name = "pic_outfit", description = "Outfit of the professor in the picture: not formal, formal" },
+	{ name = "pic_color", description = "Colour of the professor's picture: color, black&white" },
+]
+
 # ---------- Econometrics ----------
 
 [[datasets]]
@@ -1231,6 +1267,21 @@ columns = [
 	{ name = "nozzle_blowby", description = "Nozzle joints with primary O-ring blowby" },
 ]
 
+[[datasets]]
+id = "assortive_mating"
+title = "Eye Colour of Couples"
+domain = "Count data"
+description = "Eye colour (blue, brown, green) of the man and of his female partner in 204 couples; one row per couple, so that a cross-tabulation gives the 3 x 3 contingency table for a chi-squared test of independence (assortative mating)."
+rows = 204
+source = "Laeng, B., Mathisen, R. and Johnsen, J.-A. (2007), Why do blue-eyed men prefer women with the same eye color?, Behavioral Ecology and Sociobiology 61(3), 371-384"
+url = "https://www.openintro.org/data/index.php?data=assortive_mating"
+licence = "GPL-3 (R openintro package); OpenIntro releases its resources under CC BY-SA 3.0"
+status = "redistributed"
+columns = [
+	{ name = "self_male", description = "Eye colour of the man: blue, brown, green" },
+	{ name = "partner_female", description = "Eye colour of his female partner: blue, brown, green" },
+]
+
 # ---------- Classification ----------
 
 [[datasets]]
@@ -1969,6 +2020,26 @@ columns = [
 	{ name = "temp", description = "Maximum daily temperature at LaGuardia Airport (degrees Fahrenheit)" },
 	{ name = "month", description = "Month (5 = May to 9 = September)" },
 	{ name = "day", description = "Day of the month (1-31)" },
+]
+
+[[datasets]]
+id = "sp500_1950_2018"
+title = "S&P 500, 1950-2018"
+domain = "Time series"
+description = "Daily prices and trading volume of the S&P 500 index, 3 January 1950 to 7 December 2018, one row per trading day."
+rows = 17346
+source = "Yahoo! Finance, via OpenIntro"
+url = "https://www.openintro.org/data/index.php?data=sp500_1950_2018"
+licence = "GPL-3 (R openintro package); OpenIntro releases its resources under CC BY-SA 3.0"
+status = "redistributed"
+columns = [
+	{ name = "date", description = "Trading day (YYYY-MM-DD)" },
+	{ name = "open", description = "Opening price" },
+	{ name = "high", description = "Highest price of the day" },
+	{ name = "low", description = "Lowest price of the day" },
+	{ name = "close", description = "Closing price" },
+	{ name = "adj_close", description = "Closing price adjusted for dividends" },
+	{ name = "volume", description = "Trading volume (shares)" },
 ]
 
 # ---------- Dynamical systems ----------

@@ -17,11 +17,11 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 
 | Domain | Datasets |
 |---|---|
-| Regression | mtcars, anscombe, datasaurus, galton |
+| Regression | mtcars, anscombe, datasaurus, galton, evals |
 | Econometrics | grunfeld, produc, gasoline, mroz, card, lalonde, cps1, cps2, cps3, mpdta, divorce, petersen |
-| Count data | horsekicks, insectsprays, biochemists, ships, challenger |
+| Count data | horsekicks, insectsprays, biochemists, ships, challenger, assortive_mating |
 | Classification | penguins, iris, titanic, wine, breastwisconsin, glass, pima, sonar, vowel, ionosphere, vehicle, germancredit, image, ecoli, votes, liver, letters, satimage, soybean |
-| Time series | airpassengers, nile, co2, bg96, dgs10, lynxmackenzie, airquality |
+| Time series | airpassengers, nile, co2, bg96, dgs10, lynxmackenzie, airquality, sp500_1950_2018 |
 | Time series classification | ecg200, earthquakes, twoleadecg |
 | Dynamical systems | lynxhare |
 | Epidemiology | italycovid |
