@@ -21,7 +21,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Econometrics | grunfeld, produc, gasoline, mroz, card, lalonde, cps1, cps2, cps3, mpdta, divorce, petersen |
 | Count data | horsekicks, insectsprays, biochemists, ships, challenger |
 | Classification | penguins, iris, titanic, wine, breastwisconsin, glass, pima, sonar, vowel, ionosphere, vehicle, germancredit, image, ecoli, votes, liver, letters, satimage, soybean |
-| Time series | airpassengers, nile, co2, bg96, dgs10, lynxmackenzie |
+| Time series | airpassengers, nile, co2, bg96, dgs10, lynxmackenzie, airquality |
 | Time series classification | ecg200, earthquakes, twoleadecg |
 | Dynamical systems | lynxhare |
 | Epidemiology | italycovid |

@@ -1952,6 +1952,25 @@ columns = [
 	{ name = "lynx", description = "Number of lynx trapped" },
 ]
 
+[[datasets]]
+id = "airquality"
+title = "New York Air Quality"
+domain = "Time series"
+description = "Daily air-quality measurements in New York, 1 May to 30 September 1973; the classic example of a time-ordered table with missing values (37 ozone and 7 solar radiation readings missing)."
+rows = 153
+source = "Chambers, J. M., Cleveland, W. S., Kleiner, B. and Tukey, P. A. (1983), Graphical Methods for Data Analysis, Wadsworth; data from the New York State Department of Conservation (ozone) and the National Weather Service (meteorology)"
+url = "R datasets package (airquality)"
+licence = "None stated; R datasets package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "ozone", description = "Mean ozone, 13:00 to 15:00 at Roosevelt Island (parts per billion); missing on 37 days" },
+	{ name = "solar_r", description = "Solar radiation, 8:00 to 12:00 at Central Park, frequency band 4000-7700 Angstroms (Langleys); missing on 7 days" },
+	{ name = "wind", description = "Average wind speed, 7:00 and 10:00 at LaGuardia Airport (miles per hour)" },
+	{ name = "temp", description = "Maximum daily temperature at LaGuardia Airport (degrees Fahrenheit)" },
+	{ name = "month", description = "Month (5 = May to 9 = September)" },
+	{ name = "day", description = "Day of the month (1-31)" },
+]
+
 # ---------- Dynamical systems ----------
 
 [[datasets]]
