@@ -2156,6 +2156,23 @@ columns = [
 	{ name = "waiting", description = "Waiting time to the next eruption (minutes)" },
 ]
 
+# ---------- Market baskets ----------
+
+[[datasets]]
+id = "groceries"
+title = "Grocery Store Baskets"
+domain = "Market baskets"
+description = "One month (30 days) of point-of-sale transactions from a real grocery outlet: 9835 baskets of 169 product categories, in long format, one row per (basket, item) pair; the classic association-rule example."
+rows = 43367
+source = "Hahsler, M., Hornik, K. and Reutterer, T. (2006), Implications of probabilistic data modeling for mining association rules, in Spiliopoulou, M. et al. (eds), From Data and Information Analysis to Knowledge Engineering, Springer, 598-605"
+url = "R arules package (Groceries)"
+licence = "GPL-3 (R arules package)"
+status = "redistributed"
+columns = [
+	{ name = "transaction", description = "Basket number (1-9835)" },
+	{ name = "item", description = "Product category bought in the basket" },
+]
+
 # ---------- Text ----------
 
 [[datasets]]
