@@ -17,7 +17,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 
 | Domain | Datasets |
 |---|---|
-| Regression | mtcars, anscombe, galton |
+| Regression | mtcars, anscombe, datasaurus, galton |
 | Econometrics | grunfeld, produc, gasoline, mroz, card, lalonde, cps1, cps2, cps3, mpdta, divorce, petersen |
 | Count data | horsekicks, insectsprays, biochemists, ships, challenger |
 | Classification | penguins, iris, titanic, wine, breastwisconsin, glass, pima, sonar, vowel, ionosphere, vehicle, germancredit, image, ecoli, votes, liver, letters, satimage, soybean |

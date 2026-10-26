@@ -45,6 +45,9 @@ save <- function(id, d) {
 
 save("mtcars", cbind(model = rownames(mtcars), mtcars))
 save("anscombe", anscombe)
+# The Datasaurus Dozen as the datasauRus package ships it, pinned to its commit
+datasaurus <- read.delim(fetch("https://raw.githubusercontent.com/jumpingrivers/datasauRus/269706b98d171fe52258e4a7288e26e1b37512f5/inst/extdata/DatasaurusDozen-Long.tsv"))
+save("datasaurus", datasaurus)
 galton <- read.csv(fetch(paste0(rdatasets, "/HistData/GaltonFamilies.csv")), colClasses = c(family = "character"))
 save("galton", galton[, -1])
 

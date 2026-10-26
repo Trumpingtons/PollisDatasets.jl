@@ -69,6 +69,22 @@ columns = [
 ]
 
 [[datasets]]
+id = "datasaurus"
+title = "Datasaurus Dozen"
+domain = "Regression"
+description = "Thirteen x-y data sets, the Datasaurus and twelve others, with the same means and standard deviations to two decimals and a correlation of about -0.06, but very different shapes."
+rows = 1846
+source = "Matejka, J. and Fitzmaurice, G. (2017), Same stats, different graphs: generating datasets with varied appearance and identical statistics through simulated annealing, CHI 2017, 1290-1294"
+url = "https://github.com/jumpingrivers/datasauRus (inst/extdata/DatasaurusDozen-Long.tsv)"
+licence = "MIT (datasauRus R package)"
+status = "redistributed"
+columns = [
+	{ name = "dataset", description = "Set: dino, away, h_lines, v_lines, x_shape, star, high_lines, dots, circle, bullseye, slant_up, slant_down, wide_lines" },
+	{ name = "x", description = "Predictor" },
+	{ name = "y", description = "Response" },
+]
+
+[[datasets]]
 id = "galton"
 title = "Galton Family Heights"
 domain = "Regression"
