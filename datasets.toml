@@ -2137,6 +2137,24 @@ columns = [
 	{ name = "waiting", description = "Waiting time to the next eruption (minutes)" },
 ]
 
+# ---------- Text ----------
+
+[[datasets]]
+id = "pollis_guide"
+title = "The Pollis Guide, by Section"
+domain = "Text"
+description = "The text of The Pollis Guide, one row per section: 130 short documents on 19 topics, from installing Pollis to the built-in databases, for document-term matrices, TF-IDF, topic models and search."
+rows = 130
+source = "Saragga Seabra, A. (2026), The Pollis Guide: How to use Pollis, one topic at a time, draft of 16 October 2026"
+url = "https://github.com/saragga/pollis/tree/main/docs/guide"
+licence = "CC BY-SA 4.0"
+status = "open"
+columns = [
+	{ name = "topic", description = "The Guide's topic (its two-page spread), e.g. Getting Started" },
+	{ name = "section", description = "The section within the topic; equal to topic for the topic's introduction" },
+	{ name = "text", description = "The section's plain text, from the LaTeX source, without figures" },
+]
+
 # ---------- Simulated ----------
 
 [[datasets]]
