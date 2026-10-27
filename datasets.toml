@@ -2023,22 +2023,21 @@ columns = [
 ]
 
 [[datasets]]
-id = "sp500_1950_2018"
-title = "S&P 500, 1950-2018"
+id = "sp500"
+title = "S&P 500, 1985-2026"
 domain = "Time series"
-description = "Daily prices and trading volume of the S&P 500 index, 3 January 1950 to 7 December 2018, one row per trading day."
-rows = 17346
-source = "Yahoo! Finance, via OpenIntro"
-url = "https://www.openintro.org/data/index.php?data=sp500_1950_2018"
-licence = "GPL-3 (R openintro package); OpenIntro releases its resources under CC BY-SA 3.0"
-status = "redistributed"
+description = "Daily levels and trading volume of the S&P 500 price index, 2 January 1985 to 22 October 2026, one row per trading day: Black Monday 1987, the dot-com bust, the 2008 crisis, the COVID-19 crash and both Trump presidencies. Levels rounded to cents. Before 2006 the open is usually Yahoo's copy of the previous close, so overnight gaps can be measured only from 2008 on; highs, lows and closes are genuine throughout."
+rows = 10533
+source = "Yahoo! Finance (^GSPC), via Kaggle (Pavel Jurke, S&P 500 (^GSPC) Historical Data, 2026)"
+url = "https://www.kaggle.com/datasets/paveljurke/s-and-p-500-gspc-historical-data"
+licence = "CC0-1.0 (public domain)"
+status = "public-domain"
 columns = [
 	{ name = "date", description = "Trading day (YYYY-MM-DD)" },
-	{ name = "open", description = "Opening price" },
-	{ name = "high", description = "Highest price of the day" },
-	{ name = "low", description = "Lowest price of the day" },
-	{ name = "close", description = "Closing price" },
-	{ name = "adj_close", description = "Closing price adjusted for dividends" },
+	{ name = "open", description = "Opening level (index points); before 2006 usually the previous close" },
+	{ name = "high", description = "Highest level of the day" },
+	{ name = "low", description = "Lowest level of the day" },
+	{ name = "close", description = "Closing level" },
 	{ name = "volume", description = "Trading volume (shares)" },
 ]
 
