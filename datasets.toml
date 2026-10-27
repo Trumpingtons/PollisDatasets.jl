@@ -2042,6 +2042,26 @@ columns = [
 	{ name = "volume", description = "Trading volume (shares)" },
 ]
 
+[[datasets]]
+id = "gamestop"
+title = "GameStop Stock Prices"
+domain = "Time series"
+description = "Daily prices and trading volume of GameStop Corp. (NYSE: GME), 13 February 2002 to 13 May 2024, one row per trading day; prices and volume adjusted for the 4-for-1 split of July 2022. The short squeeze of January 2021 makes it a case study of unusual market behaviour: extreme daily moves, wide intraday ranges, volume spikes, heavy-tailed returns and outliers that sway estimates."
+rows = 5600
+source = "Yahoo! Finance, via Kaggle (dhruvshan, GameStop Stock Data (All Time), 2024)"
+url = "https://www.kaggle.com/datasets/dhruvshan/gamestop-stock-data-all-time"
+licence = "CC0-1.0 (public domain)"
+status = "public-domain"
+columns = [
+	{ name = "date", description = "Trading day (YYYY-MM-DD)" },
+	{ name = "open", description = "Opening price (US dollars, split-adjusted)" },
+	{ name = "high", description = "Highest price of the day (split-adjusted)" },
+	{ name = "low", description = "Lowest price of the day (split-adjusted)" },
+	{ name = "close", description = "Closing price (split-adjusted)" },
+	{ name = "adj_close", description = "Closing price adjusted for splits and dividends" },
+	{ name = "volume", description = "Trading volume (shares, split-adjusted)" },
+]
+
 # ---------- Dynamical systems ----------
 
 [[datasets]]
