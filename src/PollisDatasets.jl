@@ -10,6 +10,7 @@ using PollisDatasets
 datasets()                  # list the catalogue
 d = dataset("penguins");    # load one
 datasetinfo("penguins")     # source, licence and columns
+samplefile("sample.pdf")    # path of a sample file
 ```
 """
 module PollisDatasets
@@ -18,7 +19,7 @@ using CSV
 using TOML
 using Tables
 
-export dataset, datasets, datasetinfo
+export dataset, datasets, datasetinfo, samplefile
 
 const ROOT = dirname(@__DIR__)
 const CATALOGUE = joinpath(ROOT, "datasets.toml")
@@ -85,6 +86,18 @@ end
 Description, source to cite, licence and column descriptions of the dataset `id`.
 """
 datasetinfo(id::AbstractString) = lookup(id)
+
+"""
+    samplefile(name)
+
+Path of the sample file `name` that comes with the package, e.g. `samplefile("sample.pdf")`.
+The files are listed under `[[files]]` in `datasets.toml`.
+"""
+function samplefile(name::AbstractString)
+	names = [entry["name"] for entry in get(TOML.parsefile(CATALOGUE), "files", Dict{String, Any}[])]
+	name in names || throw(ArgumentError("unknown sample file \"$name\"; available: $(join(names, ", "))"))
+	return joinpath(ROOT, "files", name)
+end
 
 function Base.show(io::IO, ::MIME"text/plain", info::DatasetInfo)
 	println(io, info.title, " (\"", info.id, "\", ", info.rows, " rows)")

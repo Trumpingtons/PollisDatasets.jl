@@ -2337,3 +2337,30 @@ y = ifelse.(rand(rng, n) .< p, "yes", "no")
 score = 1 ./ (1 .+ exp.(-(-1.6 .+ 1.2 .* x .+ 0.5 .* randn(rng, n))))  # the classifier: an imperfect estimate of the true probability
 (y = y, score = round.(score, digits=4), yhat = ifelse.(score .>= 0.5, "yes", "no"))
 '''
+
+# ---------- Sample files ----------
+# One [[files]] entry per file in files/, whose path samplefile("...") returns: name, title, description, licence.
+
+[[files]]
+name = "sample.pdf"
+title = "Sample PDF with a Regression Table"
+description = "Three A4 pages: text and a figure on page 1, Table 1, a made-up regression table with standard errors in parentheses, on page 2, and notes on page 3. The cells of Table 1 are attached to the file as table1.csv. Typeset from sample.tex with PollisTeX, then table1.csv attached with Poppler's pdfattach."
+licence = "MIT, like the package"
+
+[[files]]
+name = "sample.tex"
+title = "LaTeX Source of the Sample PDF"
+description = "The LaTeX source of sample.pdf. It reads the cells of Table 1 from table1.csv, so a test PDF of one's own can be made by editing table1.csv or sample.tex and compiling with PollisTeX."
+licence = "MIT, like the package"
+
+[[files]]
+name = "table1.csv"
+title = "Cells of Table 1 of the Sample PDF"
+description = "The cells of Table 1 of sample.pdf, one line per row and separated by semicolons, the first line being the column headings and empty cells empty fields: the values typeset, to check an extracted table against."
+licence = "MIT, like the package"
+
+[[files]]
+name = "figure.png"
+title = "Figure of the Sample PDF"
+description = "A colour gradient, 200 by 120 pixels, the figure on page 1 of sample.pdf."
+licence = "MIT, like the package"

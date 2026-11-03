@@ -32,6 +32,21 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Text | pollis_guide |
 | Simulated | sim_glmm, sim_clf |
 
+## Sample files
+
+`samplefile(name)` returns the path of a file that comes with the package, listed under `[[files]]` in `datasets.toml`:
+
+| File | Contents |
+|---|---|
+| sample.pdf | Three pages: text and a figure, a regression table (Table 1), and notes; the cells of Table 1 are attached as table1.csv |
+| sample.tex | The LaTeX source of sample.pdf, which reads Table 1 from table1.csv |
+| table1.csv | The cells of Table 1, separated by semicolons |
+| figure.png | The figure on page 1 |
+
+```julia
+pdf = samplefile("sample.pdf")
+```
+
 ## Licence
 
 The package code is MIT licensed. Each dataset keeps the terms of its original provider, recorded in `datasets.toml`; please cite the listed source when you use a dataset.

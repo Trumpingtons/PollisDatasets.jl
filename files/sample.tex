@@ -1,0 +1,51 @@
+% The sample PDF of PollisDatasets: text and a figure on page 1, Table 1 on page 2, notes on page 3.
+% Table 1 is read from table1.csv (cells separated by semicolons), which is also attached to the PDF,
+% so the PDF Files panel can measure how well a table is extracted. Edit table1.csv or this file,
+% compile with PollisTeX.compile("sample.tex"), and attach table1.csv with Poppler's pdfattach.
+\documentclass[11pt]{article}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{csvsimple}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={Returns to Schooling: A Sample Report}, pdfauthor={PollisDatasets}, pdfsubject={A sample PDF for the PDF Files panel of Pollis}, pdfkeywords={sample, table, PDF}}
+\pagestyle{plain}
+
+\begin{document}
+
+\section*{Returns to Schooling: A Sample Report}
+
+This sample PDF has three pages: text and a figure on page 1, a regression table on page 2,
+and notes on page 3. The cells of Table 1 are attached to the file as \texttt{table1.csv}, so
+the table that a program extracts can be checked against the values that were typeset.
+
+Replace this file with your own PDF, or edit \texttt{sample.tex} and \texttt{table1.csv} to make
+a test PDF of your own.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=6cm]{figure.png}
+\caption{A colour gradient, 200 by 120 pixels.}
+\end{figure}
+
+\newpage
+
+\begin{table}[h]
+\centering
+\caption{Log hourly wage on schooling and experience}
+\begin{tabular}{lrr}
+\toprule
+\csvreader[no head, separator=semicolon, late after line=\\, late after first line=\\\midrule, late after last line=\\\bottomrule]{table1.csv}{}{\csvcoli & \csvcolii & \csvcoliii}
+\end{tabular}
+
+\medskip
+{\footnotesize Standard errors in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1}
+\end{table}
+
+\newpage
+
+\section*{Notes}
+
+The numbers in Table 1 are made up for this example. See \url{https://github.com/Trumpingtons/PollisDatasets.jl}.
+
+\end{document}
