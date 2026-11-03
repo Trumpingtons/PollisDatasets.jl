@@ -2360,7 +2360,7 @@ description = "The cells of Table 1 of sample.pdf, one line per row and separate
 licence = "MIT, like the package"
 
 [[files]]
-name = "figure.png"
-title = "Figure of the Sample PDF"
-description = "A colour gradient, 200 by 120 pixels, the figure on page 1 of sample.pdf."
-licence = "MIT, like the package"
+name = "caesar.jpg"
+title = "Engraving of Julius Caesar"
+description = "Portret van Julius Caesar, an engraving by Jan Caspar Philips (Amsterdam, 1745) for Kornelis Westerbaen's Algemeene histori, deel XI, scanned by the Rijksmuseum (RP-P-1922-265, http://hdl.handle.net/10934/RM0001.COLLECT.163958): the figure on page 1 of sample.pdf, a JPEG of 360 by 489 pixels."
+licence = "Public domain, released by the Rijksmuseum under CC0 1.0"

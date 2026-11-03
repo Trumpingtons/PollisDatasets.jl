@@ -13,7 +13,7 @@ using Test
 end
 
 @testset "sample files" begin
-	for name in ("sample.pdf", "sample.tex", "table1.csv", "figure.png")
+	for name in ("sample.pdf", "sample.tex", "table1.csv", "caesar.jpg")
 		@test isfile(samplefile(name))
 	end
 	@test_throws ArgumentError samplefile("nope.pdf")

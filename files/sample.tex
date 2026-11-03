@@ -1,36 +1,48 @@
-% The sample PDF of PollisDatasets: text and a figure on page 1, Table 1 on page 2, notes on page 3.
-% Table 1 is read from table1.csv (cells separated by semicolons), which is also attached to the PDF,
-% so the PDF Files panel can measure how well a table is extracted. Edit table1.csv or this file,
-% compile with PollisTeX.compile("sample.tex"), and attach table1.csv with Poppler's pdfattach.
+% The sample PDF of PollisDatasets, for the PDF Files panel of Pollis: sections and subsections of
+% placeholder text (lipsum) and a figure on page 1, Table 1 on page 2, notes on page 3.
+% Table 1 is read from table1.csv (one line per row, cells separated by semicolons), and the same
+% file is attached to the PDF, so an extracted table can be checked against the values typeset.
+% To make a test PDF of your own, edit table1.csv or this file, typeset it with
+% PollisTeX.compile("sample.tex"), and attach table1.csv with Poppler's pdfattach.
 \documentclass[11pt]{article}
 \usepackage[a4paper, margin=2.5cm]{geometry}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{booktabs}
 \usepackage{csvsimple}
+\usepackage{lipsum}
 \usepackage[hidelinks]{hyperref}
 \hypersetup{pdftitle={Returns to Schooling: A Sample Report}, pdfauthor={PollisDatasets}, pdfsubject={A sample PDF for the PDF Files panel of Pollis}, pdfkeywords={sample, table, PDF}}
-\pagestyle{plain}
+
+\title{Returns to Schooling: A Sample Report}
+\author{PollisDatasets}
+\date{}
 
 \begin{document}
 
-\section*{Returns to Schooling: A Sample Report}
+\maketitle
 
-This sample PDF has three pages: text and a figure on page 1, a regression table on page 2,
-and notes on page 3. The cells of Table 1 are attached to the file as \texttt{table1.csv}, so
-the table that a program extracts can be checked against the values that were typeset.
+\section{Introduction}
 
-Replace this file with your own PDF, or edit \texttt{sample.tex} and \texttt{table1.csv} to make
-a test PDF of your own.
+\lipsum[1]
 
-\begin{figure}[h]
+\subsection{Data}
+
+\lipsum[2]
+
+\begin{figure}[H]
 \centering
-\includegraphics[width=6cm]{figure.png}
-\caption{A colour gradient, 200 by 120 pixels.}
+\includegraphics[width=4.5cm]{caesar.jpg}
+\caption{Gaius Iulius Caesar, aere incisus a Iohanne Caspare Philips, MDCCXLV.}
 \end{figure}
 
 \newpage
 
-\begin{table}[h]
+\section{Results}
+
+\lipsum[3][1-3]
+
+\begin{table}[H]
 \centering
 \caption{Log hourly wage on schooling and experience}
 \begin{tabular}{lrr}
@@ -44,8 +56,14 @@ a test PDF of your own.
 
 \newpage
 
-\section*{Notes}
+\section{Notes}
 
-The numbers in Table 1 are made up for this example. See \url{https://github.com/Trumpingtons/PollisDatasets.jl}.
+\subsection{About Table 1}
+
+The numbers in Table 1 are made up for this example, and its cells are attached to this file as \texttt{table1.csv}.
+
+\subsection{Sed ut perspiciatis}
+
+\lipsum[4]
 
 \end{document}

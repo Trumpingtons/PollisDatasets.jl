@@ -41,7 +41,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | sample.pdf | Three pages: text and a figure, a regression table (Table 1), and notes; the cells of Table 1 are attached as table1.csv |
 | sample.tex | The LaTeX source of sample.pdf, which reads Table 1 from table1.csv |
 | table1.csv | The cells of Table 1, separated by semicolons |
-| figure.png | The figure on page 1 |
+| caesar.jpg | The figure on page 1, an engraving of Julius Caesar by Jan Caspar Philips (1745), from the Rijksmuseum (CC0) |
 
 ```julia
 pdf = samplefile("sample.pdf")
