@@ -1,5 +1,7 @@
-% The sample PDF of PollisDatasets, for the PDF Files panel of Pollis: sections and subsections of
-% placeholder text (lipsum) and a figure on page 1, Table 1 on page 2, notes on page 3.
+% The sample PDF of PollisDatasets, for the PDF Viewer of Pollis: the opening chapters of Caesar's
+% Commentarii de Bello Gallico (book I, chapters 1 to 3, from The Latin Library) in sections and
+% subsections, a figure on page 1, Table 1 on page 2, notes on page 3, a SAMPLE stamp on page 1, and
+% notes in English on Caesar, with a table of Rome in his lifetime (Table 2), at the end.
 % Table 1 is read from table1.csv (one line per row, cells separated by semicolons), and the same
 % file is attached to the PDF, so an extracted table can be checked against the values typeset.
 % To make a test PDF of your own, edit table1.csv or this file, typeset it with
@@ -10,11 +12,14 @@
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{csvsimple}
-\usepackage{lipsum}
+\usepackage{tikz}
 \usepackage[hidelinks]{hyperref}
-\hypersetup{pdftitle={Returns to Schooling: A Sample Report}, pdfauthor={PollisDatasets}, pdfsubject={A sample PDF for the PDF Files panel of Pollis}, pdfkeywords={sample, table, PDF}}
+\hypersetup{pdftitle={Gallia est omnis divisa in partes tres: Exemplum Relationis}, pdfauthor={PollisDatasets}, pdfsubject={A sample PDF for the PDF Viewer of Pollis}, pdfkeywords={sample, table, PDF, Caesar}}
 
-\title{Returns to Schooling: A Sample Report}
+\renewcommand{\figurename}{Figura}
+\renewcommand{\tablename}{Tabula}
+
+\title{Gallia est omnis divisa in partes tres\\[0.4em]\large Exemplum Relationis}
 \author{PollisDatasets}
 \date{}
 
@@ -22,13 +27,19 @@
 
 \maketitle
 
-\section{Introduction}
+% The stamp, on page 1 only
+\begin{tikzpicture}[remember picture, overlay]
+\node[rotate=30, draw=red!75!black, line width=1.6pt, rounded corners=3pt, inner sep=6pt, text=red!75!black, font=\sffamily\bfseries\LARGE]
+	at ([xshift=3.2cm, yshift=-2.6cm]current page.north west) {SAMPLE};
+\end{tikzpicture}
 
-\lipsum[1]
+\section{Prooemium}
 
-\subsection{Data}
+Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur. Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt. Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.
 
-\lipsum[2]
+\subsection{De finibus Galliae}
+
+Eorum una pars, quam Gallos obtinere dictum est, initium capit a flumine Rhodano, continetur Garumna flumine, Oceano, finibus Belgarum, attingit etiam ab Sequanis et Helvetiis flumen Rhenum, vergit ad septentriones. Belgae ab extremis Galliae finibus oriuntur, pertinent ad inferiorem partem fluminis Rheni, spectant in septentrionem et orientem solem. Aquitania a Garumna flumine ad Pyrenaeos montes et eam partem Oceani quae est ad Hispaniam pertinet; spectat inter occasum solis et septentriones.
 
 \begin{figure}[H]
 \centering
@@ -38,32 +49,66 @@
 
 \newpage
 
-\section{Results}
+\section{Eventus}
 
-\lipsum[3][1-3]
+Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix. Is M.~Messala et M.~Pisone consulibus regni cupiditate inductus coniurationem nobilitatis fecit et civitati persuasit ut de finibus suis cum omnibus copiis exirent: perfacile esse, cum virtute omnibus praestarent, totius Galliae imperio potiri. Id hoc facilius iis persuasit, quod undique loci natura Helvetii continentur: una ex parte flumine Rheno latissimo atque altissimo, qui agrum Helvetium a Germanis dividit; altera ex parte monte Iura altissimo, qui est inter Sequanos et Helvetios; tertia lacu Lemanno et flumine Rhodano, qui provinciam nostram ab Helvetiis dividit.
 
 \begin{table}[H]
 \centering
-\caption{Log hourly wage on schooling and experience}
+\caption{Cur Belgae fortissimi sint: fortitudo Gallorum in distantia a provincia, mercatoribus et bellis cum Germanis}
 \begin{tabular}{lrr}
 \toprule
 \csvreader[no head, separator=semicolon, late after line=\\, late after first line=\\\midrule, late after last line=\\\bottomrule]{table1.csv}{}{\csvcoli & \csvcolii & \csvcoliii}
 \end{tabular}
 
 \medskip
-{\footnotesize Standard errors in parentheses. *** p$<$0.01, ** p$<$0.05, * p$<$0.1}
+{\footnotesize Errores in parenthesibus. *** p$<$0.01, ** p$<$0.05, * p$<$0.1}
 \end{table}
 
 \newpage
 
-\section{Notes}
+\section{Adnotationes}
 
-\subsection{About Table 1}
+\subsection{De Tabula 1}
 
-The numbers in Table 1 are made up for this example, and its cells are attached to this file as \texttt{table1.csv}.
+Numeri Tabulae 1 ficti sunt; hypothesis tamen Caesaris est, qui Belgas fortissimos esse scripsit, quod a provincia longissime absunt, mercatores ad eos raro commeant, et cum Germanis continenter bellum gerunt (De Bello Gallico I.1). Caesar tabulas non scripsit. Cellae Tabulae 1 huic documento adiunctae sunt, in fasciculo \texttt{table1.csv}.
 
-\subsection{Sed ut perspiciatis}
+\subsection{De Helvetiis}
 
-\lipsum[4]
+His rebus adducti et auctoritate Orgetorigis permoti constituerunt ea quae ad proficiscendum pertinerent comparare, iumentorum et carrorum quam maximum numerum coemere, sementes quam maximas facere, ut in itinere copia frumenti suppeteret, cum proximis civitatibus pacem et amicitiam confirmare. Ad eas res conficiendas biennium sibi satis esse duxerunt; in tertium annum profectionem lege confirmant.
+
+\medskip
+{\footnotesize Textus: C.~Iulius Caesar, Commentarii de Bello Gallico, liber I, capita 1--3 (The Latin Library).}
+
+\section{Notes in English: Gaius Julius Caesar}
+
+Gaius Julius Caesar (100--44 BC) was a Roman general, statesman and author. Born into an old patrician family of modest wealth, he rose through the offices of the Roman Republic: he was elected pontifex maximus in 63 BC and consul in 59 BC, and formed with Pompey and Crassus the informal alliance later called the First Triumvirate. As governor of Gaul from 58 to 50 BC he conquered the lands between the Pyrenees, the Rhine and the Ocean, and wrote the Commentarii de Bello Gallico, seven books in the third person, from which the Latin of this sample comes; an eighth was added by his officer Aulus Hirtius.
+
+In January 49 BC he led his army across the Rubicon into Italy, starting a civil war against Pompey and the Senate, which he won at Pharsalus in 48 BC. Made dictator for life early in 44 BC, he was killed by senators led by Brutus and Cassius on the Ides of March, 15 March 44 BC. His reform of the calendar, the Julian calendar, took effect in 45 BC and, with the correction of Pope Gregory XIII in 1582, is still in use.
+
+\renewcommand{\tablename}{Table}
+\begin{table}[H]
+\centering
+\caption{Rome in Caesar's lifetime}
+\begin{tabular}{lp{11cm}}
+\toprule
+Year (BC) & Event \\
+\midrule
+100 & Gaius Julius Caesar is born in Rome \\
+88 & Sulla marches on Rome with his army \\
+82--79 & Sulla is dictator \\
+73--71 & The slave revolt of Spartacus \\
+63 & Cicero is consul and puts down the conspiracy of Catiline; Caesar is elected pontifex maximus \\
+60 & Caesar, Pompey and Crassus form the First Triumvirate \\
+59 & Caesar is consul \\
+58--50 & Caesar conquers Gaul \\
+53 & Crassus is killed at Carrhae \\
+49 & Caesar crosses the Rubicon, and the civil war begins \\
+48 & Pompey is defeated at Pharsalus and killed in Egypt \\
+45 & The Julian calendar takes effect \\
+44 & Caesar is made dictator for life, and is killed on the Ides of March \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \end{document}

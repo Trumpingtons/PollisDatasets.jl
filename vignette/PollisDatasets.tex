@@ -1,0 +1,185 @@
+% Pollis Data Packages: the datasets of the examples (PollisDatasets.jl) -- draft 1 (28 October 2026)
+% Compile with: tectonic -X compile PollisDatasets.tex
+\input{newmethods_style}
+
+% A data package Pollis installs for its examples, not one that reproduces a paper: its own header, key facts and credit
+\renewcommand{\nmdate}{28 October 2026}
+\fancyfoot[L]{\footnotesize\color{soft}\textbf{Pollis}\enspace Data Packages\enspace·\enspace\nmtheme}
+\renewcommand{\nmhead}[3]{%
+  \renewcommand{\nmtheme}{#1}%
+  \thispagestyle{fancy}%
+  \begin{minipage}[c]{13mm}\pollislogo{11mm}\end{minipage}%
+  \begin{minipage}[c]{\dimexpr\linewidth-13mm\relax}
+    {\color{navy}\Large\bfseries Pollis}\enspace{\color{soft}Data Packages}\hfill
+    {\color{deepamber}\small\bfseries\MakeUppercase{#1}}
+  \end{minipage}\par\vspace{7mm}
+  {\color{navy}\fontsize{22}{26}\selectfont\bfseries #2}\par\vspace{4pt}
+  {\color{soft}\large #3}\par\vspace{5mm}}
+\renewcommand{\factsheet}[4]{%
+  \begin{tcolorbox}[enhanced, colback=pale, colframe=pale, boxrule=0pt, sharp corners,
+    left=7pt, right=7pt, top=5pt, bottom=5pt, fontupper=\small]
+  \begin{tabularx}{\linewidth}{@{}>{\leavevmode\bfseries\color{navy}}p{27mm}>{\leavevmode}X@{}}
+  In Pollis & #1\\
+  Missing in Julia & #2\\
+  Package & #3\\
+  Tests & #4
+  \end{tabularx}
+  \end{tcolorbox}}
+\renewcommand{\nmcredit}{%
+  \par\vfill
+  \begin{minipage}[b]{0.78\linewidth}\footnotesize\color{soft}
+  Package written and tested with Claude Code (Anthropic) in Pollis.\par
+  \textcopyright\ 2026 Antonio Saragga Seabra\enspace·\enspace Licensed under \href{https://creativecommons.org/licenses/by-sa/4.0/}{CC BY-SA 4.0}\enspace·\enspace Draft, \nmdate
+  \end{minipage}\hfill
+  \begin{minipage}[b]{0.18\linewidth}\raggedleft\pollislogo{9mm}\par\vspace{2pt}{\footnotesize contact@pollis.org}\end{minipage}}
+
+
+\begin{document}
+\emergencystretch=3em
+
+\nmhead{Datasets}
+  {PollisDatasets.jl: the datasets of the examples}
+  {67 small datasets, from \fn{mtcars} and \fn{iris} to \fn{mroz} and \fn{challenger}, each with the source to
+   cite, its licence and every column described, loaded as Tables.jl column tables.}
+
+\factsheet
+  {the data of the Code Examples, installed with Pollis; the database \emph{PollisDatasets} in the Databases view,
+   the \fn{duckdb>} terminal and the \fn{sql>} mode, one table per dataset, with its descriptions.}
+  {a set of datasets whose licences were checked one by one, and recorded, before they came in. RDatasets.jl
+   loads the datasets of R's packages, as DataFrames, without the terms of each.}
+  {\fn{PollisDatasets.jl} 0.1.0, from GitHub:\newline \fn{Pkg.add(url = "https://github.com/Trumpingtons/PollisDatasets.jl")}.
+   It depends on CSV, TOML and Tables only.}
+  {68 of 68: every dataset loads with the rows and the columns its entry gives, and an unknown name is an
+   error. Six datasets also checked against R's datasets package, to the last digit printed.}
+
+\nmsection{Why a package}
+An example is only worth running if its data comes with it. Pollis's Code Examples need datasets that are small,
+well known and free to redistribute with an AGPL-3.0 program; a teacher or a student needs to know where each one
+comes from and how to cite it. PollisDatasets.jl puts each dataset in \fn{data/<id>.csv}, with its entry in
+\fn{datasets.toml}: a title, a domain, a description, the number of rows, the source to cite, where the file was
+taken from, the licence the provider states, the outcome of the licence check, and a description of every column,
+with its units or codes. Missing values are empty fields in the file and \fn{missing} in Julia.
+
+\nmsub{What it holds}
+\begin{valuetable}{@{}>{\raggedright\arraybackslash}p{40mm}>{\raggedright\arraybackslash}X@{}}
+\textbf{Domain} & \textbf{Datasets}\\\midrule
+Regression & mtcars, anscombe, datasaurus, galton, evals\\
+Econometrics & mroz, card\\
+Panel econometrics & grunfeld, produc, gasoline, petersen\\
+Causal inference & lalonde, cps1, cps2, cps3, mpdta, divorce\\
+Count data & horsekicks, insectsprays, biochemists, ships, challenger, assortive\_mating\\
+Classification & penguins, iris, titanic, wine, breastwisconsin, glass, sonar, vowel, ionosphere, germancredit,
+  image, ecoli, votes, letters, satimage, vehicle, liver, soybean, pima\\
+Time series & airpassengers, nile, co2, bg96, dgs10, lynxmackenzie, airquality, sp500, gamestop\\
+Time series classification & ecg200, earthquakes, twoleadecg\\
+Survival & lung, veteran, pbc\\
+Bayesian / multilevel & eightschools, radon, sleepstudy\\
+Dynamical systems & lynxhare\\
+Epidemiology & italycovid\\
+Density / mixtures & faithful\\
+Market baskets & groceries\\
+Text & pollis\_guide, the sections of The Pollis Guide\\
+Simulated & sim\_glmm, sim\_clf\\
+\end{valuetable}
+
+\nmsection{The licences}
+Every dataset passed a licence check before it came in, and its \fn{status} records the outcome:
+\begin{valuetable}{@{}>{\raggedright\arraybackslash}p{30mm}>{\raggedright\arraybackslash}X r@{}}
+\textbf{Status} & \textbf{Meaning} & \textbf{Datasets}\\\midrule
+\fn{open} & an explicit open licence (CC0, CC BY), or permission given & 23\\
+\fn{public-domain} & a work of the US government, or published before 1930 & 5\\
+\fn{redistributed} & no explicit licence; a small factual table redistributed for decades in CRAN and textbook
+  packages & 37\\
+\fn{simulated} & made by the Julia code in the entry's \fn{code}, which states the true model; MIT, like the
+  package & 2\\
+\end{valuetable}
+The datasets that failed are listed at the top of \fn{datasets.toml} with the reason: the Fama-French factors (no
+grant to redistribute: fetch them live, from \menupath{Explore\gt Access Data Libraries}), the SILSO sunspots (CC
+BY-NC, whose non-commercial clause AGPL-3.0 cannot carry) and Boston Housing (an ethically problematic variable).
+The S\&P 500 series came in only as a copy dedicated to the public domain (CC0), with the source named.
+
+\nmsection{In Julia}
+\begin{valuetable}{@{}>{\raggedright\arraybackslash}p{40mm}>{\raggedright\arraybackslash}X@{}}
+\textbf{Function} & \textbf{Returns}\\\midrule
+\fn{datasets()} & the catalogue, one row per dataset: \fn{id}, \fn{title}, \fn{domain}, \fn{rows}\\
+\fn{dataset("mroz")} & the dataset as a Tables.jl column table, a \fn{NamedTuple} of vectors: \fn{d.wage} is a
+  column\\
+\fn{datasetinfo("mroz")} & the description, the source to cite, the licence and the columns\\
+\end{valuetable}
+A column table goes straight into GLM.jl, MLJ.jl, Makie or any Tables.jl reader; Pollis's examples never turn it
+into a DataFrame.
+
+\nmsection{In Pollis}
+\begin{itemize}
+  \item \textbf{Installed with Pollis.} When the Julia REPL starts, Pollis adds PollisDatasets.jl to an environment
+    of its own, \fn{\textasciitilde/.pollis/julia/environments}, on the load path, so \fn{using PollisDatasets}
+    works in any project without touching its \fn{Project.toml}, and updates it when GitHub has a newer commit.
+  \item \textbf{The database.} \fn{PollisDatasets.duckdb}, in \fn{\textasciitilde/.pollis/databases}, has one table
+    per dataset, named by its id, with the title, description, source and licence as the table's comment and each
+    column's description as its own. It is attached read-only to every connection Pollis makes, so
+    \fn{SELECT * FROM PollisDatasets.mtcars} works in the \fn{sql>} mode and the \fn{duckdb>} terminal, and the
+    descriptions show in the Databases view. It is rebuilt when the installed package or its files change.
+  \item \textbf{New datasets announced.} When a version brings new datasets, the Welcome page names them, with
+    \menupath{Open Databases View}.
+\end{itemize}
+
+\nmsection{A worked example}
+\nmsub{Anscombe's quartet}
+\begin{nbox}{}
+\ttfamily\small
+using PollisDatasets, Statistics\\
+datasetinfo("anscombe")\hfill \# 11 rows; Anscombe (1973), The American Statistician\\
+a = dataset("anscombe")\\
+x, y = a.x1, a.y1\hfill \# and x2, y2 to x4, y4\\
+b = cov(x, y) / var(x); (mean(y) - b * mean(x), b, cor(x, y))
+\end{nbox}
+Four sets of eleven points, built by \nmcite{anscombe}{Anscombe (1973)} to show why a regression should be drawn
+before it is believed: the same means, the same variances, the same correlation and the same fitted line, from a
+straight line with noise, a curve, a line with one outlier, and a vertical cluster with one far point.
+\begin{valuetable}{@{}lrrrrrrr@{}}
+\textbf{Set} & \textbf{mean x} & \textbf{var x} & \textbf{mean y} & \textbf{var y} & \textbf{cor} &
+  \textbf{intercept} & \textbf{slope}\\\midrule
+1 & 9 & 11 & 7.500909 & 4.127269 & 0.816421 & 3.000091 & 0.500091\\
+2 & 9 & 11 & 7.500909 & 4.127629 & 0.816237 & 3.000909 & 0.500000\\
+3 & 9 & 11 & 7.500000 & 4.122620 & 0.816287 & 3.002455 & 0.499727\\
+4 & 9 & 11 & 7.500909 & 4.123249 & 0.816521 & 3.001727 & 0.499909\\
+\end{valuetable}
+The values are Julia's on \fn{dataset("anscombe")}; R's \fn{lm} on its own \fn{anscombe} gives the same to six
+decimals.
+
+\nmsection{What the tests show}
+\nmsub{The catalogue and the files agree}
+\fn{test/runtests.jl} loads every dataset in the catalogue and checks that it has the number of rows its entry
+gives and the columns its entry describes, in the same order; and that \fn{dataset("nope")} is an error that lists
+the names there are. 68 of 68 pass, in 7 seconds.
+
+\nmsub{Against R}
+Datasets that come from R's datasets package were compared with R 4.5's own copies:
+\begin{valuetable}{@{}llrrrr@{}}
+\textbf{Dataset} & \textbf{Column} & \textbf{Rows} & \textbf{Values} & \textbf{Sum} & \textbf{Mean}\\\midrule
+mtcars & mpg & 32 & 32 & 642.9 & 20.09062\\
+iris & sepal\_length & 150 & 150 & 876.5 & 5.843333\\
+faithful & eruptions & 272 & 272 & 948.677 & 3.487783\\
+airquality & ozone & 153 & 116 & 4887 & 42.12931\\
+nile & flow & 100 & 100 & 91935 & 919.35\\
+airpassengers & passengers & 144 & 144 & 40363 & 280.2986\\
+\end{valuetable}
+Both give these values, R to the digits it prints; the 37 ozone readings missing in New York's summer of 1973 are
+\fn{missing} in Julia as they are \fn{NA} in R.
+
+\nmsection{Adding a dataset}
+In the GitHub clone of PollisDatasets.jl, never in the installed copy: check the licence and choose the
+\fn{status}; add \fn{data/<id>.csv} and its entry in \fn{datasets.toml}, with every column described; run the tests;
+commit and push. At the next start of the Julia REPL, every Pollis installs the new version, rebuilds the database
+and announces the dataset on the Welcome page. \menupath{Help\gt Documentation\gt Drill-down: Data Packages} follows
+the whole road.
+
+\nmsection{References}
+{\footnotesize\sloppy
+\nmref{anscombe}{Anscombe, F. J. (1973). Graphs in statistical analysis. The American Statistician 27(1), 17-21. \nmdoi{10.1080/00031305.1973.10478966}}
+\nmref{rcore}{R Core Team. The R datasets package. \url{https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/00Index.html}}
+\nmref{software}{Software: CSV.jl, Tables.jl and TOML (MIT). The source of each dataset is in its entry of \fn{datasets.toml}.}
+}
+
+\nmcredit
+\end{document}

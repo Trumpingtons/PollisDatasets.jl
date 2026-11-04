@@ -1,6 +1,6 @@
 # PollisDatasets.jl
 
-A curated set of 61 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
+A curated set of 67 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
 
 ```julia
 using PollisDatasets
@@ -18,7 +18,9 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Domain | Datasets |
 |---|---|
 | Regression | mtcars, anscombe, datasaurus, galton, evals |
-| Econometrics | grunfeld, produc, gasoline, mroz, card, lalonde, cps1, cps2, cps3, mpdta, divorce, petersen |
+| Econometrics | mroz, card |
+| Panel econometrics | grunfeld, produc, gasoline, petersen |
+| Causal inference | lalonde, cps1, cps2, cps3, mpdta, divorce |
 | Count data | horsekicks, insectsprays, biochemists, ships, challenger, assortive_mating |
 | Classification | penguins, iris, titanic, wine, breastwisconsin, glass, pima, sonar, vowel, ionosphere, vehicle, germancredit, image, ecoli, votes, liver, letters, satimage, soybean |
 | Time series | airpassengers, nile, co2, bg96, dgs10, lynxmackenzie, airquality, sp500, gamestop |
@@ -38,7 +40,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 
 | File | Contents |
 |---|---|
-| sample.pdf | Three pages: text and a figure, a regression table (Table 1), and notes; the cells of Table 1 are attached as table1.csv |
+| sample.pdf | Three pages in Latin, from Caesar's De Bello Gallico: text, a figure and a SAMPLE stamp, a regression table (Table 1), and notes, ending with notes in English on Caesar and a timeline of Rome in his lifetime (Table 2); the cells of Table 1 are attached as table1.csv |
 | sample.tex | The LaTeX source of sample.pdf, which reads Table 1 from table1.csv |
 | table1.csv | The cells of Table 1, separated by semicolons |
 | caesar.jpg | The figure on page 1, an engraving of Julius Caesar by Jan Caspar Philips (1745), from the Rijksmuseum (CC0) |
@@ -46,6 +48,10 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 ```julia
 pdf = samplefile("sample.pdf")
 ```
+
+## Vignette
+
+[PollisDatasets.jl: the datasets of the examples](vignette/PollisDatasets.pdf)
 
 ## Licence
 

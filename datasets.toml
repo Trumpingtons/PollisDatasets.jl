@@ -19,7 +19,8 @@
 # Rejected after the licence check:
 #   Fama-French factors   "Copyright Eugene F. Fama and Kenneth R. French", no redistribution grant (fetch live instead)
 #   Sunspots (SILSO)      CC BY-NC 4.0: the non-commercial clause is incompatible with AGPL distribution
-#   S&P 500               "Reproduction of S&P 500 in any form is prohibited" (S&P Dow Jones Indices); Yahoo Finance terms forbid redistribution (fetch live instead)
+#   S&P 500 from S&P DJI  "Reproduction of S&P 500 in any form is prohibited" (S&P Dow Jones Indices); Yahoo Finance terms forbid redistribution
+#                         (sp500 and gamestop are instead the copies of Yahoo! Finance data published on Kaggle under CC0-1.0)
 #   Boston Housing        ethically problematic variable; withdrawn from scikit-learn
 
 # ---------- Regression ----------
@@ -2031,7 +2032,7 @@ rows = 10533
 source = "Yahoo! Finance (^GSPC), via Kaggle (Pavel Jurke, S&P 500 (^GSPC) Historical Data, 2026)"
 url = "https://www.kaggle.com/datasets/paveljurke/s-and-p-500-gspc-historical-data"
 licence = "CC0-1.0 (public domain)"
-status = "public-domain"
+status = "open"
 columns = [
 	{ name = "date", description = "Trading day (YYYY-MM-DD)" },
 	{ name = "open", description = "Opening level (index points); before 2006 usually the previous close" },
@@ -2050,7 +2051,7 @@ rows = 5600
 source = "Yahoo! Finance, via Kaggle (dhruvshan, GameStop Stock Data (All Time), 2024)"
 url = "https://www.kaggle.com/datasets/dhruvshan/gamestop-stock-data-all-time"
 licence = "CC0-1.0 (public domain)"
-status = "public-domain"
+status = "open"
 columns = [
 	{ name = "date", description = "Trading day (YYYY-MM-DD)" },
 	{ name = "open", description = "Opening price (US dollars, split-adjusted)" },
@@ -2344,7 +2345,7 @@ score = 1 ./ (1 .+ exp.(-(-1.6 .+ 1.2 .* x .+ 0.5 .* randn(rng, n))))  # the cla
 [[files]]
 name = "sample.pdf"
 title = "Sample PDF with a Regression Table"
-description = "Three A4 pages: text and a figure on page 1, Table 1, a made-up regression table with standard errors in parentheses, on page 2, and notes on page 3. The cells of Table 1 are attached to the file as table1.csv. Typeset from sample.tex with PollisTeX, then table1.csv attached with Poppler's pdfattach."
+description = "Three A4 pages in Latin, Gallia est omnis divisa in partes tres: the opening chapters of Caesar's Commentarii de Bello Gallico (book I, chapters 1 to 3, from The Latin Library) in sections and subsections, with a figure and a SAMPLE stamp, turned 30 degrees, on page 1; Table 1, a made-up regression table of Caesar's reasons why the Belgae are the bravest of the Gauls, with standard errors in parentheses, a negative coefficient, an empty cell and a count in Roman numerals, on page 2; and notes on page 3, ending with notes in English on Caesar's life and Table 2, Rome in his lifetime, a timeline with a cell that wraps. The cells of Table 1 are attached to the file as table1.csv. Typeset from sample.tex with PollisTeX, then table1.csv attached with Poppler's pdfattach."
 licence = "MIT, like the package"
 
 [[files]]
