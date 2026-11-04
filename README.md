@@ -56,3 +56,5 @@ pdf = samplefile("sample.pdf")
 ## Licence
 
 The package code is MIT licensed. Each dataset keeps the terms of its original provider, recorded in `datasets.toml`; please cite the listed source when you use a dataset.
+
+The sample PDF, its LaTeX source and the cells of its Table 1 (`sample.pdf`, `sample.tex` and `table1.csv`) are © 2026 Pollis Team, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Caesar's Latin text and the engraving of Julius Caesar (`caesar.jpg`, CC0 from the Rijksmuseum) are in the public domain.

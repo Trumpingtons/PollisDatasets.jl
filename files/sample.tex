@@ -6,6 +6,9 @@
 % file is attached to the PDF, so an extracted table can be checked against the values typeset.
 % To make a test PDF of your own, edit table1.csv or this file, typeset it with
 % PollisTeX.compile("sample.tex"), and attach table1.csv with Poppler's pdfattach.
+% Copyright (c) 2026 Pollis Team. This file, sample.pdf and table1.csv are licensed under the Creative
+% Commons Attribution 4.0 International licence (CC BY 4.0, https://creativecommons.org/licenses/by/4.0/).
+% Caesar's Latin text and the engraving of Figure 1 (caesar.jpg) are in the public domain.
 \documentclass[11pt]{article}
 \usepackage[a4paper, margin=2.5cm]{geometry}
 \usepackage{graphicx}
@@ -14,7 +17,8 @@
 \usepackage{csvsimple}
 \usepackage{tikz}
 \usepackage[hidelinks]{hyperref}
-\hypersetup{pdftitle={Gallia est omnis divisa in partes tres: Exemplum Relationis}, pdfauthor={PollisDatasets}, pdfsubject={A sample PDF for the PDF Viewer of Pollis}, pdfkeywords={sample, table, PDF, Caesar}}
+\usepackage{hyperxmp}
+\hypersetup{pdftitle={Gallia est omnis divisa in partes tres: Exemplum Relationis}, pdfauthor={Pollis Team}, pdfcopyright={Copyright 2026 Pollis Team. Licensed under CC BY 4.0. Caesar's Latin text and the engraving of Figure 1 are in the public domain.}, pdflicenseurl={https://creativecommons.org/licenses/by/4.0/}, pdfsubject={A sample PDF for the PDF Viewer of Pollis}, pdfkeywords={sample, table, PDF, Caesar}}
 
 % Room between a table's caption, above it, and its top rule
 \setlength{\belowcaptionskip}{8pt}
@@ -23,10 +27,14 @@
 \renewcommand{\tablename}{Tabula}
 
 \title{Gallia est omnis divisa in partes tres\\[0.4em]\large Exemplum Relationis}
-\author{PollisDatasets}
+\author{Pollis Team}
 \date{}
 
 \begin{document}
+
+% hyperxmp writes the author and keywords only in the XMP metadata under XeTeX: the document information
+% dictionary, which pdfinfo reads, gets them here
+\special{pdf:docinfo << /Author (Pollis Team) /Keywords (sample, table, PDF, Caesar) >>}
 
 \maketitle
 
@@ -113,5 +121,8 @@ Year (BC) & Event \\
 \bottomrule
 \end{tabular}
 \end{table}
+
+\vfill
+{\footnotesize \textcopyright\ 2026 Pollis Team. Licensed under the Creative Commons Attribution 4.0 International licence (CC BY 4.0), \url{https://creativecommons.org/licenses/by/4.0/}. Caesar's Latin text and the engraving of Figure 1 are in the public domain.\par}
 
 \end{document}
