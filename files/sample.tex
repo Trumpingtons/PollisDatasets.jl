@@ -2,7 +2,8 @@
 % Commentarii de Bello Gallico (book I, chapters 1 to 3, from The Latin Library) in sections and
 % subsections, a figure and a SAMPLE stamp on page 1, Table 1 and notes on page 2, and notes in
 % English on Caesar, with a table of Rome in his lifetime (Table 2), alone on page 3.
-% Table 1 is read from table1.csv (one line per row, cells separated by semicolons), and the same
+% Table 1 is read from table1.csv (one line per row, cells separated by semicolons; the rows Observationes and
+% R-quadratum go below a rule), and the same
 % file is attached to the PDF, so an extracted table can be checked against the values typeset.
 % To make a test PDF of your own, edit table1.csv or this file, typeset it with
 % PollisTeX.compile("sample.tex"), and attach table1.csv with Poppler's pdfattach.
@@ -15,6 +16,7 @@
 \usepackage{float}
 \usepackage{booktabs}
 \usepackage{csvsimple}
+\usepackage{ifthen}
 \usepackage{tikz}
 \usepackage[hidelinks]{hyperref}
 \usepackage{hyperxmp}
@@ -69,7 +71,9 @@ Apud Helvetios longe nobilissimus fuit et ditissimus Orgetorix. Is M.~Messala et
 \caption{Cur Belgae fortissimi sint: fortitudo Gallorum in distantia a provincia, mercatoribus et bellis cum Germanis}
 \begin{tabular}{lrr}
 \toprule
-\csvreader[no head, separator=semicolon, late after line=\\, late after first line=\\\midrule, late after last line=\\\bottomrule]{table1.csv}{}{\csvcoli & \csvcolii & \csvcoliii}
+% The coefficients, then, below a rule, the fit of each model: Observationes and R-quadratum
+\csvreader[no head, separator=semicolon, filter ifthen=\not\(\equal{\csvcoli}{Observationes}\or\equal{\csvcoli}{R-quadratum}\), late after line=\\, late after first line=\\\midrule, late after last line=\\\midrule]{table1.csv}{}{\csvcoli & \csvcolii & \csvcoliii}
+\csvreader[no head, separator=semicolon, filter ifthen=\equal{\csvcoli}{Observationes}\or\equal{\csvcoli}{R-quadratum}, late after line=\\, late after last line=\\\bottomrule]{table1.csv}{}{\csvcoli & \csvcolii & \csvcoliii}
 \end{tabular}
 
 \medskip
@@ -101,9 +105,9 @@ In January 49 BC he led his army across the Rubicon into Italy, starting a civil
 \begin{table}[H]
 \centering
 \caption{Rome in Caesar's lifetime}
-\begin{tabular}{lp{11cm}}
+\begin{tabular}{cp{11cm}}
 \toprule
-Year (BC) & Event \\
+Year (BC) & \multicolumn{1}{c}{Event} \\
 \midrule
 100 & Gaius Julius Caesar is born in Rome \\
 88 & Sulla marches on Rome with his army \\
