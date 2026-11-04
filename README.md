@@ -40,7 +40,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 
 | File | Contents |
 |---|---|
-| sample.pdf | Three pages in Latin, from Caesar's De Bello Gallico: text, a figure and a SAMPLE stamp, a regression table (Table 1), and notes, ending with notes in English on Caesar and a timeline of Rome in his lifetime (Table 2); the cells of Table 1 are attached as table1.csv |
+| sample.pdf | Three pages in Latin, from Caesar's De Bello Gallico: text, a figure and a SAMPLE stamp, a regression table (Table 1) and notes, then notes in English on Caesar and a timeline of Rome in his lifetime (Table 2) on a page of their own; the cells of Table 1 are attached as table1.csv |
 | sample.tex | The LaTeX source of sample.pdf, which reads Table 1 from table1.csv |
 | table1.csv | The cells of Table 1, separated by semicolons |
 | caesar.jpg | The figure on page 1, an engraving of Julius Caesar by Jan Caspar Philips (1745), from the Rijksmuseum (CC0) |
