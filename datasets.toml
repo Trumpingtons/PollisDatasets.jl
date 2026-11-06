@@ -2062,6 +2062,38 @@ columns = [
 	{ name = "volume", description = "Trading volume (shares, split-adjusted)" },
 ]
 
+[[datasets]]
+id = "gnp82"
+title = "US Real GNP, 1951-1984"
+domain = "Time series"
+description = "Quarterly US real gross national product, 1951Q1 to 1984Q4: the series of Hamilton's (1989) Markov-switching model of the business cycle, and of the tests of one regime against two of Hansen (1992) and Carrasco, Hu and Ploberger (2014). Their growth rates are 100 times the differences of the logs."
+rows = 136
+source = "Hamilton, J. D. (1989), A new approach to the economic analysis of nonstationary time series and the business cycle, Econometrica 57, 357-384, doi:10.2307/1912559; data from the US Bureau of Economic Analysis"
+url = "R package MSTest (inst/extdata/GNP82.DAT, commit 0301236), the file of Carrasco, Hu and Ploberger's replication programs"
+licence = "Public domain (US Bureau of Economic Analysis)"
+status = "public-domain"
+columns = [
+	{ name = "year", description = "Year" },
+	{ name = "quarter", description = "Quarter: 1-4" },
+	{ name = "gnp", description = "Real GNP, billions of 1982 dollars, seasonally adjusted annual rate" },
+]
+
+[[datasets]]
+id = "gnpc96"
+title = "US Real GNP, 1951-2010"
+domain = "Time series"
+description = "Quarterly US real gross national product, 1951Q1 to 2010Q4, the vintage of the FRED series GNPC96 that Carrasco, Hu and Ploberger (2014) used. Kept as it was: the series has since been revised and rebased, and a download today gives other values."
+rows = 240
+source = "US Bureau of Economic Analysis, Real Gross National Product, via FRED (series GNPC96); Carrasco, M., Hu, L. and Ploberger, W. (2014), Optimal test for Markov switching parameters, Econometrica 82, 765-784, doi:10.3982/ECTA8609"
+url = "R package MSTest (inst/extdata/GNPC96.txt, commit 0301236), the file of Carrasco, Hu and Ploberger's replication programs"
+licence = "Public domain (US Bureau of Economic Analysis)"
+status = "public-domain"
+columns = [
+	{ name = "year", description = "Year" },
+	{ name = "quarter", description = "Quarter: 1-4" },
+	{ name = "gnp", description = "Real GNP, billions of chained dollars, seasonally adjusted annual rate" },
+]
+
 # ---------- Dynamical systems ----------
 
 [[datasets]]

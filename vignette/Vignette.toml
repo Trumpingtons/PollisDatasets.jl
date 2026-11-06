@@ -3,7 +3,7 @@
 article = ""
 author = "Antonio Saragga Seabra"
 citation = ""
-description = "67 small datasets for examples and teaching, each with the source to cite, its licence checked and recorded, and every column described, loaded as Tables.jl column tables; installed with Pollis as the database PollisDatasets, and checked against R's datasets package."
+description = "69 small datasets for examples and teaching, each with the source to cite, its licence checked and recorded, and every column described, loaded as Tables.jl column tables; installed with Pollis as the database PollisDatasets, and checked against R's datasets package."
 license = "MIT"
 method = "Datasets for examples and teaching"
 package = "PollisDatasets"

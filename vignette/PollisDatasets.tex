@@ -39,7 +39,7 @@
 
 \nmhead{Datasets}
   {PollisDatasets.jl: the datasets of the examples}
-  {67 small datasets, from \fn{mtcars} and \fn{iris} to \fn{mroz} and \fn{challenger}, each with the source to
+  {69 small datasets, from \fn{mtcars} and \fn{iris} to \fn{mroz} and \fn{challenger}, each with the source to
    cite, its licence and every column described, loaded as Tables.jl column tables.}
 
 \factsheet
@@ -49,7 +49,7 @@
    loads the datasets of R's packages, as DataFrames, without the terms of each.}
   {\fn{PollisDatasets.jl} 0.1.0, from GitHub:\newline \fn{Pkg.add(url = "https://github.com/Trumpingtons/PollisDatasets.jl")}.
    It depends on CSV, TOML and Tables only.}
-  {68 of 68: every dataset loads with the rows and the columns its entry gives, and an unknown name is an
+  {70 of 70: every dataset loads with the rows and the columns its entry gives, and an unknown name is an
    error. Six datasets also checked against R's datasets package, to the last digit printed.}
 
 \nmsection{Why a package}
@@ -70,7 +70,7 @@ Causal inference & lalonde, cps1, cps2, cps3, mpdta, divorce\\
 Count data & horsekicks, insectsprays, biochemists, ships, challenger, assortive\_mating\\
 Classification & penguins, iris, titanic, wine, breastwisconsin, glass, sonar, vowel, ionosphere, germancredit,
   image, ecoli, votes, letters, satimage, vehicle, liver, soybean, pima\\
-Time series & airpassengers, nile, co2, bg96, dgs10, lynxmackenzie, airquality, sp500, gamestop\\
+Time series & airpassengers, nile, co2, bg96, dgs10, lynxmackenzie, airquality, sp500, gamestop, gnp82, gnpc96\\
 Time series classification & ecg200, earthquakes, twoleadecg\\
 Survival & lung, veteran, pbc\\
 Bayesian / multilevel & eightschools, radon, sleepstudy\\
@@ -87,7 +87,7 @@ Every dataset passed a licence check before it came in, and its \fn{status} reco
 \begin{valuetable}{@{}>{\raggedright\arraybackslash}p{30mm}>{\raggedright\arraybackslash}X r@{}}
 \textbf{Status} & \textbf{Meaning} & \textbf{Datasets}\\\midrule
 \fn{open} & an explicit open licence (CC0, CC BY), or permission given & 23\\
-\fn{public-domain} & a work of the US government, or published before 1930 & 5\\
+\fn{public-domain} & a work of the US government, or published before 1930 & 7\\
 \fn{redistributed} & no explicit licence; a small factual table redistributed for decades in CRAN and textbook
   packages & 37\\
 \fn{simulated} & made by the Julia code in the entry's \fn{code}, which states the true model; MIT, like the
@@ -151,7 +151,7 @@ decimals.
 \nmsub{The catalogue and the files agree}
 \fn{test/runtests.jl} loads every dataset in the catalogue and checks that it has the number of rows its entry
 gives and the columns its entry describes, in the same order; and that \fn{dataset("nope")} is an error that lists
-the names there are. 68 of 68 pass, in 7 seconds.
+the names there are. 70 of 70 pass, in 7 seconds.
 
 \nmsub{Against R}
 Datasets that come from R's datasets package were compared with R 4.5's own copies:
