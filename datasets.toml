@@ -382,6 +382,97 @@ columns = [
 ]
 
 [[datasets]]
+id = "nsw"
+title = "LaLonde NSW Job Training, LaLonde's Sample"
+domain = "Causal inference"
+description = "Earnings of the treated and control men of the National Supported Work experiment as LaLonde (1986) used them, without 1974 earnings; Dehejia and Wahba's sample, lalonde, is the part with them."
+rows = 722
+source = "LaLonde, R. (1986), Evaluating the econometric evaluations of training programs, American Economic Review 76, 604-620; Dehejia, R. and Wahba, S. (1999), JASA 94, 1053-1062"
+url = "https://users.nber.org/~rdehejia/data/.nswdata2.html"
+licence = "None stated; posted by the author for public download"
+status = "redistributed"
+columns = [
+	{ name = "treat", description = "1 if assigned to the job training programme" },
+	{ name = "age", description = "Age (years)" },
+	{ name = "educ", description = "Years of schooling" },
+	{ name = "black", description = "1 if Black" },
+	{ name = "hisp", description = "1 if Hispanic" },
+	{ name = "married", description = "1 if married" },
+	{ name = "nodegree", description = "1 if no high-school degree" },
+	{ name = "re75", description = "Real earnings in 1975 (USD)" },
+	{ name = "re78", description = "Real earnings in 1978, after the programme (USD)" },
+]
+
+[[datasets]]
+id = "psid1"
+title = "LaLonde PSID-1 Comparison Group"
+domain = "Causal inference"
+description = "All male household heads of the Panel Study of Income Dynamics under 55 who did not call themselves retired in 1975, the other nonexperimental comparison group for the NSW experiment (Dehejia-Wahba version)."
+rows = 2490
+source = "LaLonde, R. (1986), Evaluating the econometric evaluations of training programs, American Economic Review 76, 604-620; Dehejia, R. and Wahba, S. (1999), JASA 94, 1053-1062"
+url = "https://users.nber.org/~rdehejia/data/.nswdata2.html"
+licence = "None stated; posted by the author for public download"
+status = "redistributed"
+columns = [
+	{ name = "treat", description = "0: every man is a survey comparison, not in the programme" },
+	{ name = "age", description = "Age (years)" },
+	{ name = "educ", description = "Years of schooling" },
+	{ name = "black", description = "1 if Black" },
+	{ name = "hisp", description = "1 if Hispanic" },
+	{ name = "married", description = "1 if married" },
+	{ name = "nodegree", description = "1 if no high-school degree" },
+	{ name = "re74", description = "Real earnings in 1974 (USD)" },
+	{ name = "re75", description = "Real earnings in 1975 (USD)" },
+	{ name = "re78", description = "Real earnings in 1978 (USD)" },
+]
+
+[[datasets]]
+id = "psid2"
+title = "LaLonde PSID-2 Comparison Group"
+domain = "Causal inference"
+description = "The PSID-1 men not working when surveyed in the spring of 1976 (Dehejia-Wahba version)."
+rows = 253
+source = "LaLonde, R. (1986), Evaluating the econometric evaluations of training programs, American Economic Review 76, 604-620; Dehejia, R. and Wahba, S. (1999), JASA 94, 1053-1062"
+url = "https://users.nber.org/~rdehejia/data/.nswdata2.html"
+licence = "None stated; posted by the author for public download"
+status = "redistributed"
+columns = [
+	{ name = "treat", description = "0: every man is a survey comparison, not in the programme" },
+	{ name = "age", description = "Age (years)" },
+	{ name = "educ", description = "Years of schooling" },
+	{ name = "black", description = "1 if Black" },
+	{ name = "hisp", description = "1 if Hispanic" },
+	{ name = "married", description = "1 if married" },
+	{ name = "nodegree", description = "1 if no high-school degree" },
+	{ name = "re74", description = "Real earnings in 1974 (USD)" },
+	{ name = "re75", description = "Real earnings in 1975 (USD)" },
+	{ name = "re78", description = "Real earnings in 1978 (USD)" },
+]
+
+[[datasets]]
+id = "psid3"
+title = "LaLonde PSID-3 Comparison Group"
+domain = "Causal inference"
+description = "The PSID-1 men not working in 1975 or 1976, the PSID group closest to the NSW participants (Dehejia-Wahba version)."
+rows = 128
+source = "LaLonde, R. (1986), Evaluating the econometric evaluations of training programs, American Economic Review 76, 604-620; Dehejia, R. and Wahba, S. (1999), JASA 94, 1053-1062"
+url = "https://users.nber.org/~rdehejia/data/.nswdata2.html"
+licence = "None stated; posted by the author for public download"
+status = "redistributed"
+columns = [
+	{ name = "treat", description = "0: every man is a survey comparison, not in the programme" },
+	{ name = "age", description = "Age (years)" },
+	{ name = "educ", description = "Years of schooling" },
+	{ name = "black", description = "1 if Black" },
+	{ name = "hisp", description = "1 if Hispanic" },
+	{ name = "married", description = "1 if married" },
+	{ name = "nodegree", description = "1 if no high-school degree" },
+	{ name = "re74", description = "Real earnings in 1974 (USD)" },
+	{ name = "re75", description = "Real earnings in 1975 (USD)" },
+	{ name = "re78", description = "Real earnings in 1978 (USD)" },
+]
+
+[[datasets]]
 id = "mpdta"
 title = "Minimum Wage and Teen Employment"
 domain = "Causal inference"

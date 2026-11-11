@@ -1,6 +1,6 @@
 # PollisDatasets.jl
 
-A curated set of 69 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
+A curated set of 73 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
 
 ```julia
 using PollisDatasets
@@ -20,7 +20,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Regression | mtcars, anscombe, datasaurus, galton, evals |
 | Econometrics | mroz, card |
 | Panel econometrics | grunfeld, produc, gasoline, petersen |
-| Causal inference | lalonde, cps1, cps2, cps3, mpdta, divorce |
+| Causal inference | lalonde, nsw, cps1, cps2, cps3, psid1, psid2, psid3, mpdta, divorce |
 | Count data | horsekicks, insectsprays, biochemists, ships, challenger, assortive_mating |
 | Classification | penguins, iris, titanic, wine, breastwisconsin, glass, pima, sonar, vowel, ionosphere, vehicle, germancredit, image, ecoli, votes, liver, letters, satimage, soybean |
 | Time series | airpassengers, nile, co2, bg96, dgs10, lynxmackenzie, airquality, sp500, gamestop, gnp82, gnpc96 |
