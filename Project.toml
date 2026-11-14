@@ -1,7 +1,7 @@
 name = "PollisDatasets"
 uuid = "b43d2445-bde6-43fd-b0e7-0c8ab91b08dc"
 authors = ["Antonio Saragga Seabra <antseabra@gmail.com>"]
-version = "0.1.0"
+version = "0.1.1"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
