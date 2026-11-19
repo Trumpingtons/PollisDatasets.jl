@@ -2222,6 +2222,27 @@ columns = [
 	{ name = "dead", description = "Cumulative deaths" },
 ]
 
+# ---------- Spatial interaction ----------
+
+[[datasets]]
+id = "austria_migration"
+title = "Migration Between Austrian Regions, 2006"
+domain = "Spatial interaction"
+description = "Migration flows between the nine NUTS-2 regions of Austria in 2006, one row per origin and destination, with each origin's total outflows, each destination's total inflows and the distance between them: the data of the spatial interaction tutorials of Dennett (2012) and of Oshan's (2016) primer on spint. The regions' outlines are the sample file austria_nuts2.gpkg."
+rows = 81
+source = "Dennett, A. (2012), Estimating flows between geographical locations: get me started in spatial interaction modelling, CASA Working Paper 184, University College London; Oshan, T. M. (2016), A primer for working with the Spatial Interaction modeling (SpInt) module in the python spatial analysis library (PySAL), REGION 3(2), R11-R23"
+url = "https://github.com/pysal/spint/tree/main/spint/primer (austria.csv)"
+licence = "BSD 3-Clause, copyright (c) 2018, Python Spatial Analysis Library"
+status = "open"
+columns = [
+	{ name = "origin", description = "Origin region, NUTS-2 code (AT11 Burgenland, AT12 Lower Austria, AT13 Vienna, AT21 Carinthia, AT22 Styria, AT31 Upper Austria, AT32 Salzburg, AT33 Tyrol, AT34 Vorarlberg)" },
+	{ name = "destination", description = "Destination region, NUTS-2 code" },
+	{ name = "flow", description = "Number of migrants from the origin to the destination; 0 when origin and destination are the same region" },
+	{ name = "oi", description = "Total outflows of the origin to the other regions" },
+	{ name = "dj", description = "Total inflows of the destination from the other regions" },
+	{ name = "dij", description = "Distance between the centroids of the two regions (km), as published; 0 when origin and destination are the same region, where the source has 1e-300" },
+]
+
 # ---------- Survival ----------
 
 [[datasets]]
@@ -2488,3 +2509,9 @@ name = "caesar.jpg"
 title = "Engraving of Julius Caesar"
 description = "Portret van Julius Caesar, an engraving by Jan Caspar Philips (Amsterdam, 1745) for Kornelis Westerbaen's Algemeene histori, deel XI, scanned by the Rijksmuseum (RP-P-1922-265, http://hdl.handle.net/10934/RM0001.COLLECT.163958): the figure on page 1 of sample.pdf, a JPEG of 360 by 489 pixels."
 licence = "Public domain, released by the Rijksmuseum under CC0 1.0"
+
+[[files]]
+name = "austria_nuts2.gpkg"
+title = "Outlines of the Austrian NUTS-2 Regions"
+description = "The nine NUTS-2 regions of Austria of the dataset austria_migration, as polygons in ETRS89 longitude and latitude (EPSG:4258), in the layer regions with the columns nuts_id and name: the shapefile austria.shp of Oshan's (2016) primer on spint, as a GeoPackage, with the regions' English names added."
+licence = "BSD 3-Clause, copyright (c) 2018, Python Spatial Analysis Library"

@@ -1,6 +1,6 @@
 # PollisDatasets.jl
 
-A curated set of 73 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
+A curated set of 74 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
 
 ```julia
 using PollisDatasets
@@ -27,6 +27,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Time series classification | ecg200, earthquakes, twoleadecg |
 | Dynamical systems | lynxhare |
 | Epidemiology | italycovid |
+| Spatial interaction | austria_migration |
 | Survival | lung, pbc, veteran |
 | Bayesian / multilevel | eightschools, radon, sleepstudy |
 | Density / mixtures | faithful |
@@ -44,6 +45,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | sample.tex | The LaTeX source of sample.pdf, which reads Table 1 from table1.csv |
 | table1.csv | The cells of Table 1, separated by semicolons |
 | caesar.jpg | The figure on page 1, an engraving of Julius Caesar by Jan Caspar Philips (1745), from the Rijksmuseum (CC0) |
+| austria_nuts2.gpkg | The outlines of the nine Austrian NUTS-2 regions of austria_migration, from the primer of PySAL's spint (BSD 3-Clause) |
 
 ```julia
 pdf = samplefile("sample.pdf")
