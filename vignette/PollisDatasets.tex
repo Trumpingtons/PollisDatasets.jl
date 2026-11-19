@@ -39,7 +39,7 @@
 
 \nmhead{Datasets}
   {PollisDatasets.jl: the datasets of the examples}
-  {74 small datasets, from \fn{mtcars} and \fn{iris} to \fn{mroz} and \fn{challenger}, each with the source to
+  {80 small datasets, from \fn{mtcars} and \fn{iris} to \fn{mroz} and \fn{challenger}, each with the source to
    cite, its licence and every column described, loaded as Tables.jl column tables.}
 
 \factsheet
@@ -76,6 +76,8 @@ Survival & lung, veteran, pbc\\
 Bayesian / multilevel & eightschools, radon, sleepstudy\\
 Dynamical systems & lynxhare\\
 Epidemiology & italycovid\\
+Spatial econometrics & adh\_czones, adh\_shocks, boston\_tracts, georgia, katrina,
+  us\_states\_monthly\\
 Spatial interaction & austria\_migration\\
 Density / mixtures & faithful\\
 Market baskets & groceries\\
@@ -87,16 +89,16 @@ Simulated & sim\_glmm, sim\_clf\\
 Every dataset passed a licence check before it came in, and its \fn{status} records the outcome:
 \begin{valuetable}{@{}>{\raggedright\arraybackslash}p{30mm}>{\raggedright\arraybackslash}X r@{}}
 \textbf{Status} & \textbf{Meaning} & \textbf{Datasets}\\\midrule
-\fn{open} & an explicit open licence (CC0, CC BY), or permission given & 23\\
+\fn{open} & an explicit open licence (CC0, CC BY), or permission given & 27\\
 \fn{public-domain} & a work of the US government, or published before 1930 & 7\\
 \fn{redistributed} & no explicit licence; a small factual table redistributed for decades in CRAN and textbook
-  packages & 37\\
+  packages & 44\\
 \fn{simulated} & made by the Julia code in the entry's \fn{code}, which states the true model; MIT, like the
   package & 2\\
 \end{valuetable}
 The datasets that failed are listed at the top of \fn{datasets.toml} with the reason: the Fama-French factors (no
-grant to redistribute: fetch them live, from \menupath{Explore\gt Access Data Libraries}), the SILSO sunspots (CC
-BY-NC, whose non-commercial clause AGPL-3.0 cannot carry) and Boston Housing (an ethically problematic variable).
+grant to redistribute: fetch them live, from \menupath{Explore\gt Access Data Libraries}) and the SILSO sunspots (CC
+BY-NC, whose non-commercial clause AGPL-3.0 cannot carry).
 The S\&P 500 series came in only as a copy dedicated to the public domain (CC0), with the source named.
 
 \nmsection{In Julia}
@@ -106,6 +108,7 @@ The S\&P 500 series came in only as a copy dedicated to the public domain (CC0),
 \fn{dataset("mroz")} & the dataset as a Tables.jl column table, a \fn{NamedTuple} of vectors: \fn{d.wage} is a
   column\\
 \fn{datasetinfo("mroz")} & the description, the source to cite, the licence and the columns\\
+\fn{datafile("mroz")} & the path of the dataset's CSV file, for readers that take a file, such as DuckDB\\
 \end{valuetable}
 A column table goes straight into GLM.jl, MLJ.jl, Makie or any Tables.jl reader; Pollis's examples never turn it
 into a DataFrame.

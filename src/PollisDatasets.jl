@@ -10,6 +10,7 @@ using PollisDatasets
 datasets()                  # list the catalogue
 d = dataset("penguins");    # load one
 datasetinfo("penguins")     # source, licence and columns
+datafile("penguins")        # path of its CSV file
 samplefile("sample.pdf")    # path of a sample file
 ```
 """
@@ -19,7 +20,7 @@ using CSV
 using TOML
 using Tables
 
-export dataset, datasets, datasetinfo, samplefile
+export dataset, datasets, datasetinfo, datafile, samplefile
 
 const ROOT = dirname(@__DIR__)
 const CATALOGUE = joinpath(ROOT, "datasets.toml")
@@ -86,6 +87,14 @@ end
 Description, source to cite, licence and column descriptions of the dataset `id`.
 """
 datasetinfo(id::AbstractString) = lookup(id)
+
+"""
+    datafile(id)
+
+Path of the CSV file of the dataset `id`, for readers that take a file, such as DuckDB:
+`DBInterface.execute(con, "SELECT * FROM '\$(datafile("produc"))'")`.
+"""
+datafile(id::AbstractString) = joinpath(ROOT, "data", lookup(id).id * ".csv")
 
 """
     samplefile(name)

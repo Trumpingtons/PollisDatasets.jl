@@ -21,7 +21,6 @@
 #   Sunspots (SILSO)      CC BY-NC 4.0: the non-commercial clause is incompatible with AGPL distribution
 #   S&P 500 from S&P DJI  "Reproduction of S&P 500 in any form is prohibited" (S&P Dow Jones Indices); Yahoo Finance terms forbid redistribution
 #                         (sp500 and gamestop are instead the copies of Yahoo! Finance data published on Kaggle under CC0-1.0)
-#   Boston Housing        ethically problematic variable; withdrawn from scikit-learn
 
 # ---------- Regression ----------
 
@@ -2222,6 +2221,190 @@ columns = [
 	{ name = "dead", description = "Cumulative deaths" },
 ]
 
+# ---------- Spatial econometrics ----------
+
+[[datasets]]
+id = "boston_tracts"
+title = "Boston Housing by Census Tract, 1970"
+domain = "Spatial econometrics"
+description = "The 506 census tracts of the Boston area in 1970 with the median value of owner-occupied homes and the variables of Harrison and Rubinfeld's (1978) hedonic price model, as corrected by Gilley and Pace (1996), with the tracts' population and counts of homes by value from the spData R package (Bivand, 2017). The tracts' outlines, with every column, are the sample file boston_tracts.gpkg."
+rows = 506
+source = "Harrison, D. and Rubinfeld, D. L. (1978), Hedonic housing prices and the demand for clean air, Journal of Environmental Economics and Management 5, 81-102; Gilley, O. W. and Pace, R. K. (1996), On the Harrison and Rubinfeld data, Journal of Environmental Economics and Management 31, 403-405; Bivand, R. (2017), Revisiting the Boston data set: changing the units of observation affects estimated willingness to pay for clean air, REGION 4(1), 109-127"
+url = "https://github.com/Nowosad/spData/tree/master/inst/shapes (boston_tracts.gpkg)"
+licence = "CC0, spData R package"
+status = "open"
+columns = [
+	{ name = "poltract", description = "Tract identifier of the polygon, as text" },
+	{ name = "TOWN", description = "Town name" },
+	{ name = "TOWNNO", description = "Town number" },
+	{ name = "TRACT", description = "Census tract number" },
+	{ name = "LON", description = "Longitude of the tract's point, in decimal degrees" },
+	{ name = "LAT", description = "Latitude of the tract's point, in decimal degrees" },
+	{ name = "MEDV", description = "Median value of owner-occupied homes (USD 1000), as in Harrison and Rubinfeld (1978); censored at 50" },
+	{ name = "CMEDV", description = "Median value of owner-occupied homes (USD 1000), corrected by Gilley and Pace (1996)" },
+	{ name = "CRIM", description = "Crimes per head" },
+	{ name = "ZN", description = "Percent of residential land zoned for lots over 25,000 sq. ft, by town" },
+	{ name = "INDUS", description = "Percent of acres in non-retail business, by town" },
+	{ name = "CHAS", description = "1 if the tract borders the Charles River, 0 otherwise" },
+	{ name = "NOX", description = "Nitric oxides concentration (parts per 10 million), by town" },
+	{ name = "RM", description = "Average number of rooms per dwelling" },
+	{ name = "AGE", description = "Percent of owner-occupied units built before 1940" },
+	{ name = "DIS", description = "Weighted distance to five Boston employment centres" },
+	{ name = "RAD", description = "Index of accessibility to radial highways, by town" },
+	{ name = "TAX", description = "Full-value property tax rate per USD 10,000, by town" },
+	{ name = "PTRATIO", description = "Pupil-teacher ratio, by town" },
+	{ name = "B", description = "1000 (Bk - 0.63)^2, where Bk is the proportion of Black residents, as defined by Harrison and Rubinfeld (1978)" },
+	{ name = "LSTAT", description = "Percent of the population of lower status" },
+	{ name = "units", description = "Number of single-family houses" },
+	{ name = "cu5k", description = "Number of houses valued under USD 5,000" },
+	{ name = "c5_7_5", description = "Number of houses valued USD 5,000 to 7,500" },
+	{ name = "C7_5_10", description = "Number of houses valued USD 7,500 to 10,000" },
+	{ name = "C10_15", description = "Number of houses valued USD 10,000 to 15,000" },
+	{ name = "C15_20", description = "Number of houses valued USD 15,000 to 20,000" },
+	{ name = "C20_25", description = "Number of houses valued USD 20,000 to 25,000" },
+	{ name = "C25_35", description = "Number of houses valued USD 25,000 to 35,000" },
+	{ name = "C35_50", description = "Number of houses valued USD 35,000 to 50,000" },
+	{ name = "co50k", description = "Number of houses valued over USD 50,000" },
+	{ name = "median", description = "Median value of houses (USD), recomputed from the counts" },
+	{ name = "BB", description = "Black population share, recomputed for spData" },
+	{ name = "censored", description = "Whether the median value is censored: no, left or right" },
+	{ name = "NOX_ID", description = "Zone of the nitric oxides model" },
+	{ name = "POP", description = "Tract population" },
+]
+
+[[datasets]]
+id = "georgia"
+title = "Georgia Counties, 1990"
+domain = "Spatial econometrics"
+description = "Education, poverty, age, origin and the rural share of the population in the 159 counties of Georgia in 1990, with each county's centroid: the data of the examples of geographically weighted regression of Fotheringham, Brunsdon and Charlton (2002), of GWR4 and of mgwr. The counties' outlines are the sample file georgia_counties.gpkg."
+rows = 159
+source = "Fotheringham, A. S., Brunsdon, C. and Charlton, M. (2002), Geographically Weighted Regression: The Analysis of Spatially Varying Relationships, Wiley; from the 1990 US Census"
+url = "https://github.com/pysal/libpysal/tree/main/libpysal/examples/georgia (GData_utm.csv)"
+licence = "BSD 3-Clause, copyright (c) 2007-, PySAL Developers"
+status = "open"
+columns = [
+	{ name = "AreaKey", description = "County FIPS code" },
+	{ name = "Latitude", description = "Latitude of the county, in decimal degrees" },
+	{ name = "Longitud", description = "Longitude of the county, in decimal degrees" },
+	{ name = "TotPop90", description = "Population in 1990" },
+	{ name = "PctRural", description = "Percent of the population rural" },
+	{ name = "PctBach", description = "Percent of the population with a bachelor's degree" },
+	{ name = "PctEld", description = "Percent of the population elderly" },
+	{ name = "PctFB", description = "Percent of the population foreign-born" },
+	{ name = "PctPov", description = "Percent of the population below the poverty line" },
+	{ name = "PctBlack", description = "Percent of the population Black" },
+	{ name = "ID", description = "County number of the source" },
+	{ name = "X", description = "Easting of the county's centroid, UTM zone 16N (m)" },
+	{ name = "Y", description = "Northing of the county's centroid, UTM zone 16N (m)" },
+]
+
+[[datasets]]
+id = "katrina"
+title = "New Orleans Businesses After Hurricane Katrina"
+domain = "Spatial econometrics"
+description = "Whether each of 673 businesses on three New Orleans streets, Magazine Street, Carrollton Avenue and St. Claude Avenue, had reopened 3, 6 and 12 months after Hurricane Katrina in 2005, with its location, the flood depth, the median income of its area, its size, its customers and its ownership: the data of the spatial probit of LeSage, Pace, Lam, Campanella and Liu (2011). y1, y2 and y3 count the businesses that reopened on day 90 as not reopened, as the article does."
+rows = 673
+source = "LeSage, J. P., Pace, R. K., Lam, N., Campanella, R. and Liu, X. (2011), New Orleans business recovery in the aftermath of Hurricane Katrina, Journal of the Royal Statistical Society A 174, 1007-1027"
+url = "spatialprobit R package (Katrina); from the Royal Statistical Society's dataset website"
+licence = "None stated; spatialprobit R package (GPL-2 | GPL-3)"
+status = "redistributed"
+columns = [
+	{ name = "code", description = "Business number of the source" },
+	{ name = "long", description = "Longitude of the business, in decimal degrees" },
+	{ name = "lat", description = "Latitude of the business, in decimal degrees" },
+	{ name = "flood_depth", description = "Flood depth at the business (feet)" },
+	{ name = "log_medinc", description = "Log of the median household income of the business's area" },
+	{ name = "small_size", description = "1 for a small business" },
+	{ name = "large_size", description = "1 for a large business" },
+	{ name = "low_status_customers", description = "1 for customers of low socio-economic status" },
+	{ name = "high_status_customers", description = "1 for customers of high socio-economic status" },
+	{ name = "owntype_sole_proprietor", description = "1 for a sole proprietorship" },
+	{ name = "owntype_national_chain", description = "1 for a national chain" },
+	{ name = "y1", description = "1 if reopened within 3 months" },
+	{ name = "y2", description = "1 if reopened within 6 months" },
+	{ name = "y3", description = "1 if reopened within 12 months" },
+]
+
+[[datasets]]
+id = "us_states_monthly"
+title = "Unemployment and Payroll Employment of the US States, Monthly"
+domain = "Spatial econometrics"
+description = "The unemployment rate and the nonfarm payroll employment of the 48 contiguous US states, seasonally adjusted, monthly from January 1990 to December 2024: the Local Area Unemployment Statistics and the Current Employment Statistics of the Bureau of Labor Statistics, as FRED publishes them (series XXUR and XXNA, XX the state's postal code), in the vintage of November 2026. The states' outlines are the sample file us_states.gpkg, whose column stusps holds the same codes."
+rows = 20160
+source = "US Bureau of Labor Statistics, Local Area Unemployment Statistics and Current Employment Statistics (State and Area)"
+url = "https://fred.stlouisfed.org (series ALUR to WYUR and ALNA to WYNA)"
+licence = "Public domain, a work of the US Government (Bureau of Labor Statistics)"
+status = "open"
+columns = [
+	{ name = "stusps", description = "State postal code" },
+	{ name = "month", description = "Month, as YYYY-MM" },
+	{ name = "unemployment", description = "Unemployment rate, seasonally adjusted (%)" },
+	{ name = "payroll", description = "All employees, total nonfarm, seasonally adjusted (thousands)" },
+]
+
+[[datasets]]
+id = "adh_czones"
+title = "Chinese Import Competition and Manufacturing Employment, US Commuting Zones"
+domain = "Spatial econometrics"
+description = "The 722 commuting zones of the contiguous US in two periods, 1990 to 2000 and 2000 to 2007, one row per zone and period: the change in manufacturing employment, the change in US imports from China per worker and the instrument of Autor, Dorn and Hanson (2013), with their regression weights and controls, as Borusyak, Hull and Jaravel (2022) reanalyse them. Changes are per ten years, those of 2000 to 2007 scaled to ten years. The instrument is the sum over industries of the zone's shares in the sample file adh_shares.parquet times the industries' shocks in the dataset adh_shocks; the zones' outlines are the sample file us_czones.gpkg."
+rows = 1444
+source = "Autor, D. H., Dorn, D. and Hanson, G. H. (2013), The China syndrome: local labor market effects of import competition in the United States, American Economic Review 103(6), 2121-2168; Borusyak, K., Hull, P. and Jaravel, X. (2022), Quasi-experimental shift-share research designs, Review of Economic Studies 89(1), 181-213"
+url = "https://github.com/borusyak/shift-share (ADH.zip, Data/location_level.csv)"
+licence = "None stated; replication files of Borusyak, Hull and Jaravel (2022)"
+status = "redistributed"
+columns = [
+	{ name = "czone", description = "Commuting zone of 1990 (Tolbert and Sizer), as in us_czones.gpkg" },
+	{ name = "year", description = "Start of the period: 1990 for 1990 to 2000, 2000 for 2000 to 2007" },
+	{ name = "statefip", description = "State FIPS code of the zone, the clusters of the regional standard errors" },
+	{ name = "d_sh_empl_mfg", description = "Change in manufacturing employment as a share of the working-age population (percentage points per ten years)" },
+	{ name = "d_tradeusch_pw", description = "Change in US imports from China per worker (thousands of 2007 US dollars per ten years)" },
+	{ name = "d_tradeotch_pw_lag", description = "Change in the imports from China of eight other high-income countries per worker, with the employment ten years before the period: the instrument" },
+	{ name = "timepwt48", description = "The zone's share of the national working-age population at the start of the period: the regression weight" },
+	{ name = "t2", description = "1 for 2000 to 2007, 0 for 1990 to 2000" },
+	{ name = "reg_midatl", description = "1 in the Middle Atlantic census division (New England is the omitted division)" },
+	{ name = "reg_encen", description = "1 in the East North Central census division" },
+	{ name = "reg_wncen", description = "1 in the West North Central census division" },
+	{ name = "reg_satl", description = "1 in the South Atlantic census division" },
+	{ name = "reg_escen", description = "1 in the East South Central census division" },
+	{ name = "reg_wscen", description = "1 in the West South Central census division" },
+	{ name = "reg_mount", description = "1 in the Mountain census division" },
+	{ name = "reg_pacif", description = "1 in the Pacific census division" },
+	{ name = "l_shind_manuf_cbp", description = "Share of employment in manufacturing at the start of the period (County Business Patterns), a fraction" },
+	{ name = "l_sh_popedu_c", description = "Percentage of the population with a college education, start of the period" },
+	{ name = "l_sh_popfborn", description = "Percentage of the population born abroad, start of the period" },
+	{ name = "l_sh_empl_f", description = "Employment rate of women (%), start of the period" },
+	{ name = "l_sh_routine33", description = "Percentage of employment in routine occupations, start of the period" },
+	{ name = "l_task_outsource", description = "Average offshorability index of the zone's occupations, start of the period" },
+	{ name = "cz_prode_share1991", description = "Sum over industries of the zone's share times the industry's share of production workers in 1991" },
+	{ name = "cz_cap_va1991", description = "Sum over industries of the zone's share times the industry's ratio of capital to value added in 1991" },
+	{ name = "cz_log_avg_wage1991", description = "Sum over industries of the zone's share times the industry's log average wage in 1991" },
+	{ name = "cz_ind_ci_1990", description = "Sum over industries of the zone's share times the industry's share of computer investment in 1990" },
+	{ name = "cz_ind_htsh1_1990", description = "Sum over industries of the zone's share times the industry's share of high-tech equipment in 1990" },
+]
+
+[[datasets]]
+id = "adh_shocks"
+title = "Growth of Imports from China by US Manufacturing Industry"
+domain = "Spatial econometrics"
+description = "The shocks of the shift-share instrument of Autor, Dorn and Hanson (2013): for each of 397 manufacturing industries and each of the two periods, 1990 to 2000 and 2000 to 2007, the change in the imports from China of eight other high-income countries (Australia, Denmark, Finland, Germany, Japan, New Zealand, Spain and Switzerland) per US worker of the industry ten years before the period, as Borusyak, Hull and Jaravel (2022) build them, with the industry's 3-digit SIC code, by which they cluster, its group, and the five characteristics of the industry that Acemoglu, Autor, Dorn, Hanson and Price (2016) control for. The zones' shares in the industries are the sample file adh_shares.parquet, the zones the dataset adh_czones."
+rows = 794
+source = "Autor, D. H., Dorn, D. and Hanson, G. H. (2013), The China syndrome: local labor market effects of import competition in the United States, American Economic Review 103(6), 2121-2168; Borusyak, K., Hull, P. and Jaravel, X. (2022), Quasi-experimental shift-share research designs, Review of Economic Studies 89(1), 181-213"
+url = "https://github.com/borusyak/shift-share (ADH.zip, Data/shocks.dta and Data/industries.dta)"
+licence = "None stated; replication files of Borusyak, Hull and Jaravel (2022)"
+status = "redistributed"
+columns = [
+	{ name = "sic87dd", description = "Manufacturing industry, 4-digit 1987 SIC code, made consistent over time by Autor, Dorn and Hanson" },
+	{ name = "year", description = "Start of the period: 1990 for 1990 to 2000, 2000 for 2000 to 2007" },
+	{ name = "g", description = "Change in the eight countries' imports from China per US worker of the industry ten years before the period (thousands of 2007 US dollars per ten years)" },
+	{ name = "sic3", description = "3-digit SIC code of the industry" },
+	{ name = "sicgroup", description = "Group of the industry, 1 to 10, of 2-digit SIC codes (1: 20 and 21, food and tobacco; 10: 39, miscellaneous)" },
+	{ name = "prode_share1991", description = "The industry's share of production workers in its employment in 1991" },
+	{ name = "cap_va1991", description = "The industry's ratio of capital to value added in 1991" },
+	{ name = "log_avg_wage1991", description = "The industry's log average wage in 1991" },
+	{ name = "ind_ci_1990", description = "The industry's share of computer investment in its investment in 1990" },
+	{ name = "ind_htsh1_1990", description = "The industry's share of high-tech equipment in its investment in 1990" },
+]
+
 # ---------- Spatial interaction ----------
 
 [[datasets]]
@@ -2515,3 +2698,33 @@ name = "austria_nuts2.gpkg"
 title = "Outlines of the Austrian NUTS-2 Regions"
 description = "The nine NUTS-2 regions of Austria of the dataset austria_migration, as polygons in ETRS89 longitude and latitude (EPSG:4258), in the layer regions with the columns nuts_id and name: the shapefile austria.shp of Oshan's (2016) primer on spint, as a GeoPackage, with the regions' English names added."
 licence = "BSD 3-Clause, copyright (c) 2018, Python Spatial Analysis Library"
+
+[[files]]
+name = "boston_tracts.gpkg"
+title = "Outlines of the Boston Census Tracts"
+description = "The 506 census tracts of the dataset boston_tracts, as polygons in NAD27 longitude and latitude (EPSG:4267), in the layer boston_tracts with every column of the dataset: the file boston_tracts.gpkg of the spData R package."
+licence = "CC0, spData R package"
+
+[[files]]
+name = "georgia_counties.gpkg"
+title = "Outlines of the Georgia Counties"
+description = "The 159 counties of the dataset georgia, as polygons in UTM zone 16N, in the layer counties with every column of the dataset, in its order: the shapefile G_utm.shp of libpysal, as a GeoPackage. The source states no datum; the file carries NAD83 / UTM zone 16N (EPSG:26916)."
+licence = "BSD 3-Clause, copyright (c) 2007-, PySAL Developers"
+
+[[files]]
+name = "us_states.gpkg"
+title = "Outlines of the 48 Contiguous US States"
+description = "The 48 contiguous US states of the dataset produc, as polygons in NAD83 longitude and latitude (EPSG:4269), in the layer states with the columns state (the state's name as produc writes it, New_hampshire or Tennesse), name, stusps and statefp, in alphabetical order of state: the US Census Bureau's 2018 cartographic boundary file of the states at 1:20,000,000 (cb_2018_us_state_20m), as a GeoPackage, without Alaska, Hawaii, Puerto Rico and the District of Columbia. Queen contiguity of these polygons gives the neighbours of the weights matrix usaww of the R package splm."
+licence = "Public domain, a work of the US Government (US Census Bureau)"
+
+[[files]]
+name = "adh_shares.parquet"
+title = "Employment Shares of US Commuting Zones by Manufacturing Industry"
+description = "The exposure shares of the shift-share instrument of Autor, Dorn and Hanson (2013), in the layout of Borusyak, Hull and Jaravel (2022): one row per commuting zone, period and manufacturing industry, with the columns czone, year (1990 or 2000, the start of the period, as in adh_czones and adh_shocks), sic87dd and share, the industry's share of the zone's employment ten years before the period starts, in 1980 or 1990. Only the 133,936 shares above zero are kept. The shares times the shocks g of adh_shocks, summed over the industries of a zone and period, give the instrument d_tradeotch_pw_lag of adh_czones; their sum is the zone's lagged share of manufacturing employment. A Parquet file, compressed with Zstandard."
+licence = "None stated; replication files of Borusyak, Hull and Jaravel (2022)"
+
+[[files]]
+name = "us_czones.gpkg"
+title = "Outlines of the US Commuting Zones of 1990"
+description = "The 722 commuting zones of 1990 in the 48 contiguous US states and the District of Columbia, those of the dataset adh_czones, as polygons in NAD83 longitude and latitude (EPSG:4269), in the layer czones with the column czone, in its order: the counties of the US Census Bureau's 2018 cartographic boundary file at 1:20,000,000 (cb_2018_us_county_20m) merged by David Dorn's crosswalk of counties to commuting zones (cw_cty_czone). Miami-Dade (12086) and Oglala Lakota (46102) take the zones of their former codes, 12025 and 46113, and Broomfield (08014), formed in 2001, that of Boulder (08013)."
+licence = "Public domain county boundaries, a work of the US Government (US Census Bureau); the crosswalk, from Autor and Dorn (2013), states no licence"
