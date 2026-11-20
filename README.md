@@ -1,6 +1,6 @@
 # PollisDatasets.jl
 
-A curated set of 80 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
+A curated set of 81 small, well-known datasets for examples and teaching, across regression, econometrics, classification, time series, survival, multilevel models and more. Each dataset loads as a [Tables.jl](https://github.com/JuliaData/Tables.jl) column table: a `NamedTuple` of vectors.
 
 ```julia
 using PollisDatasets
@@ -27,7 +27,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | Time series classification | ecg200, earthquakes, twoleadecg |
 | Dynamical systems | lynxhare |
 | Epidemiology | italycovid |
-| Spatial econometrics | adh_czones, adh_shocks, boston_tracts, georgia, katrina, us_states_monthly |
+| Spatial econometrics | adh_czones, adh_shocks, boston_tracts, georgia, katrina, prop99, us_states_monthly |
 | Spatial interaction | austria_migration |
 | Survival | lung, pbc, veteran |
 | Bayesian / multilevel | eightschools, radon, sleepstudy |
@@ -54,6 +54,7 @@ Install with `import Pkg; Pkg.add(url = "https://github.com/Trumpingtons/PollisD
 | us_states.gpkg | The outlines of the 48 contiguous US states of produc, named as in produc, from the US Census Bureau's cartographic boundary files (public domain) |
 | adh_shares.parquet | The employment shares of the US commuting zones by manufacturing industry, the exposure shares of adh_czones and adh_shocks, from the replication files of Borusyak, Hull and Jaravel (2022) |
 | us_czones.gpkg | The outlines of the 722 US commuting zones of 1990 of adh_czones, the Census Bureau's counties merged by David Dorn's crosswalk |
+| mpdta_counties.gpkg | The outlines of the 500 US counties of mpdta, from the US Census Bureau's 2010 cartographic boundary files (public domain) |
 
 ```julia
 pdf = samplefile("sample.pdf")

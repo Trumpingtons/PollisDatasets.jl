@@ -488,6 +488,7 @@ columns = [
 	{ name = "lemp", description = "Log of teen employment (persons)" },
 	{ name = "first_treat", description = "Year the county's state first raised its minimum wage: 2004, 2006 or 2007; 0 for never in the period" },
 	{ name = "treat", description = "1 if the county is treated by 2007" },
+	{ name = "minwage", description = "1 from the year the county's state raised its minimum wage, 0 before it and in the counties never treated in the period" },
 ]
 
 [[datasets]]
@@ -2405,6 +2406,27 @@ columns = [
 	{ name = "ind_htsh1_1990", description = "The industry's share of high-tech equipment in its investment in 1990" },
 ]
 
+[[datasets]]
+id = "prop99"
+title = "California's Proposition 99 and Cigarette Sales, US States"
+domain = "Spatial econometrics"
+description = "Cigarette sales per capita in California and 38 other US states, 1970 to 2000, with the predictors of the synthetic control of Abadie, Diamond and Hainmueller (2010), who estimate the effect of Proposition 99, California's tobacco control programme of 1988. The 38 states are those without a large tobacco control programme or a large rise in cigarette taxes over the period. prop99 is 1 for California from 1989, the first year of the programme, and 0 otherwise. lnincome, beer and age15to24 are missing in some years, as in the source."
+rows = 1209
+source = "Abadie, A., Diamond, A. and Hainmueller, J. (2010), Synthetic control methods for comparative case studies: estimating the effect of California's tobacco control program, Journal of the American Statistical Association 105(490), 493-505"
+url = "tidysynth R package (smoking)"
+licence = "MIT, tidysynth R package"
+status = "open"
+columns = [
+	{ name = "state", description = "Name of the state" },
+	{ name = "year", description = "Year, 1970 to 2000" },
+	{ name = "cigsale", description = "Cigarette sales per capita (packs)" },
+	{ name = "lnincome", description = "Log of personal income per capita; from 1972" },
+	{ name = "beer", description = "Beer consumption per capita (gallons); from 1984" },
+	{ name = "age15to24", description = "Share of the population aged 15 to 24; to 1990" },
+	{ name = "retprice", description = "Average retail price of a pack of cigarettes (cents)" },
+	{ name = "prop99", description = "1 for California from 1989, 0 otherwise" },
+]
+
 # ---------- Spatial interaction ----------
 
 [[datasets]]
@@ -2728,3 +2750,9 @@ name = "us_czones.gpkg"
 title = "Outlines of the US Commuting Zones of 1990"
 description = "The 722 commuting zones of 1990 in the 48 contiguous US states and the District of Columbia, those of the dataset adh_czones, as polygons in NAD83 longitude and latitude (EPSG:4269), in the layer czones with the column czone, in its order: the counties of the US Census Bureau's 2018 cartographic boundary file at 1:20,000,000 (cb_2018_us_county_20m) merged by David Dorn's crosswalk of counties to commuting zones (cw_cty_czone). Miami-Dade (12086) and Oglala Lakota (46102) take the zones of their former codes, 12025 and 46113, and Broomfield (08014), formed in 2001, that of Boulder (08013)."
 licence = "Public domain county boundaries, a work of the US Government (US Census Bureau); the crosswalk, from Autor and Dorn (2013), states no licence"
+
+[[files]]
+name = "mpdta_counties.gpkg"
+title = "Outlines of the Counties of mpdta"
+description = "The 500 US counties of the dataset mpdta, as polygons in NAD83 longitude and latitude (EPSG:4269), in the layer counties with the columns county (the FIPS code, as countyreal in mpdta), name and statefp, ordered by county: the US Census Bureau's 2010 cartographic boundary file of the counties at 1:20,000,000 (gz_2010_us_050_00_20m), as a GeoPackage."
+licence = "Public domain, a work of the US Government (US Census Bureau)"
